@@ -83,7 +83,7 @@ if(isset($_POST['Submit'])){
     }
 
     function berekenTotaal (totaalprijsPizza) {
-        var Bezorgen = document.getElementById('bezorgen');
+        var Bezorgen = document.getElementsByName('BOA');
 
         for (i = 0; i < Bezorgen.length; i++) {
             if (Bezorgen[i].checked) {
