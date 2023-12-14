@@ -1,0 +1,233 @@
+@extends('layout')
+
+@section('title',"👩‍🍳Pizza di mama's official website 🍕🍕🍕")
+
+<?php
+//Dit is voor de prijzen op maandag en vrijdag
+$PrijsPHawaii = 11.50;
+$PrijsPFunghi = 12.50;
+$PrijsPMargherita = 12.50;
+$PrijsPMarina = 12.50;
+$PrijsPQFormaggi = 14.50;
+
+$PrijsPMargheritaMA = 7.50;
+$PrijsPFunghiMA = 7.50;
+$PrijsPMarinaMA = 7.50;
+$PrijsPHawaiiMA = 7.50;
+$PrijsPQFormaggiMA = 7.50;
+$totaalprijs= 0;
+
+$newDate = date ('l', strtotime('Today'));
+if ($newDate == 'Monday') {
+    $PrijsPMargherita = $PrijsPMargheritaMA;
+    $PrijsPFunghi = $PrijsPFunghiMA;
+    $PrijsPMarina = $PrijsPMarinaMA;
+    $PrijsPHawaii = $PrijsPHawaiiMA;
+    $PrijsPQFormaggi = $PrijsPQFormaggiMA;
+} 
+
+// dit gaat naar de controller
+if(isset($_POST['Submit'])){
+    $BOA = $_POST['BOA'];
+    $totaalprijs = $_POST['Kosten'];
+    $HawaiiList = $_POST['HawaiiList'];
+    $FunghiList = $_POST['FunghiList'];
+    $MargheritaList = $_POST['MargheritaList'];
+    $MarinaList = $_POST['MarinaList'];
+    $QFormaggiList = $_POST['QFormaggiList'];
+}
+?>
+
+<!--dit is voor de dropdown op de home & prijs berekenen !-->
+<script>
+    PrijsPHawaii = <?php echo $PrijsPHawaii; ?>;
+    PrijsPFunghi = <?php echo $PrijsPFunghi; ?>;
+    PrijsPMargherita = <?php echo $PrijsPMargherita; ?>;
+    PrijsPMarina = <?php echo $PrijsPMarina; ?>;
+    PrijsPQFormaggi = <?php echo $PrijsPQFormaggi; ?>; 
+    totaalprijs = 0;
+
+    function bestellenHawaii(){
+        HawaiiList = document.getElementById('HawaiiList').value;
+        document.getElementById('HawaiiPlek').innerHTML =  HawaiiList + " Stuks Pizza Hawaii 🍍🍕";
+        totaalprijsHawaii = HawaiiList * PrijsPHawaii;
+        berekenTotaal(totaalprijsHawaii);
+    }
+
+    function bestellenFunghi(){
+        FunghiList = document.getElementById('FunghiList').value;
+        document.getElementById('FunghiPlek').innerHTML =  FunghiList + " Stuks Pizza Funghi 🍄🍕";
+        totaalprijsFunghi = FunghiList * PrijsPFunghi;
+        berekenTotaal(totaalprijsFunghi);
+    }
+
+    function bestellenMargherita(){
+        MargheritaList = document.getElementById('MargheritaList').value;
+        document.getElementById('MargheritaPlek').innerHTML =  MargheritaList + " Stuks Pizza Margherita 🌿🍕";
+        totaalprijsMargherita = MargheritaList * PrijsPMargherita;
+        berekenTotaal(totaalprijsMargherita);
+    }
+
+    function bestellenMarina(){
+        MarinaList = document.getElementById('MarinaList').value;
+        document.getElementById('MarinaPlek').innerHTML =  MarinaList + " Stuks Pizza Marina 🐟🍕";
+        totaalprijsMarina = MarinaList * PrijsPMarina;
+        berekenTotaal(totaalprijsMarina);
+    }
+
+    function bestellenQFormaggi(){
+        QFormaggiList = document.getElementById('QFormaggiList').value;
+        document.getElementById('QFormaggiPlek').innerHTML =  QFormaggiList + " Stuks Pizza Quattro Formaggi 🧀🍕";
+        totaalprijsQFormaggi = QFormaggiList * PrijsPQFormaggi;
+        berekenTotaal(totaalprijsQFormaggi); 
+    }
+
+    function berekenTotaal (totaalprijsPizza) {
+        var Bezorgen = document.getElementById('bezorgen');
+
+        for (i = 0; i < Bezorgen.length; i++) {
+            if (Bezorgen[i].checked) {
+                NieuwTotaalPrijs = totaalprijs + 5;
+                NieuwTotaalPrijs += totaalprijsPizza;
+                document.getElementById('prijs').innerHTML = "Totaalprijs: €" + NieuwTotaalPrijs.toFixed(2) + ",-";
+            } else {
+                totaalprijs += totaalprijsPizza;
+                document.getElementById('prijs').innerHTML = "Totaalprijs: €" + totaalprijs.toFixed(2) + ",-";   
+            }
+        }
+    }
+</script>
+
+<?php
+if ($newDate == 'Friday' && $totaalprijs > 20) {
+    $totaalprijs = $totaalprijs - 15 * ($totaalprijs / 100);
+} 
+?>
+
+@section('content')
+<div class = home>
+    <form method="POST" action="{{url('/form')}}" class="home">
+        @csrf
+        <ul class = pizza name = pizza>
+            <li class = hawaii>
+                <img src="{{ asset('images/pizza_hawaii2.webp') }}" alt="pizza hawaii" width="180" height="180">
+                <p>Pizza Hawaii</p>
+                <?php echo "€" .$PrijsPHawaii ."0,-"?>
+                <select id="HawaiiList" name="HawaiiList">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+                <input type="button" name="Hawaii" value="Toevoegen" onclick="bestellenHawaii()"/>
+            </li>
+            <li class = funghi> 
+                <img src="{{ asset('images/Pizza_funghi.webp') }}" alt="pizza funghi" width="180" height="180">
+                <p>Pizza Funghi</p>
+                <?php echo "€" .$PrijsPFunghi ."0,-"?>
+                <select id="FunghiList" name="FunghiList">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+                <input type="button" name="Funghi" value="Toevoegen" onclick="bestellenFunghi()"/>
+            </li>
+            <li class = margherita>
+                <img src="{{ asset('images/pizza_margherita2.webp') }}" alt="pizza margherita" width="180" height="180">
+                <p>Pizza Margherita</p>
+                <?php echo "€" .$PrijsPMargherita ."0,-"?>
+                <select id="MargheritaList" name="MargheritaList">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+                <input type="button" name="Margherita" value="Toevoegen" onclick="bestellenMargherita()"/>
+            </li>
+            <li class = marina>
+                <img src="{{ asset('images/pizza_marina.jpg') }}" alt="pizza marina" width="180" height="180">
+                <p>Pizza Marina</p>
+                <?php echo "€" .$PrijsPMarina ."0,-"?>
+                <select id="MarinaList" name="MarinaList">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+                <input type="button" name="Marina" value="Toevoegen" onclick="bestellenMarina()"/>
+            </li>
+            <li class = QF>
+                <img src="{{ asset('images/pizza_QF.jpg') }}" alt="pizza Quattro Formaggi" width="180" height="180" >
+                <p>Pizza Quattro Formaggi</p>
+                <?php echo "€" .$PrijsPQFormaggi ."0,-"?>
+                <select id="QFormaggiList" name="QFormaggiList">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+                <input type="button" name="QFormaggi" value="Toevoegen" onclick="bestellenQFormaggi()"/>
+            </li>
+        </ul>
+            <div class = lijst>
+                <div class = dropdownNumbers>
+                    <div id = HawaiiPlek>
+                    </div>
+                        <div id = FunghiPlek>
+                        </div>
+                            <div id = MargheritaPlek>
+                            </div>
+                        <div id = MarinaPlek>
+                        </div>
+                    <div id = QFormaggiPlek>
+                    </div>
+                </div>      
+                <div class = veldbot>
+                    <div class = BOA name = BOA id = BOA>
+                        <input type="radio" id="afhalen" name="BOA" value = "afhalen" onclick="BerekenTotaal()">Afhalen
+                        <input type="radio" id="bezorgen" name="BOA" value = "bezorgen" onclick="BerekenTotaal()">Bezorgen (+ €5)
+                    </div>
+                    <div id="prijs">
+                    </div>    
+                <a href="/form" class="button1">Afrekenen</a> 
+            </div>
+        </div>
+    </form>
+</div>    
+@endsection
