@@ -87,14 +87,11 @@ if(isset($_POST['Submit'])){
 
         for (i = 0; i < Bezorgen.length; i++) {
             if (Bezorgen[i].checked) {
-                NieuwTotaalPrijs = totaalprijs + 5;
-                NieuwTotaalPrijs += totaalprijsPizza;
-                document.getElementById('prijs').innerHTML = "Totaalprijs: €" + NieuwTotaalPrijs.toFixed(2) + ",-";
-            } else {
-                totaalprijs += totaalprijsPizza;
-                document.getElementById('prijs').innerHTML = "Totaalprijs: €" + totaalprijs.toFixed(2) + ",-";   
-            }
+                totaalprijs += 5;
+            }             
         }
+        totaalprijs += totaalprijsPizza;
+       document.getElementById('prijs').innerHTML = "Totaalprijs: €" + totaalprijs.toFixed(2) + ",-"; 
     }
 </script>
 
