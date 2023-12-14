@@ -95,11 +95,11 @@ if(isset($_POST['Submit'])){
     }
 </script>
 
-<?php
-if ($newDate == 'Friday' && $totaalprijs > 20) {
-    $totaalprijs = $totaalprijs - 15 * ($totaalprijs / 100);
-} 
-?>
+//<?php
+//if ($newDate == 'Friday' && $totaalprijs > 20) {
+//    $totaalprijs = $totaalprijs - 15 * ($totaalprijs / 100);
+//} 
+//?>
 
 @section('content')
 <div class = home>
