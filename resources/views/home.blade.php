@@ -217,8 +217,8 @@ if ($newDate == 'Friday' && $totaalprijs > 20) {
                 </div>      
                 <div class = veldbot>
                     <div class = BOA name = BOA id = BOA>
-                        <input type="radio" id="afhalen" name="BOA" value = "afhalen" onclick="BerekenTotaal()">Afhalen
-                        <input type="radio" id="bezorgen" name="BOA" value = "bezorgen" onclick="BerekenTotaal()">Bezorgen (+ €5)
+                        <input type="radio" id="afhalen" name="BOA" value = "afhalen" onclick="BerekenTotaal()">Afhalen</input>
+                        <input type="radio" id="bezorgen" name="BOA" value = "bezorgen" onclick="BerekenTotaal()">Bezorgen (+ €5)</input>
                     </div>
                     <div id="prijs">
                     </div>    
