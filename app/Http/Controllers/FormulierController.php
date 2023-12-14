@@ -25,11 +25,9 @@ class FormulierController extends Controller
          ]);
 
          $form['postcode'] = bcrypt($form['postcode']);
+         User::create($form);
          $Form->save();
 
          return view ('besteld');
      }
-
-
-
 }

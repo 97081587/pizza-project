@@ -58,8 +58,7 @@ if(isset($_POST['submit'])){
             <input type="date" id="Bdatum" name="Bdatum"  min="<?php echo date("Y-m-d"); ?>" required>
       </div>
       <br>
-      <a href="/besteld" class="Voltooien">Voltooien</a>
-      <!--<input href="/besteld" type="submit" value=afrekenen />!-->
+      <button>Voltooien</button>
   </form>
 </div>
 @endsection
