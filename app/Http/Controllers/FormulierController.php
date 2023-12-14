@@ -10,10 +10,10 @@ class FormulierController extends Controller
      public function form(Request $request) {
          //dd($request);
          $form = $request->validate([
-             'Naam' => 'required',
-             'Adres' => 'required',
-             'Postcode' => ['required','max:12'],
-             'Plaats' => ['required','max:85'],
+             'naam' => 'required',
+             'adres' => 'required',
+             'postcode' => ['required','max:12'],
+             'plaats' => ['required','max:85'],
              'BOA' => 'required',
              'Bdatum' => 'required' ,
              'Kosten' => 'required',

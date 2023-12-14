@@ -13,7 +13,7 @@ $newDate = date ('l', strtotime($Bdatum));
 
 // dit gaat naar de DB
 if(isset($_POST['submit'])){
-    $Fname = $_POST['Fname'];
+    $Fname = $_POST['naam'];
     $adres = $_POST['adres'];
     $postcode = $_POST['postcode'];
     $plaats = $_POST['plaats'];
@@ -24,7 +24,7 @@ if(isset($_POST['submit'])){
 <div class=formulier>
   <form method='POST' action="{{url('/besteld')}}">
     @csrf
-      <div name="fname">
+      <div name="naam">
         <label for="fname">Voornaam:</label>
         <br>
         <input type="text" id="fname" name="fname"
