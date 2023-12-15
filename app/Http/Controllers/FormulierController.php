@@ -16,7 +16,8 @@ class FormulierController extends Controller
             'Bdatum' => 'required',
          ]);
          //dd($request);
-         User::create($form);
-         //$Form->save();
+         //User::create($form);
+         $Form->save();
+         return view ('formulier');
      }
 }
