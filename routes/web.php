@@ -17,11 +17,13 @@ Route::get('/', function() {
     return view ('home');
 });
 
+Route::post('/verwerkenpizza', [pizzaController::class, 'pizza']);
+
 Route::get('/form', function() {
     return view ('formulier');
 });
 
-Route::post('/verwerken', [FormulierController::class, 'form']);
+Route::post('/allesverwerken', [FormulierController::class, 'form']);
 
 Route::get('/besteld', function() {
     return view ('besteld');

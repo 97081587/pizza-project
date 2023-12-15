@@ -103,7 +103,7 @@ if(isset($_POST['Submit'])){
 
 @section('content')
 <div class = home>
-    <form method="POST" action="/verwerken" class="home">
+    <form method="POST" action="/verwerkenpizza" class="home">
         @csrf
         <ul class = pizza name = pizza>
             <li class = hawaii>
