@@ -24,7 +24,6 @@ class FormulierController extends Controller
              'QFormaggiList' => 'required'
          ]);
 
-         //$form['postcode'] = bcrypt($form['postcode']);
          User::create($form);
          //$Form->save();
 

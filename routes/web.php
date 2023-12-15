@@ -21,7 +21,7 @@ Route::get('/form', function() {
     return view ('formulier');
 });
 
-Route::post('/besteld1', [FormulierController::class, 'form']);
+Route::post('/verwerken', [FormulierController::class, 'form']);
 
 Route::get('/besteld', function() {
     return view ('besteld');

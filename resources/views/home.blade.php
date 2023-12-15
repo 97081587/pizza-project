@@ -103,7 +103,7 @@ if(isset($_POST['Submit'])){
 
 @section('content')
 <div class = home>
-    <form method="POST" action="{{url('/form')}}" class="home">
+    <form method="POST" action="{{url('/verwerken')}}" class="home">
         @csrf
         <ul class = pizza name = pizza>
             <li class = hawaii>
