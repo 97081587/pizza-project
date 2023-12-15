@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class FormulierController extends Controller
 {
      public function form(Request $request) {
-         //dd($request);
+        //dd($request);
          $form = $request->validate([
              'naam' => 'required',
              'adres' => 'required',
@@ -23,7 +23,7 @@ class FormulierController extends Controller
              'MarinaList' => 'required',
              'QFormaggiList' => 'required'
          ]);
-
+         //dd($request);
          User::create($form);
          //$Form->save();
 

@@ -22,7 +22,7 @@ if(isset($_POST['submit'])){
 ?>
 @section('content')
 <div class=formulier>
-  <form method='POST' action="{{url('/verwerken')}}">
+  <form method='POST' action="/verwerken">
     @csrf
       <div name="naam">
         <label for="fname">Voornaam:</label>
