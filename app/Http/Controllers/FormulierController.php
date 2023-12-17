@@ -17,6 +17,6 @@ class FormulierController extends Controller
          dd($request);
 
          $Form->save();
-         return view ('formulier');
+         return view ('besteld');
      }
 }

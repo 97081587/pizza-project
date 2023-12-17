@@ -19,6 +19,6 @@ class PizzaController extends Controller
         dd($request);
         
         $pizza->save();
-       return view ('form'); 
+       return view ('formulier'); 
     }
 }
