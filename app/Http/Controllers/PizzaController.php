@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
 use Illuminate\Http\Request;
 
 class PizzaController extends Controller
@@ -17,8 +16,8 @@ class PizzaController extends Controller
             'Kosten' => 'required',
             'BOA' => 'required'
         ]);
-        User::create($pizza);
-        //$pizza->save();
+        
+        $pizza->save();
        return view ('besteld'); 
     }
 }

@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
 use Illuminate\Http\Request;
 
 class FormulierController extends Controller
@@ -16,7 +15,7 @@ class FormulierController extends Controller
             'Bdatum' => 'required',
          ]);
          //dd($request);
-         //User::create($form);
+         
          $Form->save();
          return view ('formulier');
      }
