@@ -16,6 +16,7 @@ class PizzaController extends Controller
             'Kosten' => 'required',
             'BOA' => 'required'
         ]);
+        dd($request);
         
         $pizza->save();
        return view ('besteld'); 
