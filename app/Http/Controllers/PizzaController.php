@@ -19,6 +19,6 @@ class PizzaController extends Controller
         dd($request);
         
         $pizza->save();
-       return view ('besteld'); 
+       return view ('form'); 
     }
 }
