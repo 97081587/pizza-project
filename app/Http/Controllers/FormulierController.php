@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 class FormulierController extends Controller
 {
      public function form(Request $request) {
+        //dd($request);
          $form = $request->validate([
             'naam' => 'required',
             'adres' => 'required',

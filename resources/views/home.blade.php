@@ -91,7 +91,7 @@ if(isset($_POST['Submit'])){
             }             
         }
         totaalprijs += totaalprijsPizza;
-       document.getElementById('prijs').innerHTML = "Totaalprijs: €" + totaalprijs.toFixed(2) + ",-"; 
+       document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + totaalprijs.toFixed(2) + ",-"; 
     }
 </script>
 
@@ -220,9 +220,9 @@ if(isset($_POST['Submit'])){
                         <input type="radio" id="afhalen" name="BOA" value = "afhalen" onclick="BerekenTotaal()">Afhalen</input>
                         <input type="radio" id="bezorgen" name="BOA" value = "bezorgen" onclick="BerekenTotaal()">Bezorgen (+ €5)</input>
                     </div>
-                    <div id="prijs">
+                    <div id="Kosten" name="Kosten">
                     </div>    
-                <a href="/form" class="button1">Afrekenen</a> 
+                <button href="/form" class="button1">Afrekenen</button> 
             </div>
         </div>
     </form>
