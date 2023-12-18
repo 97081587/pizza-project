@@ -15,7 +15,6 @@ $PrijsPFunghiMA = 7.50;
 $PrijsPMarinaMA = 7.50;
 $PrijsPHawaiiMA = 7.50;
 $PrijsPQFormaggiMA = 7.50;
-$totaalprijs= 0;
 
 $newDate = date ('l', strtotime('Today'));
 if ($newDate == 'Monday') {
@@ -25,6 +24,11 @@ if ($newDate == 'Monday') {
     $PrijsPHawaii = $PrijsPHawaiiMA;
     $PrijsPQFormaggi = $PrijsPQFormaggiMA;
 } 
+
+//<?php
+//if ($newDate == 'Friday' && $totaalprijs > 20) {
+//    $totaalprijs = $totaalprijs - 15 * ($totaalprijs / 100);
+//} 
 
 // dit gaat naar de controller
 if(isset($_POST['Submit'])){
@@ -94,12 +98,6 @@ if(isset($_POST['Submit'])){
        document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + totaalprijs.toFixed(2) + ",-"; 
     }
 </script>
-
-//<?php
-//if ($newDate == 'Friday' && $totaalprijs > 20) {
-//    $totaalprijs = $totaalprijs - 15 * ($totaalprijs / 100);
-//} 
-//?>
 
 @section('content')
 <div class = home>
