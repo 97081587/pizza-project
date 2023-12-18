@@ -15,7 +15,6 @@ class FormulierController extends Controller
             'plaats' => ['required','max:85'],
             'Bdatum' => 'required',
          ]);
-         dd($request);
 
          $Form->save();
          return view ('besteld');
