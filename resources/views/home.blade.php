@@ -25,11 +25,6 @@ if ($newDate == 'Monday') {
     $PrijsPQFormaggi = $PrijsPQFormaggiMA;
 } 
 
-//<?php
-//if ($newDate == 'Friday' && $totaalprijs > 20) {
-//    $totaalprijs = $totaalprijs - 15 * ($totaalprijs / 100);
-//} 
-
 // dit gaat naar de controller
 if(isset($_POST['Submit'])){
     $BOA = $_POST['BOA'];
@@ -96,6 +91,11 @@ if(isset($_POST['Submit'])){
         }
         totaalprijs += totaalprijsPizza;
        document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + totaalprijs.toFixed(2) + ",-"; 
+
+       if ($newDate == 'Friday' && $totaalprijs > 20) {
+        $totaalprijs = $totaalprijs - 15 * ($totaalprijs / 100);
+       }
+
     }
 </script>
 
