@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class FormulierController extends Controller
 {
      public function form(Request $request) {
-         dd($request);
+         //dd($request);
          $validatedData = $request->validate([
             'naam' => 'required',
             'adres' => 'required',
@@ -25,7 +25,7 @@ class FormulierController extends Controller
          $form->plaats = $validatedData['plaats'];
          $form->Bdatum = $validatedData['Bdatum'];
 
-         $Form->save();
+         $form->save();
 
          return view ('besteld');
      }

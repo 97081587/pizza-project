@@ -4,4 +4,7 @@
 
 @section('content')
 <p>Dit heeft u besteld:</p>
+    <div>
+    </div>
+        
 @endsection
