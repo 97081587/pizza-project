@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class PizzaController extends Controller
 {
     public function pizza(Request $request) {
-        dd($request);
+        //dd($request);
         $validatedData = $request->validate([
             'HawaiiList' => 'required',
             'FunghiList' => 'required',
@@ -18,7 +18,6 @@ class PizzaController extends Controller
             'Kosten' => 'required',
             'BOA' => 'required'
         ]);
-        
         $pizza = new Pizza();
 
         $pizza->HawaiiList = $validatedData['HawaiiList'];
