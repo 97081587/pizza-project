@@ -16,14 +16,14 @@ class FormulierController extends Controller
             'plaats' => ['required','max:85'],
             'Bdatum' => 'required',
          ]);
-         dd($request);
+        // dd($request);
          $form = new User();
 
-         $form->naam = $validatedData['naam'];
-         $form->adres = $validatedData['adres'];
-         $form->postcode = $validatedData['postcode'];
-         $form->plaats = $validatedData['plaats'];
-         $form->Bdatum = $validatedData['Bdatum'];
+         $form->Naam = $request['naam'];
+         $form->Adres = $request['adres'];
+         $form->Postcode = $request['postcode'];
+         $form->Plaats = $request['plaats'];
+         $form->Bdatum = $request['Bdatum'];
 
          $form->save();
 

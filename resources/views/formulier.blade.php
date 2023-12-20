@@ -27,7 +27,7 @@ if(isset($_POST['submit'])){
       <div name="naam">
         <label for="fname">Voornaam:</label>
         <br>
-        <input type="text" id="fname" name="fname"
+        <input type="text" id="fname" name="naam"
             placeholder="Voornaam" value="" required>
         <br>
     </div>
@@ -41,7 +41,7 @@ if(isset($_POST['submit'])){
         <div name="postcode">
           <label for="Pcode">Postcode:</label>
           <br>
-          <input type="text" id="pcode" name="pcode"
+          <input type="text" id="pcode" name="postcode"
               placeholder="Postcode" maxlength="12" value="" required>
           <br>
         </div>
