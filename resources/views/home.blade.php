@@ -121,7 +121,7 @@ if(isset($_POST['Submit'])){
                     <option value="9">9</option>
                     <option value="10">10</option>
                 </select>
-                <input type="button" name="Hawaii" value="Toevoegen" onclick="bestellenHawaii()"/>
+                <input type="button" name="HawaiiList" value="Toevoegen" onclick="bestellenHawaii()"/>
             </li>
             <li class = funghi> 
                 <img src="{{ asset('images/Pizza_funghi.webp') }}" alt="pizza funghi" width="180" height="180">
@@ -140,7 +140,7 @@ if(isset($_POST['Submit'])){
                     <option value="9">9</option>
                     <option value="10">10</option>
                 </select>
-                <input type="button" name="Funghi" value="Toevoegen" onclick="bestellenFunghi()"/>
+                <input type="button" name="FunghiList" value="Toevoegen" onclick="bestellenFunghi()"/>
             </li>
             <li class = margherita>
                 <img src="{{ asset('images/pizza_margherita2.webp') }}" alt="pizza margherita" width="180" height="180">
@@ -159,7 +159,7 @@ if(isset($_POST['Submit'])){
                     <option value="9">9</option>
                     <option value="10">10</option>
                 </select>
-                <input type="button" name="Margherita" value="Toevoegen" onclick="bestellenMargherita()"/>
+                <input type="button" name="MargheritaList" value="Toevoegen" onclick="bestellenMargherita()"/>
             </li>
             <li class = marina>
                 <img src="{{ asset('images/pizza_marina.jpg') }}" alt="pizza marina" width="180" height="180">
@@ -178,7 +178,7 @@ if(isset($_POST['Submit'])){
                     <option value="9">9</option>
                     <option value="10">10</option>
                 </select>
-                <input type="button" name="Marina" value="Toevoegen" onclick="bestellenMarina()"/>
+                <input type="button" name="MarinaList" value="Toevoegen" onclick="bestellenMarina()"/>
             </li>
             <li class = QF>
                 <img src="{{ asset('images/pizza_QF.jpg') }}" alt="pizza Quattro Formaggi" width="180" height="180" >
@@ -197,7 +197,7 @@ if(isset($_POST['Submit'])){
                     <option value="9">9</option>
                     <option value="10">10</option>
                 </select>
-                <input type="button" name="QFormaggi" value="Toevoegen" onclick="bestellenQFormaggi()"/>
+                <input type="button" name="QFormaggiList" value="Toevoegen" onclick="bestellenQFormaggi()"/>
             </li>
         </ul>
             <div class = lijst>

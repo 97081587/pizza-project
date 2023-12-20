@@ -20,13 +20,13 @@ class PizzaController extends Controller
         ]);
         $pizza = new Pizza();
 
-        $pizza->HawaiiList = $validatedData['HawaiiList'];
-        $pizza->FunghiList = $validatedData['FunghiList'];
-        $pizza->MargheritaList = $validatedData['MargheritaList'];
-        $pizza->MarinaList = $validatedData['MarinaList'];
-        $pizza->QFormaggiList = $validatedData['QFormaggiList'];
-        $pizza->Kosten = $validatedData['Kosten'];
-        $pizza->BOA = $validatedData['BOA'];
+        $pizza->HawaiiList = $request['HawaiiList'];
+        $pizza->FunghiList = $request['FunghiList'];
+        $pizza->MargheritaList = $request['MargheritaList'];
+        $pizza->MarinaList = $request['MarinaList'];
+        $pizza->QFormaggiList = $request['QFormaggiList'];
+        $pizza->Kosten = $request['Kosten'];
+        $pizza->BOA = $request['BOA'];
 
         $pizza->save();
 
