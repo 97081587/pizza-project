@@ -220,7 +220,7 @@ if(isset($_POST['Submit'])){
                     </div>
                     <div id="Kosten" name="Kosten">
                     </div>    
-                <a href="/form" class="button1">Afrekenen</a> 
+                <a type="submit" href="/form" class="button1">Afrekenen</a> 
             </div>
         </div>
     </form>
