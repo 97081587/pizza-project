@@ -221,6 +221,7 @@ if(isset($_POST['Submit'])){
                     <div id="Kosten" name="Kosten">
                     </div>    
                 <a type="submit" href="/form" class="button1">Afrekenen</a> 
+                <button>Afrekenen</button>
             </div>
         </div>
     </form>
