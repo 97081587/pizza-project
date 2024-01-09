@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('QFormaggiList');
             $table->string('Kosten');
             $table->string('BOA');
+            $table->rememberToken();
             $table->timestamps();
         });
     }
