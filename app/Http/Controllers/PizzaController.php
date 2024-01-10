@@ -15,10 +15,9 @@ class PizzaController extends Controller
             'MargheritaList' => 'required',
             'MarinaList' => 'required',
             'QFormaggiList' => 'required',
-            'Kosten' => 'required',
             'BOA' => 'required'
         ]);
-        dd($request);
+        //dd($request);
         $pizza = new Pizza();
 
         $pizza->HawaiiList = $request['HawaiiList'];
@@ -30,7 +29,7 @@ class PizzaController extends Controller
         $pizza->BOA = $request['BOA'];
 
         $pizza->save();
-
+        dd($request);
        return view ('formulier'); 
     }
 }
