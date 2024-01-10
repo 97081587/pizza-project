@@ -44,7 +44,7 @@ if(isset($_POST['Submit'])){
     PrijsPMargherita = <?php echo $PrijsPMargherita; ?>;
     PrijsPMarina = <?php echo $PrijsPMarina; ?>;
     PrijsPQFormaggi = <?php echo $PrijsPQFormaggi; ?>;
-    totaalprijs = 5;
+    totaalprijs = 0;
 
         function bestellenHawaii(){
             HawaiiList = document.getElementById('HawaiiList').value;
