@@ -215,7 +215,7 @@ if(isset($_POST['Submit'])){
                         <input type="radio" id="afhalen" name="BOA" value ="afhalen">Afhalen</input>
                         <input type="radio" id="bezorgen" name="BOA" value ="bezorgen">Bezorgen (+ €5)</input>
                     </div>
-                    <input type="button" class="button2" value="Toevoegen" onclick="berekenTotaal()"/>   
+                    <input type="button" class="button2" value="Toevoegen aan bestelling" onclick="berekenTotaal()"/>   
                 <button class ="button1" type="submit">Afrekenen</button>
             </div>
         </div>

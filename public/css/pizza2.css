@@ -92,17 +92,16 @@ li a:hover {
 }
 
 .button2 {
-    background-color: rgb(245, 197, 54);
+    background-color: rgb(243, 212, 119);
     border: none;
-    height: 50px;
+    height: 35px;
     width: 300px; 
     border-radius: 15px; 
-    font-size: 18px;
+    font-size: 16px;
     cursor:pointer;
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: -1;
 }
 
 .a {
