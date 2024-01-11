@@ -216,8 +216,7 @@ if(isset($_POST['Submit'])){
                     <input type="button" name="Toevoegen" value="Toevoegen" onclick="berekenTotaal()"/>
                     <div id="Kosten" name="Kosten">
                     </div>    
-                <a type="submit" href="/form" class="button1">Afrekenen</a> 
-                <button class = BOA name = BOA id= BOA>Afrekenen</button>
+                <button class ="button1" type="submit">Afrekenen</button>
             </div>
         </div>
     </form>
