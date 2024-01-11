@@ -44,7 +44,6 @@ if(isset($_POST['Submit'])){
     PrijsPMargherita = <?php echo $PrijsPMargherita; ?>;
     PrijsPMarina = <?php echo $PrijsPMarina; ?>;
     PrijsPQFormaggi = <?php echo $PrijsPQFormaggi; ?>;
-    totaalprijs = 0;
 
         function bestellenHawaii(){
             HawaiiList = document.getElementById('HawaiiList').value;
@@ -84,9 +83,10 @@ if(isset($_POST['Submit'])){
     function berekenTotaal (totaalprijsPizza) {
 
         if (document.getElementById('afhalen').checked) {
+            totaalprijs = 0;
             totaalprijs += totaalprijsPizza;
             document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + totaalprijs.toFixed(2) + ",-";   
-        } elseif (document.getElementById('bezorgen').checked) {
+        } else if (document.getElementById('bezorgen').checked) {
             totaalprijs = 5;
             totaalprijs += totaalprijsPizza;
             document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + totaalprijs.toFixed(2) + ",-";   
@@ -121,7 +121,6 @@ if(isset($_POST['Submit'])){
                     <option value="9">9</option>
                     <option value="10">10</option>
                 </select>
-                <input type="button" name="HawaiiList" value="Toevoegen" onclick="bestellenHawaii()"/>
             </li>
             <li class = funghi> 
                 <img src="{{ asset('images/Pizza_funghi.webp') }}" alt="pizza funghi" width="180" height="180">
@@ -140,7 +139,6 @@ if(isset($_POST['Submit'])){
                     <option value="9">9</option>
                     <option value="10">10</option>
                 </select>
-                <input type="button" name="FunghiList" value="Toevoegen" onclick="bestellenFunghi()"/>
             </li>
             <li class = margherita>
                 <img src="{{ asset('images/pizza_margherita2.webp') }}" alt="pizza margherita" width="180" height="180">
@@ -159,7 +157,6 @@ if(isset($_POST['Submit'])){
                     <option value="9">9</option>
                     <option value="10">10</option>
                 </select>
-                <input type="button" name="MargheritaList" value="Toevoegen" onclick="bestellenMargherita()"/>
             </li>
             <li class = marina>
                 <img src="{{ asset('images/pizza_marina.jpg') }}" alt="pizza marina" width="180" height="180">
@@ -178,7 +175,6 @@ if(isset($_POST['Submit'])){
                     <option value="9">9</option>
                     <option value="10">10</option>
                 </select>
-                <input type="button" name="MarinaList" value="Toevoegen" onclick="bestellenMarina()"/>
             </li>
             <li class = QF>
                 <img src="{{ asset('images/pizza_QF.jpg') }}" alt="pizza Quattro Formaggi" width="180" height="180" >
@@ -197,7 +193,6 @@ if(isset($_POST['Submit'])){
                     <option value="9">9</option>
                     <option value="10">10</option>
                 </select>
-                <input type="button" name="QFormaggiList" value="Toevoegen" onclick="bestellenQFormaggi()"/>
             </li>
         </ul>
             <div class = lijst>
@@ -218,10 +213,11 @@ if(isset($_POST['Submit'])){
                         <input type="radio" id="afhalen" name="BOA" value = "afhalen" onclick="berekenTotaal()">Afhalen</input>
                         <input type="radio" id="bezorgen" name="BOA" value = "bezorgen" onclick="berekenTotaal()">Bezorgen (+ €5)</input>
                     </div>
+                    <input type="button" name="HawaiiList" value="Toevoegen" onclick="bestellenHawaii()" onclick="bestellenFunghi()" onclick="bestellenMargherita()" onclick="bestellenMarina()" onclick="bestellenQFormaggi()"/>
                     <div id="Kosten" name="Kosten">
                     </div>    
                 <a type="submit" href="/form" class="button1">Afrekenen</a> 
-                <button>Afrekenen</button>
+                <button class = BOA name = BOA id= BOA>Afrekenen</button>
             </div>
         </div>
     </form>
