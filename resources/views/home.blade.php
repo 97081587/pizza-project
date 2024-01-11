@@ -85,14 +85,12 @@ if(isset($_POST['Submit'])){
         if (document.getElementById('afhalen').checked) {
             totaalprijs = 0;
             totaalprijs += totaalprijsPizza;
+            document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + totaalprijs.toFixed(2) + ",-"; 
         } else if (document.getElementById('bezorgen').checked) {
             totaalprijs = 5;
-            totaalprijs += totaalprijsPizza;
-             
+            totaalprijs += totaalprijsPizza * 5;
+            document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + totaalprijs.toFixed(2) + ",-"; 
         } 
-
-        totaalprijs + totaalprijsHawaii + totaalprijsFunghi + totaalprijsMargherita + totaalprijsMarina + totaalprijsQFormaggi;
-        document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + totaalprijs.toFixed(2) + ",-";  
     }
     
        //if (newDate == 'Friday' && totaalprijs > 20) {
@@ -212,8 +210,8 @@ if(isset($_POST['Submit'])){
                 </div>      
                 <div class = veldbot>
                     <div class = BOA name = BOA id = BOA>
-                        <input type="radio" id="afhalen" name="BOA" value = "afhalen" onclick="berekenTotaal()">Afhalen</input>
-                        <input type="radio" id="bezorgen" name="BOA" value = "bezorgen" onclick="berekenTotaal()">Bezorgen (+ €5)</input>
+                        <input type="radio" id="afhalen" name="BOA" value = "afhalen">Afhalen</input>
+                        <input type="radio" id="bezorgen" name="BOA" value = "bezorgen">Bezorgen (+ €5)</input>
                     </div>
                     <input type="button" name="Toevoegen" value="Toevoegen" onclick="berekenTotaal()"/>
                     <div id="Kosten" name="Kosten">
