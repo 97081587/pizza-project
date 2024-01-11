@@ -86,10 +86,9 @@ if(isset($_POST['Submit'])){
         if (document.getElementById('afhalen').checked) {
             totaalprijs += totaalprijsPizza;
             document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + totaalprijs.toFixed(2) + ",-";   
-        }
-            elseif (document.getElementById('bezorgen').checked) 
-        {
-            5 + totaalprijs += totaalprijsPizza;
+        } elseif (document.getElementById('bezorgen').checked) {
+            totaalprijs = 5;
+            totaalprijs += totaalprijsPizza;
             document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + totaalprijs.toFixed(2) + ",-";   
         }
     }
