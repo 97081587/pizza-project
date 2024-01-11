@@ -92,7 +92,12 @@ if(isset($_POST['Submit'])){
             document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + totaalprijs.toFixed(2) + ",-";   
         }
     }
-        
+    
+    function Toevoegen () {
+
+    }
+
+    
        //if (newDate == 'Friday' && totaalprijs > 20) {
        // totaalprijs = totaalprijs - 15 * (totaalprijs / 100);
       // }
@@ -213,7 +218,7 @@ if(isset($_POST['Submit'])){
                         <input type="radio" id="afhalen" name="BOA" value = "afhalen" onclick="berekenTotaal()">Afhalen</input>
                         <input type="radio" id="bezorgen" name="BOA" value = "bezorgen" onclick="berekenTotaal()">Bezorgen (+ €5)</input>
                     </div>
-                    <input type="button" name="HawaiiList" value="Toevoegen" onclick="bestellenHawaii()" onclick="bestellenFunghi()" onclick="bestellenMargherita()" onclick="bestellenMarina()" onclick="bestellenQFormaggi()"/>
+                    <input type="button" name="Toevoegen" value="Toevoegen" onclick="Toevoegen()"/>
                     <div id="Kosten" name="Kosten">
                     </div>    
                 <a type="submit" href="/form" class="button1">Afrekenen</a> 
