@@ -209,13 +209,13 @@ if(isset($_POST['Submit'])){
                     </div>
                 </div>      
                 <div class = veldbot>
+                    <div id="Kosten" name="Kosten">
+                    </div> 
                     <div class = BOA name = BOA id = BOA>
                         <input type="radio" id="afhalen" name="BOA" value ="afhalen">Afhalen</input>
                         <input type="radio" id="bezorgen" name="BOA" value ="bezorgen">Bezorgen (+ €5)</input>
                     </div>
-                    <input type="button" name="Toevoegen" value="Toevoegen" onclick="berekenTotaal()"/>
-                    <div id="Kosten" name="Kosten">
-                    </div>    
+                    <input type="button" class="button2" value="Toevoegen" onclick="berekenTotaal()"/>   
                 <button class ="button1" type="submit">Afrekenen</button>
             </div>
         </div>
