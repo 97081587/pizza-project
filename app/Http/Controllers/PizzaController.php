@@ -28,7 +28,7 @@ class PizzaController extends Controller
         $pizza->BOA = $request['BOA'];
 
         $pizza->save();
-        dd($request);
+        //dd($request);
        return view ('formulier'); 
     }
 }
