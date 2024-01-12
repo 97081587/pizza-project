@@ -24,8 +24,7 @@ class PizzaController extends Controller
         $pizza->FunghiList = $request['FunghiList'];
         $pizza->MargheritaList = $request['MargheritaList'];
         $pizza->MarinaList = $request['MarinaList'];
-        $pizza->QFormaggiList = $request['QFormaggiList'];
-        $pizza->Kosten = $request['Kosten'];
+        $pizza->QFormaggiList = $request['QFormaggiList'];;
         $pizza->BOA = $request['BOA'];
 
         $pizza->save();

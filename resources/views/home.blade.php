@@ -86,12 +86,11 @@ if(isset($_POST['Submit'])){
         document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + totaalprijs.toFixed(2) + ",-";
 
         if (document.getElementById('bezorgen').checked) {
-            totaalprijs + 5;
-            document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + totaalprijs.toFixed(2) + ",-";   
-        } else if (document.getElementById('afhalen').checked) {
-            document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + totaalprijs.toFixed(2) + ",-";
+            totaalprijs + 5 = totaalprijsB;
+            document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + totaalprijsB.toFixed(2) + ",-";   
         }
     }
+
        //if (newDate == 'Friday' && totaalprijs > 20) {
        // totaalprijs = totaalprijs - 15 * (totaalprijs / 100);
       // }
@@ -211,7 +210,7 @@ if(isset($_POST['Submit'])){
                     <div id="Kosten" name="Kosten">
                     </div> 
                     <div class = BOA name = BOA id = BOA>
-                        <input type="radio" id="afhalen" name="BOA" value ="afhalen" onclick="berekenTotaal()">Afhalen</input>
+                        <input type="radio" id="afhalen" name="BOA" value ="afhalen">Afhalen</input>
                         <input type="radio" id="bezorgen" name="BOA" value ="bezorgen" onclick="berekenTotaal()">Bezorgen (+ €5)</input>
                     </div> 
                 <button class ="button1" type="submit">Afrekenen</button>
