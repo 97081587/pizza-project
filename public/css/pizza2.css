@@ -93,31 +93,12 @@ li a:hover {
     align-items: center;
 }
 
-.button2 {
-    background-color: rgb(243, 161, 46);
-    border: none;
-    height: 40px;
-    width: 300px; 
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-    font-size: 16px;
-    cursor:pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .a {
     height: 100px;
     width: 300px;
 }
 
 .button1:hover {
-    background-color: rgb(246, 228, 176);
-    transition-duration: 0.5s;
-}
-
-.button2:hover {
     background-color: rgb(246, 228, 176);
     transition-duration: 0.5s;
 }
