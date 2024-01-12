@@ -44,6 +44,7 @@ if(isset($_POST['Submit'])){
     PrijsPMargherita = <?php echo $PrijsPMargherita; ?>;
     PrijsPMarina = <?php echo $PrijsPMarina; ?>;
     PrijsPQFormaggi = <?php echo $PrijsPQFormaggi; ?>;
+    newDate = "<?php echo $newDate; ?>";
 
         function bestellenHawaii(){
             HawaiiList = document.getElementById('HawaiiList').value;
@@ -82,18 +83,19 @@ if(isset($_POST['Submit'])){
 
     function berekenTotaal (totaalprijsPizza) {
         totaalprijs = 0;
-        totaalprijs += totaalprijsPizza;
-        document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + totaalprijs.toFixed(2) + ",-";
+        totaalprijsA = totaalprijs + totaalprijsPizza;
+        document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + totaalprijsA.toFixed(2) + ",-";
 
-    //    if (document.getElementById('bezorgen').checked) {
-    //        totaalprijs + 5 = totaalprijsB;
-    //        document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + totaalprijsB.toFixed(2) + ",-";   
-    //    }
+        if (document.getElementById('bezorgen').checked) {
+            totaalprijsB = totaalprijsA + 5 ;
+            document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + totaalprijsB.toFixed(2) + ",-";   
+        }
+
+        if (newDate == 'Friday' && totaalprijsA > 20) {
+            totaalprijsC = totaalprijsA - 15 * (totaalprijsA / 100);
+            document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + totaalprijsC.toFixed(2) + ",-";
+        }  
     }
-
-       //if (newDate == 'Friday' && totaalprijs > 20) {
-       // totaalprijs = totaalprijs - 15 * (totaalprijs / 100);
-      // }
 
 </script>
 
@@ -211,7 +213,7 @@ if(isset($_POST['Submit'])){
                     </div> 
                     <div class = BOA name = BOA id = BOA>
                         <input type="radio" id="afhalen" name="BOA" value ="afhalen">Afhalen</input>
-                        <input type="radio" id="bezorgen" name="BOA" value ="bezorgen" onclick="berekenTotaal()">Bezorgen (+ €5)</input>
+                        <input type="radio" id="bezorgen" name="BOA" value ="bezorgen">Bezorgen (+ €5)</input>
                     </div> 
                 <button class ="button1" type="submit">Afrekenen</button>
             </div>
