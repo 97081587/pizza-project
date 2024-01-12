@@ -83,16 +83,17 @@ if(isset($_POST['Submit'])){
 
     function berekenTotaal (totaalprijsPizza) {
         totaalprijs = 0;
-        totaalprijsA = totaalprijs + totaalprijsPizza;
+        totaalprijs += totaalprijsPizza;
 
         if (document.getElementById('bezorgen').checked) {
-            totaalprijsB = totaalprijsA + 5 ;
-            document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + totaalprijsB.toFixed(2) + ",-";   
+            totaalprijs += 5;   
         }
 
-        if (newDate == 'Friday' && totaalprijsA > 20) {
-            totaalprijsC = totaalprijsA - 15 * (totaalprijsA / 100);
-            document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + totaalprijsC.toFixed(2) + ",-";
+        document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + totaalprijs.toFixed(2) + ",-";
+
+        if (newDate == 'Friday' && totaalprijs > 20) {
+            totaalprijs = totaalprijs - 15 * (totaalprijs / 100);
+            document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + totaalprijs.toFixed(2) + ",-";
         }  
     }
 
