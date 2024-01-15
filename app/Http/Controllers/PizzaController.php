@@ -6,7 +6,13 @@ use App\Models\Pizza;
 use Illuminate\Http\Request;
 
 class PizzaController extends Controller
-{
+{   
+    public function index() {
+        $pizzas = pizza::all();
+
+        return view('besteld', ['pizzas' => $pizzas]);
+    }
+
     public function pizza(Request $request) {
         //dd($request);
         $validatedData = $request->validate([
@@ -17,6 +23,7 @@ class PizzaController extends Controller
             'QFormaggiList' => 'required',
             'BOA' => 'required'
         ]);
+
         //dd($request);
         $pizza = new Pizza();
 

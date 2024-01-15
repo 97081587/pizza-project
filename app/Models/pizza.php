@@ -6,6 +6,10 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class pizza extends Model
-{
-    use HasFactory;
+{   
+    protected $table = 'pizzas';
+
+    protected $primaryKey = 'id';
+
+    public $timestamps = true;
 }
