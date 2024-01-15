@@ -5,11 +5,11 @@
 @section('content')
 <p>Dit heeft u besteld:</p>
     @foreach ($pizzas as $pizza)
-        <p>{{$pizza->HawaiiList}}</p>
-        <p>{{$pizza->FunghiList}}</p>
-        <p>{{$pizza->MargheritaList}}</p>
-        <p>{{$pizza->MarinaList}}</p>
-        <p>{{$pizza->QFormaggiList}}</p>
+        <p>{{$pizza->HawaiiList}}  Stuks Pizza Hawaii 🍍🍕</p>
+        <p>{{$pizza->FunghiList}} Stuks Pizza Funghi 🍄🍕</p>
+        <p>{{$pizza->MargheritaList}} Stuks Pizza Margherita 🌿🍕</p>
+        <p>{{$pizza->MarinaList}} Stuks Pizza Marina 🐟🍕</p>
+        <p>{{$pizza->QFormaggiList}} Stuks Pizza Quattro Formaggi 🧀🍕</p>
         <p>Bestellen of afhalen: {{$pizza->BOA}}<p>
     @endforeach  
         @foreach ($items as $item)      
