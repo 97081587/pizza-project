@@ -7,13 +7,13 @@ use Illuminate\Http\Request;
 
 class PizzaController extends Controller
 {   
-    public function index() {
+    public function export() {
         $pizzas = pizza::all();
 
         return view('besteld', ['pizzas' => $pizzas]);
     }
 
-    public function pizza(Request $request) {
+    public function import(Request $request) {
         //dd($request);
         $validatedData = $request->validate([
             'HawaiiList' => 'required',

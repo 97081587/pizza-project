@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class FormulierController extends Controller
 {
-     public function form(Request $request) {
+     public function import2(Request $request) {
          //dd($request);
          $validatedData = $request->validate([
             'naam' => 'required',
