@@ -7,13 +7,7 @@ use Illuminate\Http\Request;
 
 class PizzaController extends Controller
 {   
-    public function export() {
-        $pizzas = pizza::all();
-
-        return view('besteld', ['pizzas' => $pizzas]);
-    }
-
-    public function import(Request $request) {
+    public function pizza(Request $request) {
         //dd($request);
         $validatedData = $request->validate([
             'HawaiiList' => 'required',
@@ -37,5 +31,11 @@ class PizzaController extends Controller
         $pizza->save();
         //dd($request);
        return view ('formulier'); 
+    }
+
+    public function export() {
+        $pizzas = pizza::all();
+
+        return view('besteld', ['pizzas' => $pizzas]);
     }
 }

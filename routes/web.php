@@ -26,9 +26,9 @@ Route::get('/form', function() {
 
 Route::post('/allesverwerken', [FormulierController::class, 'import2']);
 
-Route::get('/besteld',[PizzaController::class, 'export']);
+Route::post('/besteld',[PizzaController::class, 'export']);
 
-Route::get('/besteld', [FormulierController::class,'export2']);
+Route::post('/besteld', [FormulierController::class,'export2']);
 
 Route::get('/besteld', function() {
     return view ('besteld');
