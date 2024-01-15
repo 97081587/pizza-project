@@ -10,7 +10,7 @@
         <p>{{$pizza->MargheritaList}}</p>
         <p>{{$pizza->MarinaList}}</p>
         <p>{{$pizza->QFormaggiList}}</p>
-        <p>Bestellen of afhalen: {{}}<p>
+        <p>Bestellen of afhalen: {{$pizza->BOA}}<p>
     @endforeach  
         @foreach ($items as $item)      
             <p>Besteldatum: {{}}<p>
