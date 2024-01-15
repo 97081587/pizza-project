@@ -26,6 +26,8 @@ Route::get('/form', function() {
 
 Route::post('/allesverwerken', [FormulierController::class, 'form']);
 
+Route::get('/besteld',[PizzaController::class, 'index']);
+
 Route::get('/besteld', function() {
     return view ('besteld');
 });
