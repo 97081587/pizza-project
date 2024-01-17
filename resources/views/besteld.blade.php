@@ -12,12 +12,12 @@
         <p>{{$pizza->QFormaggiList}} Stuks Pizza Quattro Formaggi 🧀🍕</p>
         <p>Bestellen of afhalen: {{$pizza->BOA}}<p>
     @endforeach  
-        @foreach ($items as $item)      
-            <p>Besteldatum: {{$item}}<p>
+        @foreach ($users as $user)      
+            <p>Besteldatum: {{$user}}<p>
             <p>Uw gegevens:</p>
-            <p>Naam: {{$item}}<p>
-            <p>Adres: {{$item}}<p>
-            <p>Postcode: {{$item}}<p>
-            <p>Plaats: {{$item}}<p>
+            <p>Naam: {{$user}}<p>
+            <p>Adres: {{$user}}<p>
+            <p>Postcode: {{$user}}<p>
+            <p>Plaats: {{$user}}<p>
         @endforeach
 @endsection

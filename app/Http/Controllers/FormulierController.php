@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\pizza;
 use Illuminate\Http\Request;
 
 class FormulierController extends Controller
@@ -24,9 +25,21 @@ class FormulierController extends Controller
          $form->Postcode = $request['postcode'];
          $form->Plaats = $request['plaats'];
          $form->Bdatum = $request['Bdatum'];
-
+         //dd($request);
          $form->save();
-
+         //dd($request);
          return view ('besteld');
      }
+
+    public function exportpizza() {
+        $pizzas = pizza::all();
+
+        return view('besteld', ['pizzas' => $pizzas]);
+    }
+
+    public function exportuser() {
+        $users = user::all();
+
+        return view('besteld', ['users' => $users]);
+    }
 }

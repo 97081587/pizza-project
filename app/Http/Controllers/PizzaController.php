@@ -32,10 +32,4 @@ class PizzaController extends Controller
         //dd($request);
        return view ('formulier'); 
     }
-
-    public function export() {
-        $pizzas = pizza::all();
-
-        return view('besteld', ['pizzas' => $pizzas]);
-    }
 }
