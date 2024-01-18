@@ -45,7 +45,8 @@ if(isset($_POST['Submit'])){
     PrijsPMarina = <?php echo $PrijsPMarina; ?>;
     PrijsPQFormaggi = <?php echo $PrijsPQFormaggi; ?>;
     newDate = "<?php echo $newDate; ?>";
-
+    totaalprijs = 0;
+    
         function bestellenHawaii(){
             HawaiiList = document.getElementById('HawaiiList').value;
             document.getElementById('HawaiiPlek').innerHTML =  HawaiiList + " Stuks Pizza Hawaii 🍍🍕";
@@ -82,19 +83,21 @@ if(isset($_POST['Submit'])){
         }
 
     function berekenTotaal (totaalprijsPizza) {
-        totaalprijs = 0;
         totaalprijs += totaalprijsPizza;
-
-        if (document.getElementById('bezorgen').checked) {
-            totaalprijs += 5;   
-        }
-
         document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + totaalprijs.toFixed(2) + ",-";
 
         if (newDate == 'Friday' && totaalprijs > 20) {
             totaalprijs = totaalprijs - 15 * (totaalprijs / 100);
             document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + totaalprijs.toFixed(2) + ",-";
         }  
+    }
+
+    function bezorgkosten() {
+        if (document.getElementById('bezorgen').checked) {
+            totaalprijs += 5;
+        }
+
+        document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + totaalprijs.toFixed(2) + ",-";
     }
 
 </script>
@@ -214,7 +217,7 @@ if(isset($_POST['Submit'])){
                     <div class = BOA name = BOA id = BOA>
                         <input type="radio" id="afhalen" name="BOA" value ="afhalen">Afhalen</input>
                         <label>
-                            <input type="radio" id="bezorgen" name="BOA" value ="bezorgen">Bezorgen (+ €5)</input>
+                            <input type="radio" id="bezorgen" name="BOA" value ="bezorgen" onchange="bezorgkosten()">Bezorgen (+ €5)</input>
                         </label>
                     </div> 
                 <button class ="button1" type="submit">Afrekenen</button>

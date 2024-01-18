@@ -7,9 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class pizza extends Model
 {   
-    protected $table = 'pizzas';
 
-    protected $primaryKey = 'id';
-
-    public $timestamps = true;
 }
