@@ -92,9 +92,11 @@ if(isset($_POST['Submit'])){
         }  
     }
 
-    function bezorgkosten() {
-        if (document.getElementById('bezorgen').checked) {
+    function bezorgkosten(boa) {
+        if (boa === 'bezorgen') {
             totaalprijs += 5;
+        } else if (boa === 'afhalen') {
+            totaalprijs -= 5;
         }
 
         document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + totaalprijs.toFixed(2) + ",-";
@@ -215,9 +217,9 @@ if(isset($_POST['Submit'])){
                     <div id="Kosten" name="Kosten">
                     </div> 
                     <div class = BOA name = BOA id = BOA>
-                        <input type="radio" id="afhalen" name="BOA" value ="afhalen">Afhalen</input>
+                        <input type="radio" id="afhalen" name="BOA" value ="afhalen" onchange="bezorgkosten('afhalen')" checked>Afhalen</input>
                         <label>
-                            <input type="radio" id="bezorgen" name="BOA" value ="bezorgen" onchange="bezorgkosten()">Bezorgen (+ €5)</input>
+                            <input type="radio" id="bezorgen" name="BOA" value ="bezorgen" onchange="bezorgkosten('bezorgen')">Bezorgen (+ €5)</input>
                         </label>
                     </div> 
                 <button class ="button1" type="submit">Afrekenen</button>
