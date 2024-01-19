@@ -35,12 +35,6 @@ if(isset($_POST['Submit'])){
     $MarinaList = $_POST['MarinaList'];
     $QFormaggiList = $_POST['QFormaggiList'];
 }
-
-
-$i=0
-while ($i < 9999) {
-    $user
-}
 ?>
 
 <!--dit is voor de dropdown op de home & prijs berekenen !-->
@@ -56,7 +50,9 @@ while ($i < 9999) {
         function bestellenHawaii(){
             HawaiiList = document.getElementById('HawaiiList').value;
             document.getElementById('HawaiiPlek').innerHTML =  HawaiiList + " Stuks Pizza Hawaii 🍍🍕";
+
             totaalprijsHawaii = HawaiiList * PrijsPHawaii;
+            
             berekenTotaal(totaalprijsHawaii);
         }
 
