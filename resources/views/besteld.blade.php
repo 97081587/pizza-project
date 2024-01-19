@@ -3,7 +3,8 @@
 @section('title','Dit heeft u besteld')
 
 @section('content')
-<p>Dit heeft u besteld:</p>
+<div>
+    <p>Dit heeft u besteld:</p>
     @foreach ($pizzas as $pizza)
         <p>{{$pizza->HawaiiList}}  Stuks Pizza Hawaii 🍍🍕</p>
         <p>{{$pizza->FunghiList}} Stuks Pizza Funghi 🍄🍕</p>
@@ -20,4 +21,5 @@
             <p>Postcode: {{$user}}<p>
             <p>Plaats: {{$user}}<p>
         @endforeach
+</div>
 @endsection

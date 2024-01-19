@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('MarinaList');
             $table->string('QFormaggiList');
             $table->string('BOA');
+            $table->string('User');
             $table->rememberToken();
             $table->timestamps();
         });

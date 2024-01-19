@@ -28,18 +28,18 @@ class FormulierController extends Controller
          //dd($request);
          $form->save();
          //dd($request);
-         return view ('besteld');
+         $pizzas = pizza::all();
+         $users = user::all();
+         return view('besteld', ['pizzas' => $pizzas], ['users' => $form]);
      }
 
-    public function exportpizza() {
-        $pizzas = pizza::all();
+    // public function exportpizza() {
+    //     // $pizzas = pizza::all();
+    //     // return view('besteld', ['pizzas' => $pizzas]);
+    // }
 
-        return view('besteld', ['pizzas' => $pizzas]);
-    }
-
-    public function exportuser() {
-        $users = user::all();
-
-        return view('besteld', ['users' => $users]);
-    }
+    // public function exportuser() {
+    //     // $users = user::all();
+    //     // return view('besteld', ['users' => $users]);
+    // }
 }
