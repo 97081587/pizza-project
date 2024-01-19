@@ -50,8 +50,9 @@ if(isset($_POST['Submit'])){
         function bestellenHawaii(){
             HawaiiList = document.getElementById('HawaiiList').value;
             document.getElementById('HawaiiPlek').innerHTML =  HawaiiList + " Stuks Pizza Hawaii 🍍🍕";
-
-            totaalprijsHawaii = HawaiiList * PrijsPHawaii;
+            if (HawaiiList.value == selected) {
+               totaalprijsHawaii = HawaiiList * PrijsPHawaii; 
+            }
             
             berekenTotaal(totaalprijsHawaii);
         }
@@ -114,7 +115,7 @@ if(isset($_POST['Submit'])){
                 <img src="{{ asset('images/pizza_hawaii2.webp') }}" alt="pizza hawaii" width="180" height="180">
                 <p>Pizza Hawaii</p>
                 <?php echo "€" .$PrijsPHawaii ."0,-"?>
-                <select id="HawaiiList" name="HawaiiList" onclick="bestellenHawaii()">
+                <select id="HawaiiList" name="HawaiiList" onchange="bestellenHawaii()">
                     <option value="0">0</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -132,7 +133,7 @@ if(isset($_POST['Submit'])){
                 <img src="{{ asset('images/Pizza_funghi.webp') }}" alt="pizza funghi" width="180" height="180">
                 <p>Pizza Funghi</p>
                 <?php echo "€" .$PrijsPFunghi ."0,-"?>
-                <select id="FunghiList" name="FunghiList" onclick="bestellenFunghi()">
+                <select id="FunghiList" name="FunghiList" onchange="bestellenFunghi()">
                     <option value="0">0</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -150,7 +151,7 @@ if(isset($_POST['Submit'])){
                 <img src="{{ asset('images/pizza_margherita2.webp') }}" alt="pizza margherita" width="180" height="180">
                 <p>Pizza Margherita</p>
                 <?php echo "€" .$PrijsPMargherita ."0,-"?>
-                <select id="MargheritaList" name="MargheritaList" onclick="bestellenMargherita()">
+                <select id="MargheritaList" name="MargheritaList" onchange="bestellenMargherita()">
                     <option value="0">0</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -168,7 +169,7 @@ if(isset($_POST['Submit'])){
                 <img src="{{ asset('images/pizza_marina.jpg') }}" alt="pizza marina" width="180" height="180">
                 <p>Pizza Marina</p>
                 <?php echo "€" .$PrijsPMarina ."0,-"?>
-                <select id="MarinaList" name="MarinaList" onclick="bestellenMarina()">
+                <select id="MarinaList" name="MarinaList" onchange="bestellenMarina()">
                     <option value="0">0</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -186,7 +187,7 @@ if(isset($_POST['Submit'])){
                 <img src="{{ asset('images/pizza_QF.jpg') }}" alt="pizza Quattro Formaggi" width="180" height="180" >
                 <p>Pizza Quattro Formaggi</p>
                 <?php echo "€" .$PrijsPQFormaggi ."0,-"?>
-                <select id="QFormaggiList" name="QFormaggiList" onclick="bestellenQFormaggi()">
+                <select id="QFormaggiList" name="QFormaggiList" onchange="bestellenQFormaggi()">
                     <option value="0">0</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
