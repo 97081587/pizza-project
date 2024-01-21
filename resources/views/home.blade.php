@@ -50,10 +50,10 @@ if(isset($_POST['Submit'])){
         function bestellenHawaii(){
             HawaiiList = document.getElementById('HawaiiList').value;
             document.getElementById('HawaiiPlek').innerHTML =  HawaiiList + " Stuks Pizza Hawaii 🍍🍕";
-            if (HawaiiList.value == selected) {
-               totaalprijsHawaii = HawaiiList * PrijsPHawaii; 
+            CurrentVal = document.querySelector('HawaiiList').value;
+            if (CurrentVal === selected) {
+                 totaalprijsHawaii = HawaiiList * PrijsPHawaii;
             }
-            
             berekenTotaal(totaalprijsHawaii);
         }
 
