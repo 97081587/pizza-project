@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('MargheritaList');
             $table->string('MarinaList');
             $table->string('QFormaggiList');
+            $table->string('Totaalprijs');
             $table->string('BOA');
             $table->rememberToken();
             $table->timestamps();
