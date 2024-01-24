@@ -3,6 +3,7 @@
 @section('title',"👩‍🍳Pizza di mama's official website 🍕🍕🍕")
 
 <?php
+$Totaalprijs = '';
 //Dit is voor de prijzen op maandag en vrijdag
 $PrijsPHawaii = 11.50;
 $PrijsPFunghi = 12.50;
@@ -34,6 +35,7 @@ if(isset($_POST['Submit'])){
     $MargheritaList = $_POST['MargheritaList'];
     $MarinaList = $_POST['MarinaList'];
     $QFormaggiList = $_POST['QFormaggiList'];
+    $Totaalprijs = $_POST['Totaalprijs'];
 }
 ?>
 
@@ -44,8 +46,8 @@ if(isset($_POST['Submit'])){
     PrijsPMargherita = <?php echo $PrijsPMargherita; ?>;
     PrijsPMarina = <?php echo $PrijsPMarina; ?>;
     PrijsPQFormaggi = <?php echo $PrijsPQFormaggi; ?>;
+    Totaalprijs = <?php echo $Totaalprijs; ?>;
     newDate = "<?php echo $newDate; ?>";
-    totaalprijs = 0;
     
         function bestellenHawaii(){
             HawaiiList = document.getElementById('HawaiiList').value;
@@ -83,22 +85,22 @@ if(isset($_POST['Submit'])){
         }
 
     function berekenTotaal (totaalprijsPizza) {
-        totaalprijs += totaalprijsPizza;
-        document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + totaalprijs.toFixed(2) + ",-"; 
+        Totaalprijs += totaalprijsPizza;
+        document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + Totaalprijs.toFixed(2) + ",-"; 
 
         if (newDate == 'Friday' && totaalprijs > 20) {
             totaalprijs = totaalprijs - 15 * (totaalprijs / 100);
-            document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + totaalprijs.toFixed(2) + ",-";
+            document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + Totaalprijs.toFixed(2) + ",-";
         } 
     }
 
     function bezorgkosten(boa) {
         if (boa === 'bezorgen') {
-            totaalprijs += 5;
+            Totaalprijs += 5;
         } else if (boa === 'afhalen') {
-            totaalprijs -= 5;
+            Totaalprijs -= 5;
         }
-        document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + totaalprijs.toFixed(2) + ",-";
+        document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + Totaalprijs.toFixed(2) + ",-";
     }
 
 </script>
