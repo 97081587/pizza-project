@@ -46,7 +46,7 @@ if(isset($_POST['Submit'])){
     PrijsPMargherita = <?php echo $PrijsPMargherita; ?>;
     PrijsPMarina = <?php echo $PrijsPMarina; ?>;
     PrijsPQFormaggi = <?php echo $PrijsPQFormaggi; ?>;
-    Totaalprijs = <?php echo $Totaalprijs; ?>;
+    Totaalprijs = 0;
     newDate = "<?php echo $newDate; ?>";
     
         function bestellenHawaii(){
