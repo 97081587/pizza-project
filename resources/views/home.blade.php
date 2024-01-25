@@ -85,7 +85,14 @@ if(isset($_POST['Submit'])){
         }
 
     function berekenTotaal (totaalprijsPizza) {
-        Totaalprijs += totaalprijsPizza;
+        // alert(totaalprijsPizza)
+        // Totaalprijs += totaalprijsPizza;
+        // alert(Totaalprijs)
+        prijs = ["","","","",""];
+        for () {
+            
+        }
+
         document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + Totaalprijs.toFixed(2) + ",-"; 
 
         if (newDate == 'Friday' && totaalprijs > 20) {
