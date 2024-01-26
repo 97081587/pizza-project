@@ -89,7 +89,7 @@ if(isset($_POST['Submit'])){
         // Totaalprijs += totaalprijsPizza;
         // alert(Totaalprijs)
         prijs = ["","","","",""];
-        for () {
+        for (i = 0; i < prijs.length, i++) {
             
         }
 
