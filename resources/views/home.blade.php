@@ -88,7 +88,7 @@ if(isset($_POST['Submit'])){
         // alert(totaalprijsPizza)
         // Totaalprijs += totaalprijsPizza;
         // alert(Totaalprijs)
-        prijs = [totaalprijsHawaii, PrijsPHawaii];
+        prijs = [totaalprijs, PrijsPHawaii, PrijsPFunghi, PrijsPMargherita, PrijsPMarina, PrijsPQFormaggi];
         for (i = 0; i < prijs.length, i++) {
             
         }
