@@ -1,6 +1,6 @@
 @extends('layout')
 
-@section('title',"👩‍🍳Pizza di mama's official website 🍕🍕🍕")
+@section('title',"👩‍🍳Pizza di mama's official website 🍕🍕🍕", Auth::user())
 
 <?php
 $Totaalprijs = '';
