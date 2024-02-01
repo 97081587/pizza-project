@@ -86,11 +86,11 @@ if(isset($_POST['Submit'])){
 
     function berekenTotaal (totaalprijsPizza) {
         // alert(totaalprijsPizza)
-        // Totaalprijs += totaalprijsPizza;
+        //Totaalprijs += totaalprijsPizza;
         // alert(Totaalprijs)
-        prijs = [totaalprijs, PrijsPHawaii, PrijsPFunghi, PrijsPMargherita, PrijsPMarina, PrijsPQFormaggi];
-        for (i = 0; i < prijs.length, i++) {
-            
+        prijs = [PrijsPHawaii, totaalprijsHawaii];
+        for (i = 0; i < prijs.length; i++) {
+            Totaalprijs += prijs[i];
         }
 
         document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + Totaalprijs.toFixed(2) + ",-"; 
