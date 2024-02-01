@@ -29,7 +29,6 @@ if ($newDate == 'Monday') {
 // dit gaat naar de controller
 if(isset($_POST['Submit'])){
     $BOA = $_POST['BOA'];
-    $totaalprijs = $_POST['Kosten'];
     $HawaiiList = $_POST['HawaiiList'];
     $FunghiList = $_POST['FunghiList'];
     $MargheritaList = $_POST['MargheritaList'];
@@ -86,12 +85,12 @@ if(isset($_POST['Submit'])){
 
     function berekenTotaal (totaalprijsPizza) {
         // alert(totaalprijsPizza)
-        //Totaalprijs += totaalprijsPizza;
+        Totaalprijs += totaalprijsPizza;
         // alert(Totaalprijs)
-        prijs = [PrijsPHawaii, totaalprijsHawaii];
-        for (i = 0; i < prijs.length; i++) {
-            Totaalprijs += prijs[i];
-        }
+        // prijs = [PrijsPHawaii, totaalprijsHawaii];
+        // for (i = 0; i < prijs.length; i++) {
+        //     Totaalprijs += prijs[i];
+        // }
 
         document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + Totaalprijs.toFixed(2) + ",-"; 
 
