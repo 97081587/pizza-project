@@ -30,7 +30,7 @@ class FormulierController extends Controller
          //dd($request);
 
          $pizzas = pizza::get();
-         $users = auth()->user()->userReturn()->get();
+         $users = user::get();
          return view('besteld', ['pizzas' => $pizzas], ['users' => $form]);
      }
 
