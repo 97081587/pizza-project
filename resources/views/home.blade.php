@@ -94,8 +94,8 @@ if(isset($_POST['Submit'])){
 
         document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + Totaalprijs.toFixed(2) + ",-"; 
 
-        if (newDate == 'Friday' && totaalprijs > 20) {
-            totaalprijs = totaalprijs - 15 * (totaalprijs / 100);
+        if (newDate == 'Friday' && Totaalprijs > 20) {
+            Totaalprijs = Totaalprijs - 15 * (Totaalprijs / 100);
             document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + Totaalprijs.toFixed(2) + ",-";
         } 
     }
@@ -221,7 +221,7 @@ if(isset($_POST['Submit'])){
                     </div>
                 </div>      
                 <div class = veldbot>
-                    <div id="Kosten" name="Kosten">
+                    <div id="Kosten" name="Totaalprijs">
                     </div> 
                     <div class = BOA name = BOA id = BOA>
                         <input type="radio" id="afhalen" name="BOA" value ="afhalen" onchange="bezorgkosten('afhalen')" checked>Afhalen</input>
