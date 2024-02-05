@@ -33,14 +33,4 @@ class FormulierController extends Controller
          $users = user::get();
          return view('besteld', ['pizzas' => $pizzas], ['users' => $form]);
      }
-
-    // public function exportpizza() {
-    //     // $pizzas = pizza::all();
-    //     // return view('besteld', ['pizzas' => $pizzas]);
-    // }
-
-    // public function exportuser() {
-    //     // $users = user::all();
-    //     // return view('besteld', ['users' => $users]);
-    // }
 }

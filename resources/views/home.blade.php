@@ -84,19 +84,12 @@ if(isset($_POST['Submit'])){
         }
 
     function berekenTotaal (totaalprijsPizza) {
-        //alert(totaalprijsPizza)
-        // Hoeveelheid = [HawaiiList, MargheritaList, MarinaList, QFormaggiList, FunghiList];
-        // if (Hoeveelheid >= 1) {
-            Totaalprijs += totaalprijsPizza;
-        // } elseif (Hoeveelheid <= 1) {
-        //     Totaalprijs -= totaalprijsPizza;
-        // }
-
-        //alert(Totaalprijs)
-        // prijs = [Totaalprijs, totaalprijsPizza];
-        // for (i = 0; i < prijs.length; i++) {
-        //     ;
-        //}
+        for (i = 0; i < HawaiiList; i++) {
+            Totaalprijs = totaalprijsHawaii;
+        }
+        for (i = 0; i < FunghiList; i++) {
+            Totaalprijs = totaalprijsFunghi;
+        }
 
         document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + Totaalprijs.toFixed(2) + ",-"; 
 
