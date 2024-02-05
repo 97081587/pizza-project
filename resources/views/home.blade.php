@@ -85,10 +85,19 @@ if(isset($_POST['Submit'])){
 
     function berekenTotaal (totaalprijsPizza) {
         for (i = 0; i < HawaiiList; i++) {
-            Totaalprijs = totaalprijsHawaii;
+            totaalprijsHawaii;
         }
         for (i = 0; i < FunghiList; i++) {
-            Totaalprijs = totaalprijsFunghi;
+            totaalprijsFunghi;
+        }
+        for (i = 0; i < MargheritaList; i++) {
+            totaalprijsMargherita;
+        }
+        for (i = 0; i < MarinaList; i++) {
+            totaalprijsMarina;
+        }
+        for (i = 0; i < QFormaggiList; i++) {
+            totaalprijsQFormaggi;   
         }
 
         document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + Totaalprijs.toFixed(2) + ",-"; 
