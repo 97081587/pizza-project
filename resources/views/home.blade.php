@@ -84,7 +84,7 @@ if(isset($_POST['Submit'])){
         }
 
     function berekenTotaal (totaalprijsPizza) {
-        Totaalprijs = totaalprijsHawaii;
+        Totaalprijs = totaalprijsPizza;
         // for (i = 0; i < HawaiiList; i++) {
             
         // }
