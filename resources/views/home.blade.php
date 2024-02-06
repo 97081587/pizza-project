@@ -84,10 +84,12 @@ if(isset($_POST['Submit'])){
         }
 
     function berekenTotaal (totaalprijsPizza) {
+        Totaalprijs = totaalprijsHawaii;
         // for (i = 0; i < HawaiiList; i++) {
-            Totaalprijs = totaalprijsHawaii + totaalprijsFunghi + totaalprijsMargherita + totaalprijsMarina + totaalprijsQFormaggi;
+            
         // }
-
+        //Totaalprijs = totaalprijsHawaii + totaalprijsFunghi + totaalprijsMargherita + totaalprijsMarina + totaalprijsQFormaggi;
+        
         document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + Totaalprijs.toFixed(2) + ",-"; 
 
         if (newDate == 'Friday' && Totaalprijs > 20) {
