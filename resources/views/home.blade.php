@@ -91,7 +91,7 @@ if(isset($_POST['Submit'])){
     function berekenTotaal (totaalprijsPizza) {
         PizzaArray = [];
         PArrayLen = PizzaArray.length;
-        
+        alert(PArrayLen);
         for (i = 0; i < PArrayLen; i++) {
             Totaalprijs = 
         }

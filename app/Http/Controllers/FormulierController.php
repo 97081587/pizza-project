@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\pizza;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class FormulierController extends Controller
 {
@@ -30,7 +31,7 @@ class FormulierController extends Controller
          //dd($request);
 
          $pizzas = pizza::get();
-         $users = user::get();
+         $user = User::all();
          return view('besteld', ['pizzas' => $pizzas], ['users' => $form]);
      }
 }
