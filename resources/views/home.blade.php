@@ -92,7 +92,7 @@ if(isset($_POST['Submit'])){
         PizzaArray = [];
         PArrayLen = PizzaArray.length;
         for (i = 0; i < PArrayLen; i++) {
-            Totaalprijs = 
+            
         }
         // Totaalprijs = Totaalprijs + totaalprijsPizza;
         //Totaalprijs = totaalprijsHawaii + totaalprijsFunghi + totaalprijsMargherita + totaalprijsMarina + totaalprijsQFormaggi;
