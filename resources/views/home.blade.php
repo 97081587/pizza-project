@@ -52,6 +52,7 @@ if(isset($_POST['Submit'])){
             HawaiiList = document.getElementById('HawaiiList').value;
             document.getElementById('HawaiiPlek').innerHTML =  HawaiiList + " Stuks Pizza Hawaii 🍍🍕";
             totaalprijsHawaii = HawaiiList * PrijsPHawaii;
+            PizzaArray.push("totaalprijsHawaii");
             berekenTotaal(totaalprijsHawaii);
         }
 
@@ -59,6 +60,7 @@ if(isset($_POST['Submit'])){
             FunghiList = document.getElementById('FunghiList').value;
             document.getElementById('FunghiPlek').innerHTML =  FunghiList + " Stuks Pizza Funghi 🍄🍕";
             totaalprijsFunghi = FunghiList * PrijsPFunghi;
+            PizzaArray.push("totaalprijsFunghi");
             berekenTotaal(totaalprijsFunghi);
         }
 
@@ -66,6 +68,7 @@ if(isset($_POST['Submit'])){
             MargheritaList = document.getElementById('MargheritaList').value;
             document.getElementById('MargheritaPlek').innerHTML =  MargheritaList + " Stuks Pizza Margherita 🌿🍕";
             totaalprijsMargherita = MargheritaList * PrijsPMargherita;
+            PizzaArray.push("totaalprijsMargherita");
             berekenTotaal(totaalprijsMargherita);
         }
 
@@ -73,6 +76,7 @@ if(isset($_POST['Submit'])){
             MarinaList = document.getElementById('MarinaList').value;
             document.getElementById('MarinaPlek').innerHTML =  MarinaList + " Stuks Pizza Marina 🐟🍕";
             totaalprijsMarina = MarinaList * PrijsPMarina;
+            PizzaArray.push("totaalprijsMarina");
             berekenTotaal(totaalprijsMarina);
         }
 
@@ -80,14 +84,18 @@ if(isset($_POST['Submit'])){
             QFormaggiList = document.getElementById('QFormaggiList').value;
             document.getElementById('QFormaggiPlek').innerHTML =  QFormaggiList + " Stuks Pizza Quattro Formaggi 🧀🍕";
             totaalprijsQFormaggi = QFormaggiList * PrijsPQFormaggi;
+            PizzaArray.push("totaalprijsQFormaggi");
             berekenTotaal(totaalprijsQFormaggi); 
         }
 
     function berekenTotaal (totaalprijsPizza) {
-        Totaalprijs = totaalprijsPizza;
-        // for (i = 0; i < HawaiiList; i++) {
-            
-        // }
+        PizzaArray = [];
+        PArrayLen = PizzaArray.length;
+        
+        for (i = 0; i < PArrayLen; i++) {
+            Totaalprijs = 
+        }
+        // Totaalprijs = Totaalprijs + totaalprijsPizza;
         //Totaalprijs = totaalprijsHawaii + totaalprijsFunghi + totaalprijsMargherita + totaalprijsMarina + totaalprijsQFormaggi;
         
         document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + Totaalprijs.toFixed(2) + ",-"; 
