@@ -47,6 +47,7 @@ if(isset($_POST['Submit'])){
     PrijsPQFormaggi = <?php echo $PrijsPQFormaggi; ?>;
     Totaalprijs = 0;
     newDate = "<?php echo $newDate; ?>";
+    PizzaArray = [];
     
         function bestellenHawaii(){
             HawaiiList = document.getElementById('HawaiiList').value;
@@ -89,10 +90,26 @@ if(isset($_POST['Submit'])){
         }
 
     function berekenTotaal (totaalprijsPizza) {
-        PizzaArray = [];
+        alert(PizzaArray.length);
         PArrayLen = PizzaArray.length;
         for (i = 0; i < PArrayLen; i++) {
-            
+            switch(PArrayLen) {
+                case 1:
+                    Totaalprijs = PizzaArray;
+                break;
+                case 2:
+
+                break;
+                case 3:
+
+                break;
+                case 4:
+
+                break;
+                case 5:
+
+                break;
+            }
         }
         // Totaalprijs = Totaalprijs + totaalprijsPizza;
         //Totaalprijs = totaalprijsHawaii + totaalprijsFunghi + totaalprijsMargherita + totaalprijsMarina + totaalprijsQFormaggi;
