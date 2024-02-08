@@ -3,7 +3,6 @@
 @section('title',"👩‍🍳Pizza di mama's official website 🍕🍕🍕", Auth::user())
 
 <?php
-$Totaalprijs = '';
 //Dit is voor de prijzen op maandag en vrijdag
 $PrijsPHawaii = 11.50;
 $PrijsPFunghi = 12.50;
@@ -101,7 +100,7 @@ if(isset($_POST['Submit'])){
             totaalprijsPerPizza += value;
         });
         Totaalprijs = totaalprijsPerPizza;
-        
+
         if (bezorging) {
             Totaalprijs += 5;
         }
