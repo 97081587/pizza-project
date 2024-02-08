@@ -14,7 +14,7 @@ class PizzaController extends Controller
             'FunghiList' => 'required',
             'MargheritaList' => 'required',
             'MarinaList' => 'required',
-            //'Totaalprijs' => 'required',
+            'Totaalprijs' => 'required',
             'QFormaggiList' => 'required',
             'BOA' => 'required'
         ]);
@@ -22,16 +22,17 @@ class PizzaController extends Controller
         //dd($request);
         $pizza = new Pizza();
 
-        $pizza->HawaiiList = $request['HawaiiList'];
-        $pizza->FunghiList = $request['FunghiList'];
-        $pizza->MargheritaList = $request['MargheritaList'];
-        $pizza->MarinaList = $request['MarinaList'];
-        $pizza->decimal('Totaalprijs');
-        $pizza->QFormaggiList = $request['QFormaggiList'];
-        $pizza->BOA = $request['BOA'];
+        $pizza->HawaiiList = $request->input('HawaiiList');
+        $pizza->FunghiList = $request->input('FunghiList');
+        $pizza->MargheritaList = $request->input('MargheritaList');
+        $pizza->MarinaList = $request->input('MarinaList');
+        $pizza->Totaalprijs = $request->input('Totaalprijs');
+        $pizza->QFormaggiList = $request->input('QFormaggiList');
+        $pizza->BOA = $request->input('BOA');
 
         $pizza->save();
         //dd($request);
-       return view ('formulier'); 
+       //return view ('formulier'); 
+       return redirect()->route('formulier');
     }
 }
