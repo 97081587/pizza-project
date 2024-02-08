@@ -53,7 +53,10 @@ if(isset($_POST['Submit'])){
             HawaiiList = document.getElementById('HawaiiList').value;
             document.getElementById('HawaiiPlek').innerHTML =  HawaiiList + " Stuks Pizza Hawaii 🍍🍕";
             totaalprijsHawaii = HawaiiList * PrijsPHawaii;
-            PizzaArray.push("totaalprijsHawaii");
+            if (PizzaArray.includes("totaalprijsHawaii")) {     
+            } else {
+               PizzaArray.push("totaalprijsHawaii"); 
+            }
             berekenTotaal(totaalprijsHawaii);
         }
 
@@ -61,7 +64,10 @@ if(isset($_POST['Submit'])){
             FunghiList = document.getElementById('FunghiList').value;
             document.getElementById('FunghiPlek').innerHTML =  FunghiList + " Stuks Pizza Funghi 🍄🍕";
             totaalprijsFunghi = FunghiList * PrijsPFunghi;
-            PizzaArray.push("totaalprijsFunghi");
+            if (PizzaArray.includes("totaalprijsFunghi")) {     
+            } else {
+               PizzaArray.push("totaalprijsFunghi"); 
+            }
             berekenTotaal(totaalprijsFunghi);
         }
 
@@ -69,7 +75,10 @@ if(isset($_POST['Submit'])){
             MargheritaList = document.getElementById('MargheritaList').value;
             document.getElementById('MargheritaPlek').innerHTML =  MargheritaList + " Stuks Pizza Margherita 🌿🍕";
             totaalprijsMargherita = MargheritaList * PrijsPMargherita;
-            PizzaArray.push("totaalprijsMargherita");
+            if (PizzaArray.includes("totaalprijsMargherita")) {     
+            } else {
+               PizzaArray.push("totaalprijsMargherita"); 
+            }
             berekenTotaal(totaalprijsMargherita);
         }
 
@@ -77,7 +86,10 @@ if(isset($_POST['Submit'])){
             MarinaList = document.getElementById('MarinaList').value;
             document.getElementById('MarinaPlek').innerHTML =  MarinaList + " Stuks Pizza Marina 🐟🍕";
             totaalprijsMarina = MarinaList * PrijsPMarina;
-            PizzaArray.push("totaalprijsMarina");
+            if (PizzaArray.includes("totaalprijsMarina")) {     
+            } else {
+               PizzaArray.push("totaalprijsMarina"); 
+            }
             berekenTotaal(totaalprijsMarina);
         }
 
@@ -85,31 +97,19 @@ if(isset($_POST['Submit'])){
             QFormaggiList = document.getElementById('QFormaggiList').value;
             document.getElementById('QFormaggiPlek').innerHTML =  QFormaggiList + " Stuks Pizza Quattro Formaggi 🧀🍕";
             totaalprijsQFormaggi = QFormaggiList * PrijsPQFormaggi;
-            PizzaArray.push("totaalprijsQFormaggi");
+            if (PizzaArray.includes("totaalprijsQFormaggi")) {     
+            } else {
+               PizzaArray.push("totaalprijsQFormaggi"); 
+            }
             berekenTotaal(totaalprijsQFormaggi); 
         }
 
     function berekenTotaal (totaalprijsPizza) {
         alert(PizzaArray.length);
+        alert(totaalprijsHawaii)
         PArrayLen = PizzaArray.length;
         for (i = 0; i < PArrayLen; i++) {
-            switch(PArrayLen) {
-                case 1:
-                    Totaalprijs = PizzaArray;
-                break;
-                case 2:
-
-                break;
-                case 3:
-
-                break;
-                case 4:
-
-                break;
-                case 5:
-
-                break;
-            }
+            
         }
         // Totaalprijs = Totaalprijs + totaalprijsPizza;
         //Totaalprijs = totaalprijsHawaii + totaalprijsFunghi + totaalprijsMargherita + totaalprijsMarina + totaalprijsQFormaggi;
