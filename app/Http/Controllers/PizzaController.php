@@ -14,7 +14,7 @@ class PizzaController extends Controller
             'FunghiList' => 'required',
             'MargheritaList' => 'required',
             'MarinaList' => 'required',
-            'Totaalprijs' => 'required',
+            //'Totaalprijs' => 'required',
             'QFormaggiList' => 'required',
             'BOA' => 'required'
         ]);
@@ -26,7 +26,7 @@ class PizzaController extends Controller
         $pizza->FunghiList = $request['FunghiList'];
         $pizza->MargheritaList = $request['MargheritaList'];
         $pizza->MarinaList = $request['MarinaList'];
-        $pizza->decimal('amount', 8, 2);
+        $pizza->decimal('Totaalprijs');
         $pizza->QFormaggiList = $request['QFormaggiList'];
         $pizza->BOA = $request['BOA'];
 
