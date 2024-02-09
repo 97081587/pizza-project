@@ -31,7 +31,7 @@ class FormulierController extends Controller
          //dd($request);
 
          $pizzas = pizza::get();
-         $user = User::all();
-         return view('besteld', ['pizzas' => $pizzas], ['users' => $form]);
+         $users = User::all();
+         return view('besteld', ['pizzas' => $pizzas], ['users' => $users]);
      }
 }

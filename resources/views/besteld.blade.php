@@ -15,12 +15,12 @@
         <p>Bestellen of afhalen: {{$pizza->BOA}}<p>
     @endforeach  
         @foreach ($users as $user)      
-            <p>Besteldatum: {{$user}}<p>
+            <p>Besteldatum: {{$user->Bdatum}}<p>
             <p>Uw gegevens:</p>
-            <p>Naam: {{$user}}<p>
-            <p>Adres: {{$user}}<p>
-            <p>Postcode: {{$user}}<p>
-            <p>Plaats: {{$user}}<p>
+            <p>Naam: {{$user->Naam}}<p>
+            <p>Adres: {{$user->Adres}}<p>
+            <p>Postcode: {{$user->Postcode}}<p>
+            <p>Plaats: {{$user->Plaats}}<p>
         @endforeach
 </div>
 @endsection
