@@ -22,17 +22,16 @@ class PizzaController extends Controller
         //dd($request);
         $pizza = new Pizza();
 
-        $pizza->HawaiiList = $request->input('HawaiiList');
-        $pizza->FunghiList = $request->input('FunghiList');
-        $pizza->MargheritaList = $request->input('MargheritaList');
-        $pizza->MarinaList = $request->input('MarinaList');
-        $pizza->Totaalprijs = $request->input('Totaalprijs');
-        $pizza->QFormaggiList = $request->input('QFormaggiList');
-        $pizza->BOA = $request->input('BOA');
+        $pizza->HawaiiList = $request['HawaiiList'];
+        $pizza->FunghiList = $request['FunghiList'];
+        $pizza->MargheritaList = $request['MargheritaList'];
+        $pizza->MarinaList = $request['MarinaList'];
+        $pizza->Totaalprijs = $request['Totaalprijs'];
+        $pizza->QFormaggiList = $request['QFormaggiList'];
+        $pizza->BOA = $request['BOA'];
 
         $pizza->save();
         //dd($request);
-       //return view ('formulier'); 
-       return redirect()->route('formulier');
+        return view ('formulier'); 
     }
 }
