@@ -14,6 +14,10 @@ use App\Http\Controllers\FormulierController;
 |
 */
 
+Route::get('/registreren', function() {
+    return view ('registreren');
+});
+
 Route::get('/', function() {
     return view ('home');
 });

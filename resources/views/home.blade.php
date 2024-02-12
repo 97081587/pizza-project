@@ -1,6 +1,6 @@
 @extends('layout')
 
-@section('title', "👩‍🍳Pizza di mama's official website 🍕🍕🍕", Auth::user())
+@section('title', "👩‍🍳Pizza di mama's official website 🍕🍕🍕")
 
 <?php
 //Dit is voor de prijzen op maandag en vrijdag
