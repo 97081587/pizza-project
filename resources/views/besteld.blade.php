@@ -14,13 +14,15 @@
         <P>Totaalprijs: €{{$pizza->Totaalprijs}},-</p>
         <p>Bestellen of afhalen: {{$pizza->BOA}}<p>
     @endforeach  
-        @foreach ($users as $user)      
-            <p>Besteldatum: {{$user->Bdatum}}<p>
+        @foreach ($gegevens as $gegeven)      
+            <p>Besteldatum: {{$gegeven->Bdatum}}<p>
             <p>Uw gegevens:</p>
-            <p>E-mailadres: {{$user->Email}}<p>
-            <p>Adres: {{$user->Adres}}<p>
-            <p>Postcode: {{$user->Postcode}}<p>
-            <p>Plaats: {{$user->Plaats}}<p>
+            <p>Adres: {{$gegeven->Adres}}<p>
+            <p>Postcode: {{$gegeven->Postcode}}<p>
+            <p>Plaats: {{$gegeven->Plaats}}<p>
         @endforeach
+    @foreach ($Users as $User)
+        <p>E-mailadres: {{$Usser ->Email}}<p>
+    @endforeach
 </div>
 @endsection
