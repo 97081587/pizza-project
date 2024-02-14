@@ -9,7 +9,7 @@ class loginController extends Controller
     public function form(Request $request) {
         //dd($request);
         $validatedData = $request->validate([
-           'Emailadres' => ['required', 'email'],
+           'E-mailadres' => ['required', 'email'],
            'Wachtwoord' => ['required', 'min:3'],
         ]);
        // dd($request);

@@ -4,12 +4,12 @@
 
 <?php
 
-$Uname = '';
+$Email = '';
 $Wachtwoord = '';
 
 // dit gaat naar de DB
 if(isset($_POST['submit'])){
-    $Uname = $_POST['gebruikersnaam'];
+    $Email = $_POST['E-mailadres'];
     $Wachtwoord = $_POST['Wachtwoord'];
 }
 ?>
@@ -31,6 +31,7 @@ if(isset($_POST['submit'])){
               placeholder="Wachtwoord" value="" required>
           <br>
         </div>
+        <a href="">Registreren</a>
         <br>
         <button>Voltooien</button>
     </form>
