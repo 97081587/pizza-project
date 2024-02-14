@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\bestelgegevens;
 use App\Models\pizza;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -18,7 +19,7 @@ class FormulierController extends Controller
             'Bdatum' => 'required',
          ]);
         // dd($request);
-         $form = new User();
+         $form = new bestelgegevens();
          $form->Adres = $request['adres'];
          $form->Postcode = $request['postcode'];
          $form->Plaats = $request['plaats'];
