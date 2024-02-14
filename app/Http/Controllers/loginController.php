@@ -2,24 +2,27 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class loginController extends Controller
 {
-    public function form(Request $request) {
+    public function login(Request $request) {
         //dd($request);
         $validatedData = $request->validate([
-           'E-mailadres' => ['required', 'email'],
-           'Wachtwoord' => ['required', 'min:3'],
+           'Email' => ['required', 'email'],
+           'Wachtwoord' => ['required', 'min:3']
         ]);
-       // dd($request);
-        $form = new User();
-
-        $form->Email = $request['Email'];
-
-        $validatedData['Wachtwoord'] = bcrypt($validatedData['Wachtwoord']);
         //dd($request);
-        $form->save();
+        $login = new User();
+
+        $login->Email = $request['Email'];
+        $login->Wachtwoord = $request['Wachtwoord'];
+        
+        $validatedData['Wachtwoord'] = bcrypt($validatedData['Wachtwoord']);
+        //User::create($validatedData);
+        //dd($request);
+        $login->save();
         //dd($request);
         return view('home');
     }

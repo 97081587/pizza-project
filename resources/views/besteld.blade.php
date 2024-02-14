@@ -17,7 +17,7 @@
         @foreach ($users as $user)      
             <p>Besteldatum: {{$user->Bdatum}}<p>
             <p>Uw gegevens:</p>
-            <p>Naam: {{$user->Naam}}<p>
+            <p>E-mailadres: {{$user->Email}}<p>
             <p>Adres: {{$user->Adres}}<p>
             <p>Postcode: {{$user->Postcode}}<p>
             <p>Plaats: {{$user->Plaats}}<p>

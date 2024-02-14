@@ -20,7 +20,7 @@
                    <li><a href="#over">Over pizza di mama</a></li>
                    <li><a href="#winkels">Winkels </a></li>
                    <li><a href="#werken">Werken bij </a></li>
-                   <li><a href="/login">Login</a></li>
+                   <li><a href="/login">Login/registreren</a></li>
                  </ul>
                 </nav>
             </div>
