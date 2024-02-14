@@ -12,7 +12,6 @@ class FormulierController extends Controller
      public function form(Request $request) {
          //dd($request);
          $validatedData = $request->validate([
-            'naam' => 'required',
             'adres' => 'required',
             'postcode' => ['required','max:12'],
             'plaats' => ['required','max:85'],
@@ -20,8 +19,6 @@ class FormulierController extends Controller
          ]);
         // dd($request);
          $form = new User();
-
-         $form->Naam = $request['naam'];
          $form->Adres = $request['adres'];
          $form->Postcode = $request['postcode'];
          $form->Plaats = $request['plaats'];

@@ -9,14 +9,15 @@ class loginController extends Controller
     public function form(Request $request) {
         //dd($request);
         $validatedData = $request->validate([
-           'gebruikersnaam' => 'required',
-           'Wachtwoord' => 'required',
+           'Emailadres' => ['required', 'email'],
+           'Wachtwoord' => ['required', 'min:3'],
         ]);
        // dd($request);
         $form = new User();
 
-        $form->Naam = $request['naam'];
-        $form->Adres = $request['adres'];
+        $form->Email = $request['Email'];
+
+        $validatedData['Wachtwoord'] = bcrypt($validatedData['Wachtwoord']);
         //dd($request);
         $form->save();
         //dd($request);

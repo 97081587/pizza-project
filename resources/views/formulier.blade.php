@@ -3,8 +3,6 @@
 @section('title',"formulier")
 
 <?php
-
-$fname = '';
 $adres = '';
 $Pcode = '';
 $plaats = '';
@@ -13,7 +11,6 @@ $newDate = date ('l', strtotime($Bdatum));
 
 // dit gaat naar de DB
 if(isset($_POST['submit'])){
-    $Fname = $_POST['naam'];
     $adres = $_POST['adres'];
     $postcode = $_POST['postcode'];
     $plaats = $_POST['plaats'];
@@ -24,13 +21,6 @@ if(isset($_POST['submit'])){
 <div class=formulier>
   <form method='POST' action="/allesverwerken">
     @csrf
-      <div name="naam">
-        <label for="fname">Voornaam:</label>
-        <br>
-        <input type="text" id="fname" name="naam"
-            placeholder="Voornaam" value="" required>
-        <br>
-    </div>
       <div name="adres">
         <label for="adres">Adres:</label>
         <br>

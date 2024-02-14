@@ -17,13 +17,13 @@ if(isset($_POST['submit'])){
 <div class=formulier>
     <form method='POST' action="/">
       @csrf
-        <div name="naam">
-          <label for="fname">Gebruikersnaam:</label>
-          <br>
-          <input type="text" id="fname" name="Gebruikersnaam"
-              placeholder="Gebruikersnaam" value="" required>
-          <br>
-      </div>
+      <div name="E-mailadres">
+        <label for="Email">E-mailadres:</label>
+        <br>
+        <input type="text" id="E-mail" name="Email"
+            placeholder="E-mailadres" value="" required>
+        <br>
+    </div>
         <div name="adres">
           <label for="adres">Wachtwoord:</label>
           <br>
