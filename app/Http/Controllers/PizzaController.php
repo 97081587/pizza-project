@@ -18,11 +18,7 @@ class PizzaController extends Controller
             'BOA' => 'required'
         ]);
 
-        // $validatedData['user_id'] = auth()->id();
-        // Pizza::create($validatedData);
-
         $pizza = new Pizza();
-
         $pizza->HawaiiList = $request['HawaiiList'];
         $pizza->FunghiList = $request['FunghiList'];
         $pizza->MargheritaList = $request['MargheritaList'];
@@ -32,6 +28,10 @@ class PizzaController extends Controller
         $pizza->BOA = $request['BOA'];
 
         $pizza->save();
+
+        //gebruikt de id van het huidige gebruiker
+        $validatedData['user_id'] = auth()->id();
+        Pizza::create($validatedData);
 
         return view ('formulier'); 
     }

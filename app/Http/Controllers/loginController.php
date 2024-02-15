@@ -12,13 +12,17 @@ class loginController extends Controller
            'email' => ['required', 'email'],
            'password' => ['required', 'min:3']
         ]);
-        $login = new User();
 
+        $login = new User();
         $login->email = $request['email'];
         $login->password = $request['password'];
 
+        //$login->save();
+
+        //gebruikt de id van het huidige gebruiker
+        $validatedData['user_id'] = auth()->id();
         $validatedData['password'] = bcrypt($validatedData['password']);
-        User::create($validatedData);
+        //User::create($validatedData);
 
         return view('home');
     }
