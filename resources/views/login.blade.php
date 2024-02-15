@@ -15,7 +15,7 @@ if(isset($_POST['submit'])){
 ?>
 @section('content')
 <div class=formulier>
-    <form method='POST' action="/verwerkenlogin">
+    <form method='POST' action="/ingelogd">
       @csrf
       <div name="Email">
         <label for="Email">E-mailadres:</label>

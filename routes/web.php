@@ -19,7 +19,7 @@ Route::get('/login', function() {
     return view ('login');
 });
 
-Route::post('/verwerkenlogin', [loginController::class, 'login']);
+Route::post('/ingelogd', [loginController::class, 'login']);
 
 Route::get('/', function() {
     return view ('home');

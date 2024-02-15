@@ -18,11 +18,14 @@ class loginController extends Controller
 
         $login->Email = $request['Email'];
         $login->Wachtwoord = $request['Wachtwoord'];
-        
-        $validatedData['Wachtwoord'] = bcrypt($validatedData['Wachtwoord']);
-        //User::create($validatedData);
-        //dd($request);
+
         $login->save();
+
+        $validatedData['Wachtwoord'] = bcrypt($validatedData['Wachtwoord']);
+        //dd($validatedData['Wachtwoord']);
+        User::create($validatedData);
+       
+        //dd($request);
         //dd($request);
         return view('home');
     }
