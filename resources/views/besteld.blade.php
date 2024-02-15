@@ -11,7 +11,7 @@
         <p>{{$pizza->MargheritaList}} Stuks Pizza Margherita 🌿🍕</p>
         <p>{{$pizza->MarinaList}} Stuks Pizza Marina 🐟🍕</p>
         <p>{{$pizza->QFormaggiList}} Stuks Pizza Quattro Formaggi 🧀🍕</p>
-        <P>Totaalprijs: €{{$pizza->Totaalprijs}},-</p>
+        <p>Totaalprijs: €{{$pizza->Totaalprijs}},-</p>
         <p>Bestellen of afhalen: {{$pizza->BOA}}<p>
     @endforeach  
         @foreach ($gegevens as $gegeven)      
