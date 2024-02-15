@@ -22,7 +22,7 @@ class loginController extends Controller
         $login->save();
 
         $validatedData['password'] = bcrypt($validatedData['password']);
-        //dd($validatedData['Wachtwoord']);
+        //dd($validatedData['password']);
         User::create($validatedData);
        
         //dd($request);

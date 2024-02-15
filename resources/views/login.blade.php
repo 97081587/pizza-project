@@ -4,13 +4,13 @@
 
 <?php
 
-$Email = '';
-$Wachtwoord = '';
+$email = '';
+$password = '';
 
 // dit gaat naar de DB
 if(isset($_POST['submit'])){
-    $Email = $_POST['email'];
-    $Wachtwoord = $_POST['password'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
 }
 ?>
 @section('content')
