@@ -28,7 +28,8 @@ class FormulierController extends Controller
          //dd($request);
 
          $pizzas = pizza::get();
-            $gegevens = bestelgegevens::get();
+         $gegevens = bestelgegevens::get();
+         
          $Users = [];
          if (auth()->check()) {
             $Users = auth()->User()->UserReturn()->get();
