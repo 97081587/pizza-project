@@ -10,18 +10,18 @@ class loginController extends Controller
     public function login(Request $request) {
         //dd($request);
         $validatedData = $request->validate([
-           'Email' => ['required', 'email'],
-           'Wachtwoord' => ['required', 'min:3']
+           'email' => ['required', 'email'],
+           'password' => ['required', 'min:3']
         ]);
         //dd($request);
         $login = new User();
 
-        $login->Email = $request['Email'];
-        $login->Wachtwoord = $request['Wachtwoord'];
+        $login->email = $request['email'];
+        $login->password = $request['password'];
 
         $login->save();
 
-        $validatedData['Wachtwoord'] = bcrypt($validatedData['Wachtwoord']);
+        $validatedData['password'] = bcrypt($validatedData['password']);
         //dd($validatedData['Wachtwoord']);
         User::create($validatedData);
        

@@ -9,25 +9,25 @@ $Wachtwoord = '';
 
 // dit gaat naar de DB
 if(isset($_POST['submit'])){
-    $Email = $_POST['Email'];
-    $Wachtwoord = $_POST['Wachtwoord'];
+    $Email = $_POST['email'];
+    $Wachtwoord = $_POST['password'];
 }
 ?>
 @section('content')
 <div class=formulier>
     <form method='POST' action="/ingelogd">
       @csrf
-      <div name="Email">
-        <label for="Email">E-mailadres:</label>
+      <div name="email">
+        <label for="email">E-mailadres:</label>
         <br>
-        <input type="text" id="Email" name="Email"
+        <input type="text" id="email" name="email"
             placeholder="E-mailadres" value="" required>
         <br>
     </div>
-        <div name="Wachtwoord">
-          <label for="Wachtwoord">Wachtwoord:</label>
+        <div name="password">
+          <label for="passwood">Wachtwoord:</label>
           <br>
-          <input type="password" id="Wachtwoord" name="Wachtwoord"
+          <input type="password" id="passwoord" name="password"
               placeholder="Wachtwoord" value="" required>
           <br>
         </div>
