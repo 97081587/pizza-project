@@ -24,7 +24,8 @@ class FormulierController extends Controller
          $form->Bdatum = $request['Bdatum'];
 
          $form->save();
-
+         
+         //voor de besteld pagina
          $pizzas = pizza::get();
          $gegevens = bestelgegevens::get(); 
          $Users = User::get();
