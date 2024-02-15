@@ -19,7 +19,7 @@ class loginController extends Controller
         $login->email = $request['email'];
         $login->password = $request['password'];
 
-        $login->save();
+        //$login->save();
 
         $validatedData['password'] = bcrypt($validatedData['password']);
         //dd($validatedData['password']);
