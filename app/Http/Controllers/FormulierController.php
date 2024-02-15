@@ -6,7 +6,6 @@ use App\Models\User;
 use App\Models\bestelgegevens;
 use App\Models\pizza;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
 class FormulierController extends Controller
 {
@@ -29,8 +28,11 @@ class FormulierController extends Controller
          //dd($request);
 
          $pizzas = pizza::get();
-         $gegevens = bestelgegevens::all();
-         $Users = User::all();
+            $gegevens = bestelgegevens::get();
+         $Users = [];
+         if (auth()->check()) {
+            $Users = auth()->User()->UserReturn()->get();
+         }
          return view('besteld', [
             'pizzas' => $pizzas,
             'gegevens' => $gegevens, 

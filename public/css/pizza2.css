@@ -102,3 +102,10 @@ li a:hover {
     background-color: rgb(246, 228, 176);
     transition-duration: 0.5s;
 }
+
+/*besteld pagina*/
+
+.gegevens {
+    display: flex;
+    justify-content: center;
+}

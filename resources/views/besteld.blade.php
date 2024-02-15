@@ -4,7 +4,7 @@
 
 @section('content')
 <div>
-    <p>Dit heeft u besteld:</p>
+    <h2>Dit heeft u besteld:</h2>
     @foreach ($pizzas as $pizza)
         <p>{{$pizza->HawaiiList}}  Stuks Pizza Hawaii 🍍🍕</p>
         <p>{{$pizza->FunghiList}} Stuks Pizza Funghi 🍄🍕</p>
@@ -14,15 +14,17 @@
         <p>Totaalprijs: €{{$pizza->Totaalprijs}},-</p>
         <p>Bestellen of afhalen: {{$pizza->BOA}}<p>
     @endforeach  
-        @foreach ($gegevens as $gegeven)      
+        @foreach ($gegevens as $gegeven)  
             <p>Besteldatum: {{$gegeven->Bdatum}}<p>
-            <p>Uw gegevens:</p>
+        <div class="gegevens">        
+            <h2>Uw gegevens:</h2>
             <p>Adres: {{$gegeven->Adres}}<p>
             <p>Postcode: {{$gegeven->Postcode}}<p>
             <p>Plaats: {{$gegeven->Plaats}}<p>
         @endforeach
     @foreach ($Users as $User)
         <p>E-mailadres: {{$User ->email}}<p>
+        </div>
     @endforeach
 </div>
 @endsection

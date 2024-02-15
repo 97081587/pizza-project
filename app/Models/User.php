@@ -43,7 +43,7 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-    // public function UserReturn() {
-    //     return $this->hasMany(pizza::class, 'User');
-    // }
+    public function UserReturn() {
+        return $this->hasMany(user::class, 'User');
+    }
 }
