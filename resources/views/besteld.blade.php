@@ -22,7 +22,7 @@
             <p>Plaats: {{$gegeven->Plaats}}<p>
         @endforeach
     @foreach ($Users as $User)
-        <p>E-mailadres: {{$Usser ->Email}}<p>
+        <p>E-mailadres: {{$User ->email}}<p>
     @endforeach
 </div>
 @endsection
