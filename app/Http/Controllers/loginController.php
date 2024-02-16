@@ -7,7 +7,12 @@ use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 
 class loginController extends Controller
-{
+{   
+    public function logout() {
+        auth()->logout();
+        return redirect('/');
+    }
+
     public function login(Request $request) {
         $validatedData = $request->validate([
            'email' => ['required', 'email', Rule::unique('users', 'email')],

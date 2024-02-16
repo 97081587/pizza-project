@@ -14,32 +14,57 @@ if(isset($_POST['submit'])){
 }
 ?>
 @section('content')
-<div class=formulier>
-    <form method='POST' action="/ingelogd">
+@auth
+  <form method='POST' action="/uitgelogd">
+    @csrf
+    <button>Uitloggen</button>
+  </form>
+@else
+<div class=formulierRegistreren>
+    <form method='POST' action="/registreren">
       @csrf
       <div>
         <label for="email">E-mailadres:</label>
         <br>
-        <input type="text" id="email" name="email"
-            placeholder="E-mailadres" value="" required>
+        <input type="text" name="RegiEmail"
+            placeholder="E-mailadres" required>
         <br>
     </div>
         <div>
-          <label for="passwood">Wachtwoord:</label>
+          <label for="password">Wachtwoord:</label>
           <br>
-          <input type="password" id="passwoord" name="password"
-              placeholder="Wachtwoord" value="" required>
+          <input type="password" name="RegiPassword"
+              placeholder="Wachtwoord" required>
           <br>
         </div>
-        {{-- <div>
-          <label for="passwood">Wachtwoord bevestiging:</label>
+        <div>
+          <label for="password">Bevestig uw achtwoord:</label>
           <br>
-          <input type="password" id="passwoordBevestiging" name="passwordBevestiging"
-              placeholder="Bevestig uw wachtwoord" value="" required>
+          <input type="password" name="RegiPassword"
+              placeholder="Bevestig uw wachtwoord" required>
           <br>
-        </div> --}}
+        </div>
+      <br>
+  <button>Registreren</button>      
+</div>
+  <form method='POST' action="/ingelogd">
+    @csrf
+      <div>
+        <label for="email">E-mailadres:</label>
         <br>
-        <button>Voltooien</button>
-    </form>
-  </div>
-  @endsection
+        <input type="text" name="email"
+          placeholder="E-mailadres" required>
+        <br>
+      </div>
+    <div>
+      <label for="password">Wachtwoord:</label>
+      <br>
+      <input type="password" name="password"
+          placeholder="Wachtwoord" required>
+      <br>
+    </div>
+    <br>
+      <button>Inloggen</button>
+  </form>
+@endauth
+@endsection

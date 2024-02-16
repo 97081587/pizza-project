@@ -21,6 +21,8 @@ Route::get('/login', function() {
 
 Route::post('/ingelogd', [loginController::class, 'login']);
 
+Route::post('/uitgelogd', [loginController::class, 'logout']);
+
 Route::get('/', function() {
     return view ('home');
 });
