@@ -19,8 +19,9 @@ if(isset($_POST['submit'])){
 ?>
 @section('content')
 <div class=formulier>
-  <form method='POST' action="/allesverwerken">
-    @csrf
+    @auth
+    <form method='POST' action="/allesverwerken">
+     @csrf 
       <div name="adres">
         <label for="adres">Adres:</label>
         <br>
@@ -49,6 +50,26 @@ if(isset($_POST['submit'])){
       </div>
       <br>
       <button>Voltooien</button>
-  </form>
+    </form>
+    @else
+    <form method='POST' action="/ingelogd">
+      @csrf 
+    <div>
+      <label for="email">E-mailadres:</label>
+      <br>
+      <input type="text" id="email" name="email"
+          placeholder="E-mailadres" value="" required>
+      <br>
+  </div>
+      <div>
+        <label for="passwood">Wachtwoord:</label>
+        <br>
+        <input type="password" id="passwoord" name="password"
+            placeholder="Wachtwoord" value="" required>
+        <br>
+      </div>
+      <button>Voltooien</button>
+    </form>
+    @endauth
 </div>
 @endsection

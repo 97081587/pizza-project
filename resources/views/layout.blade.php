@@ -14,6 +14,7 @@
             <h2 class=est>Est. 2022 "la migliore pizza fatta in casa."</h2> 
         </div>
             <div>
+                <div class="email">{{Auth::user()->email}}</div>
                 <nav>
                  <ul class=nav2>
                    <li><a href="/">Aanbiedingen</a></li>
