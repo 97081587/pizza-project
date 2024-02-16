@@ -8,20 +8,28 @@ use Illuminate\Validation\Rule;
 
 class loginController extends Controller
 {   
-    public function logout() {
-        auth()->logout();
+    public function login(Request $request) {
+        $validatedData = $request->validate([
+            'email' => 'required',
+            'password' => 'required'
+        ]);
+
+        if (auth()->attempt(['email' => $validatedData['email'], 'password' => $validatedData['password']])) {
+            $request_session()->regenerate();
+        }
+
         return redirect('/');
     }
 
-    public function login(Request $request) {
+    public function registreren(Request $request) {
         $validatedData = $request->validate([
-           'email' => ['required', 'email', Rule::unique('users', 'email')],
-           'password' => ['required', 'min:3']
+           'RegiEmail' => ['required', 'email', Rule::unique('users', 'email')],
+           'RegiPassword' => ['required', 'min:3']
         ]);
 
-        $login = new User();
-        $login->email = $request['email'];
-        $login->password = $request['password'];
+        $register = new User();
+        $register->email = $request['RegiEmail'];
+        $register->password = $request['RegiPassword'];
 
         //$login->save();
 
@@ -32,6 +40,11 @@ class loginController extends Controller
         $gebruiker = User::create($validatedData);
         auth()->login($gebruiker);
 
+        return redirect('/');
+    }
+
+    public function logout() {
+        auth()->logout();
         return redirect('/');
     }
 }

@@ -19,6 +19,8 @@ Route::get('/login', function() {
     return view ('login');
 });
 
+Route::post('/registreren', [loginController::class, 'registreren']);
+
 Route::post('/ingelogd', [loginController::class, 'login']);
 
 Route::post('/uitgelogd', [loginController::class, 'logout']);
