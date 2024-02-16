@@ -4,13 +4,13 @@
 
 <?php
 
-$email = '';
-$password = '';
+$RegiEmail = '';
+$RegiPassword = '';
 
 // dit gaat naar de DB
 if(isset($_POST['submit'])){
-    $email = $_POST['email'];
-    $password = $_POST['password'];
+    $RegiEmail = $_POST['RegiEmail'];
+    $RegiPassword = $_POST['RegiPassword'];
 }
 ?>
 @section('content')
@@ -27,23 +27,23 @@ if(isset($_POST['submit'])){
         <label for="email">E-mailadres:</label>
         <br>
         <input type="text" name="RegiEmail"
-            placeholder="E-mailadres" required>
+            placeholder="E-mailadres">
         <br>
     </div>
         <div>
           <label for="password">Wachtwoord:</label>
           <br>
           <input type="password" name="RegiPassword"
-              placeholder="Wachtwoord" required>
+              placeholder="Wachtwoord">
           <br>
         </div>
-        <div>
+        {{-- <div>
           <label for="password">Bevestig uw achtwoord:</label>
           <br>
           <input type="password" name="RegiPassword"
-              placeholder="Bevestig uw wachtwoord" required>
+              placeholder="Bevestig uw wachtwoord">
           <br>
-        </div>
+        </div> --}}
       <br>
   <button>Registreren</button>      
 </div>
@@ -53,14 +53,14 @@ if(isset($_POST['submit'])){
         <label for="email">E-mailadres:</label>
         <br>
         <input type="text" name="email"
-          placeholder="E-mailadres" required>
+          placeholder="E-mailadres">
         <br>
       </div>
     <div>
       <label for="password">Wachtwoord:</label>
       <br>
       <input type="password" name="password"
-          placeholder="Wachtwoord" required>
+          placeholder="Wachtwoord">
       <br>
     </div>
     <br>

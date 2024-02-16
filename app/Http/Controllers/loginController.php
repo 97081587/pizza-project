@@ -27,16 +27,14 @@ class loginController extends Controller
            'RegiPassword' => ['required', 'min:3']
         ]);
 
-        $register = new User();
-        $register->email = $request['RegiEmail'];
-        $register->password = $request['RegiPassword'];
-
-        //$login->save();
-
+        // $register = new User();
+        // $register->email = $request['RegiEmail'];
+        // $register->password = $request['RegiPassword'];
+        
         //gebruikt de id van het huidige gebruiker
         //$validatedData['user_id'] = auth()->id();
 
-        $validatedData['password'] = bcrypt($validatedData['password']);
+        $validatedData['RegiPassword'] = bcrypt($validatedData['RegiPassword']);
         $gebruiker = User::create($validatedData);
         auth()->login($gebruiker);
 
