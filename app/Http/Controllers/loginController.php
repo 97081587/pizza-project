@@ -21,11 +21,6 @@ class loginController extends Controller
         return redirect('/');
     }
 
-    public function logout() {
-        auth()->logout();
-        return redirect('/');
-    }
-
     public function registreren(Request $request) {
         $validatedData = $request->validate([
            'RegiEmail' => ['required', 'email', Rule::unique('users', 'email')],
@@ -36,15 +31,18 @@ class loginController extends Controller
         $register->email = $request['RegiEmail'];
         $register->password = $request['RegiPassword'];
         
-        //gebruikt de id van het huidige gebruiker
-        //$validatedData['user_id'] = auth()->id();
-
         $register->password = bcrypt(request('RegiPassword'));
         $register->save();
-        // $validatedData['RegiPassword'] = bcrypt($validatedData['RegiPassword']);
-        // $gebruiker = User::create($validatedData);
+
+        //gebruikt de id van het huidige gebruiker
+        //$validatedData['user_id'] = auth()->id();
         auth()->login($register);
 
+        return redirect('/');
+    }
+
+    public function logout() {
+        auth()->logout();
         return redirect('/');
     }
 }
