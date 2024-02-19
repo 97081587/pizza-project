@@ -21,28 +21,30 @@ class loginController extends Controller
         return redirect('/');
     }
 
+    public function logout() {
+        auth()->logout();
+        return redirect('/');
+    }
+
     public function registreren(Request $request) {
         $validatedData = $request->validate([
            'RegiEmail' => ['required', 'email', Rule::unique('users', 'email')],
            'RegiPassword' => ['required', 'min:3']
         ]);
 
-        // $register = new User();
-        // $register->email = $request['RegiEmail'];
-        // $register->password = $request['RegiPassword'];
+        $register = new User();
+        $register->email = $request['RegiEmail'];
+        $register->password = $request['RegiPassword'];
         
         //gebruikt de id van het huidige gebruiker
         //$validatedData['user_id'] = auth()->id();
 
-        $validatedData['RegiPassword'] = bcrypt($validatedData['RegiPassword']);
-        $gebruiker = User::create($validatedData);
-        auth()->login($gebruiker);
+        $register->password = bcrypt(request('RegiPassword'));
+        $register->save();
+        // $validatedData['RegiPassword'] = bcrypt($validatedData['RegiPassword']);
+        // $gebruiker = User::create($validatedData);
+        auth()->login($register);
 
-        return redirect('/');
-    }
-
-    public function logout() {
-        auth()->logout();
         return redirect('/');
     }
 }
