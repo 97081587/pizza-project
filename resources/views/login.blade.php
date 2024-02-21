@@ -20,7 +20,8 @@ if(isset($_POST['submit'])){
     <button>Uitloggen</button>
   </form>
 @else
-  <div class=formulierRegistrerenEnInloggen>
+<div class=formulierRegistrerenEnInloggen>
+    <div class="1">
       <form method='POST' action="/registreren">
         @csrf
         <div>
@@ -44,7 +45,9 @@ if(isset($_POST['submit'])){
           </div> --}}
         <br>
         <button>Registreren</button>
-      </form>      
+      </form>
+    </div>
+  <div class="2">      
     <form method='POST' action="/ingelogd">
       @csrf
         <div>
@@ -63,5 +66,6 @@ if(isset($_POST['submit'])){
         <button>Inloggen</button>
     </form>
   </div>
+</div>
 @endauth
 @endsection
