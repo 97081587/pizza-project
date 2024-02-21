@@ -15,7 +15,7 @@ class loginController extends Controller
         ]);
 
         if (auth()->attempt(['email' => $validatedData['email'], 'password' => $validatedData['password']])) {
-            $request_session()->regenerate();
+            $request->session()->regenerate();
         }
 
         return redirect('/');
