@@ -20,51 +20,48 @@ if(isset($_POST['submit'])){
     <button>Uitloggen</button>
   </form>
 @else
-<div class=formulierRegistreren>
-    <form method='POST' action="/registreren">
-      @csrf
-      <div>
-        <label for="email">E-mailadres:</label>
-        <br>
-        <input type="text" name="RegiEmail"
-            placeholder="E-mailadres">
-        <br>
-    </div>
+  <div class=formulierRegistrerenEnInloggen>
+      <form method='POST' action="/registreren">
+        @csrf
         <div>
-          <label for="password">Wachtwoord:</label>
+          <label for="email">E-mailadres:</label>
           <br>
-          <input type="password" name="RegiPassword"
-              placeholder="Wachtwoord">
+          <input type="text" name="RegiEmail" placeholder="E-mailadres">
           <br>
         </div>
-        {{-- <div>
-          <label for="password">Bevestig uw achtwoord:</label>
-          <br>
-          <input type="password" name="RegiPassword"
-              placeholder="Bevestig uw wachtwoord">
-          <br>
-        </div> --}}
-      <br>
-  <button>Registreren</button>      
-</div>
-  <form method='POST' action="/ingelogd">
-    @csrf
-      <div>
-        <label for="email">E-mailadres:</label>
+          <div>
+            <label for="password">Wachtwoord:</label>
+            <br>
+            <input type="password" name="RegiPassword" placeholder="Wachtwoord">
+            <br>
+          </div>
+          {{-- <div>
+            <label for="password">Bevestig uw achtwoord:</label>
+            <br>
+            <input type="password" name="RegiPassword"
+                placeholder="Bevestig uw wachtwoord">
+            <br>
+          </div> --}}
         <br>
-        <input type="text" name="email"
-          placeholder="E-mailadres">
+        <button>Registreren</button>
+      </form>      
+    <form method='POST' action="/ingelogd">
+      @csrf
+        <div>
+          <label for="email">E-mailadres:</label>
+          <br>
+          <input type="text" name="email" placeholder="E-mailadres">
+          <br>
+        </div>
+      <div>
+        <label for="password">Wachtwoord:</label>
+        <br>
+        <input type="password" name="password" placeholder="Wachtwoord">
         <br>
       </div>
-    <div>
-      <label for="password">Wachtwoord:</label>
       <br>
-      <input type="password" name="password"
-          placeholder="Wachtwoord">
-      <br>
-    </div>
-    <br>
-      <button>Inloggen</button>
-  </form>
+        <button>Inloggen</button>
+    </form>
+  </div>
 @endauth
 @endsection

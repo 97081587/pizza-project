@@ -73,7 +73,7 @@ li a:hover {
     justify-content: space-evenly;
 }
 
-.formulierRegistreren {
+.formulier {
     display: flex;
     justify-content: space-around;
     font-size: 17px;
@@ -103,7 +103,7 @@ li a:hover {
     transition-duration: 0.5s;
 }
 
-.email {
+.emailHome {
     display: flex;
     font-size: 17px;
     justify-content: right;
@@ -113,4 +113,10 @@ li a:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.formulierRegistrerenEnInloggen {
+    display: flex;
+    justify-content: space-around;
+    font-size: 17px;
 }

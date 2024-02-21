@@ -15,7 +15,7 @@
         </div>
             <div>
                 @auth
-                <div class="email">{{Auth::user()->email}}</div>
+                <div class="emailHome">{{Auth::user()->email}}</div>
                 @endauth
                 <nav>
                  <ul class=nav2>
