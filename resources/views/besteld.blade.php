@@ -18,8 +18,8 @@
         @foreach ($gegevens as $gegeven)  
             <p>Besteldatum: {{$gegeven->Bdatum}}<p>
         </div>
-            <div>        
-                <h2>Uw gegevens:</h2>
+            <h2>Uw gegevens:</h2>
+            <div>         
                 <p>Adres: {{$gegeven->Adres}}<p>
                 <p>Postcode: {{$gegeven->Postcode}}<p>
                 <p>Plaats: {{$gegeven->Plaats}}<p>
