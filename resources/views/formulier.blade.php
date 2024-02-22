@@ -51,25 +51,57 @@ if(isset($_POST['submit'])){
       <br>
       <button>Voltooien</button>
     </form>
-    @else
-    <form method='POST' action="/ingelogd">
-      @csrf 
-    <div>
-      <label for="email">E-mailadres:</label>
-      <br>
-      <input type="text" id="email" name="email"
-          placeholder="E-mailadres" value="" required>
-      <br>
-  </div>
-      <div>
-        <label for="passwood">Wachtwoord:</label>
+  @else
+      <div class=formulierRegistrerenEnInloggen>
+        <div class="1">
+          <form method='POST' action="/registreren">
+            @csrf
+            <h2>Registreren</h2>
+            <div>
+              <label for="email">E-mailadres:</label>
+              <br>
+              <input type="text" name="RegiEmail" placeholder="E-mailadres">
+              <br>
+            </div>
+              <div>
+                <label for="password">Wachtwoord:</label>
+                <br>
+                <input type="password" name="RegiPassword" placeholder="Wachtwoord">
+                <br>
+              </div>
+              {{-- <div>
+                <label for="password">Bevestig uw achtwoord:</label>
+                <br>
+                <input type="password" name="RegiPassword"
+                    placeholder="Bevestig uw wachtwoord">
+                <br>
+              </div> --}}
+            <br>
+            <button>Registreren</button>
+          </form>
+        </div>
         <br>
-        <input type="password" id="passwoord" name="password"
-            placeholder="Wachtwoord" value="" required>
-        <br>
+      <div class="2">      
+        <form method='POST' action="/ingelogd">
+          @csrf
+          <h2>Inloggen</h2>
+            <div>
+              <label for="email">E-mailadres:</label>
+              <br>
+              <input type="text" name="email" placeholder="E-mailadres">
+              <br>
+            </div>
+          <div>
+            <label for="password">Wachtwoord:</label>
+            <br>
+            <input type="password" name="password" placeholder="Wachtwoord">
+            <br>
+          </div>
+          <br>
+            <button>Inloggen</button>
+        </form>
       </div>
-      <button>Voltooien</button>
-    </form>
-    @endauth
+    </div>
+  @endauth
 </div>
 @endsection
