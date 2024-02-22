@@ -17,7 +17,10 @@ if(isset($_POST['submit'])){
 @auth
   <form method='POST' action="/uitgelogd">
     @csrf
-    <button>Uitloggen</button>
+    <br>
+    <div class="Uitloggen">
+      <button >Uitloggen</button>
+    </div>
   </form>
 @else
 <div class=formulierRegistrerenEnInloggen>
