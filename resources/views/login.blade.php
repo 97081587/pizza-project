@@ -24,6 +24,7 @@ if(isset($_POST['submit'])){
     <div class="1">
       <form method='POST' action="/registreren">
         @csrf
+        <h2>Registreren</h2>
         <div>
           <label for="email">E-mailadres:</label>
           <br>
@@ -47,9 +48,11 @@ if(isset($_POST['submit'])){
         <button>Registreren</button>
       </form>
     </div>
+    <br>
   <div class="2">      
     <form method='POST' action="/ingelogd">
       @csrf
+      <h2>Inloggen</h2>
         <div>
           <label for="email">E-mailadres:</label>
           <br>
