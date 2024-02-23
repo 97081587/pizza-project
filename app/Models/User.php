@@ -44,6 +44,6 @@ class User extends Authenticatable
     ];
 
     public function UserReturn() {
-        return $this->hasMany(pizza::class, 'User');
+        return $this->hasMany(pizza::class, 'id');
     }
 }

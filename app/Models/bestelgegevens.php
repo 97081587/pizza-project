@@ -17,6 +17,6 @@ class bestelgegevens extends Model
     ];
 
     public function user() {
-        return $this->belongsTo(User::class, 'User');
+        return $this->belongsTo(User::class, 'id');
     }
 }
