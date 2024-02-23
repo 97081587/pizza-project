@@ -26,9 +26,12 @@ class FormulierController extends Controller
          $form->save();
          
          //voor de besteld pagina
-         $pizzas = pizza::get();
-         $gegevens = bestelgegevens::get(); 
-         $Users = User::get();
+         if (auth()->check()) {
+            $pizzas = auth()->user()->UserReturn()->get();
+            $gegevens =  auth()->user()->UserReturn()->get();
+            $Users = auth()->user()->UserReturn()->get(); 
+         }
+
          return view('besteld', [
             'pizzas' => $pizzas,
             'gegevens' => $gegevens, 

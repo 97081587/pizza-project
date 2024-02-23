@@ -16,7 +16,7 @@ class bestelgegevens extends Model
         'Bdatum'
     ];
 
-    public function user() {
+    public function UserGegevens() {
         return $this->belongsTo(User::class, 'id');
     }
 }
