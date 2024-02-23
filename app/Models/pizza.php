@@ -17,7 +17,7 @@ class pizza extends Model
         'QFormaggiList'
     ];
 
-    public function user() {
-        return $this->belongsTo(User::class, 'id');
-    }
+    // public function user() {
+    //     return $this->belongsTo(User::class, 'id');
+    // }
 }
