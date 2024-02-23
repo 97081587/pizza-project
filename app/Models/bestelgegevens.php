@@ -15,4 +15,8 @@ class bestelgegevens extends Model
         'Plaats',
         'Bdatum'
     ];
+
+    public function user() {
+        return $this->belongsTo(User::class, 'User');
+    }
 }

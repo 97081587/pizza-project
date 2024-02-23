@@ -34,8 +34,6 @@ class loginController extends Controller
         $register->password = bcrypt(request('RegiPassword'));
         $register->save();
 
-        //gebruikt de id van het huidige gebruiker
-        //$validatedData['user_id'] = auth()->id();
         auth()->login($register);
 
         return redirect('/');

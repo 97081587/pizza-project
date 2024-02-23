@@ -29,8 +29,6 @@ class PizzaController extends Controller
 
         $pizza->save();
 
-        //gebruikt de id van het huidige gebruiker
-        // $validatedData['user_id'] = auth()->id();
         //Pizza::create($validatedData);
 
         return view ('formulier'); 
