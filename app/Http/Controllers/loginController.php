@@ -16,9 +16,10 @@ class loginController extends Controller
 
         if (auth()->attempt(['email' => $validatedData['email'], 'password' => $validatedData['password']])) {
             $request->session()->regenerate();
-        }
-
-        return redirect('/');
+            return redirect('/form');
+        } else {
+           return redirect('/'); 
+        }  
     }
 
     public function registreren(Request $request) {
@@ -34,9 +35,11 @@ class loginController extends Controller
         $register->password = bcrypt(request('RegiPassword'));
         $register->save();
 
-        auth()->login($register);
-
-        return redirect('/');
+        if (auth()->login($register)) {
+            return redirect('/form');
+        } else {
+           return redirect('/'); 
+        }    
     }
 
     public function logout() {
