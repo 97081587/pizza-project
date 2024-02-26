@@ -30,6 +30,6 @@
         @yield('content')
     </body>
 <footer class=footer>
-    <p>Oscar Li 2023</p>
+    <p>Oscar Li 2023-2024</p>
 </footer>
 </html>
