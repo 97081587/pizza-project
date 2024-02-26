@@ -44,16 +44,25 @@ class User extends Authenticatable
     ];
 
     // public function UserReturn() {
-    //     return $this->hasMany(pizza::class, 'id');
-    //     return $this->hasMany(bestelgegevens::class, 'id');
-    //     return $this->hasMany(User::class, 'id');
+    //     return [
+    //         $this->hasMany(pizza::class, 'id'),
+    //         $this->hasMany(bestelgegevens::class, 'id'),
+    //         $this->hasMany(User::class, 'id')
+    //     ];
     // }
 
-    public function UserReturn() {
-        return [
-            $this->hasMany(pizza::class, 'id'),
-            $this->hasMany(bestelgegevens::class, 'id'),
-            $this->hasMany(User::class, 'id')
-        ];
+    public function pizzas()
+    {
+        return $this->hasMany(Pizza::class, 'id');
+    }
+
+    public function bestelgegevens()
+    {
+        return $this->hasMany(Bestelgegevens::class, 'id');
+    }
+
+    public function user()
+    {
+        return $this->hasMany(user::class, 'id');
     }
 }

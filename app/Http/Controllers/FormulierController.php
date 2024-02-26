@@ -27,9 +27,9 @@ class FormulierController extends Controller
          
          //voor de besteld pagina
          if (auth()->check()) {
-            $pizzas = auth()->user()->UserReturn()->get();
-            $gegevens =  auth()->user()->UserReturn()->get();
-            $Users = auth()->user()->UserReturn()->get(); 
+            $pizzas = auth()->user()->pizzas()->get();
+            $gegevens =  auth()->user()->bestelgegevens()->get();
+            $Users = auth()->user()->user()->get(); 
          }
 
          return view('besteld', [
