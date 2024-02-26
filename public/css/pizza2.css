@@ -103,18 +103,18 @@ li a:hover {
     transition-duration: 0.5s;
 }
 
-.emailHome {
-    display: flex;
-    font-size: 17px;
-    justify-content: right;
-    margin: 5px;
-    height: 0px;
-}
-
 .top {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+
+.emailHome {
+    display: flex;
+    font-size: 17px;
+    justify-content: right;
+    align-items: end;
+    margin: 7px;
 }
 
 .BesteldGegevens {
