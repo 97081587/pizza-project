@@ -54,7 +54,7 @@ if(isset($_POST['submit'])){
   @else
       <div class=formulierRegistrerenEnInloggen>
         <div class="1">
-          <form method='POST' action="/registreren">
+          <form method='POST' action="/RegiVanPizzaNaarFormulier">
             @csrf
             <h2>Registreren</h2>
             <div>
@@ -82,7 +82,7 @@ if(isset($_POST['submit'])){
         </div>
         <br>
       <div class="2">      
-        <form method='POST' action="/ingelogd">
+        <form method='POST' action="/InlogVanPizzaNaarFormulier">
           @csrf
           <h2>Inloggen</h2>
             <div>
