@@ -3,7 +3,7 @@
 @section('title','Dit heeft u besteld')
 
 @section('content')
-<div class="gegevens">
+<div class="BesteldGegevens">
     <h2>Dit heeft u besteld:</h2>
     @foreach ($pizzas as $pizza)
         <div>
