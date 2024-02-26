@@ -29,9 +29,6 @@ Route::get('/', function() {
 
 Route::post('/verwerkenpizza', [pizzaController::class, 'pizza']);
 
-Route::post('/InlogVanPizzaNaarFormulier', [loginEnRegi2::class], 'login');
-Route::post('/RegiVanPizzaNaarFormulier', [loginEnRegi2::class], 'registreren');
-
 Route::get('/form', function() {
     return view ('formulier');
 });
