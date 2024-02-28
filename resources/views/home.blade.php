@@ -261,13 +261,17 @@ if (isset($_POST['Submit'])) {
             </div>
         </form>
         @else
-        @csrf
+        <script>
+            function registreer() {
+                alert("Login of registreer aub");
+            }
+        </script>
             <ul class=pizza name=pizza>
                 <li class=hawaii>
                     <img src="{{ asset('images/pizza_hawaii2.webp') }}" alt="pizza hawaii" width="180" height="180">
                     <p>Pizza Hawaii</p>
                     <?php echo '€' . $PrijsPHawaii . '0,-'; ?>
-                    <select id="HawaiiList" name="HawaiiList" onchange="bestellenHawaii()">
+                    <select id="HawaiiList" name="HawaiiList" onclick="registreer()">
                         <option value="0">0</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -285,7 +289,7 @@ if (isset($_POST['Submit'])) {
                     <img src="{{ asset('images/Pizza_funghi.webp') }}" alt="pizza funghi" width="180" height="180">
                     <p>Pizza Funghi</p>
                     <?php echo '€' . $PrijsPFunghi . '0,-'; ?>
-                    <select id="FunghiList" name="FunghiList" onchange="bestellenFunghi()">
+                    <select id="FunghiList" name="FunghiList" onclick="registreer()">
                         <option value="0">0</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -304,7 +308,7 @@ if (isset($_POST['Submit'])) {
                         height="180">
                     <p>Pizza Margherita</p>
                     <?php echo '€' . $PrijsPMargherita . '0,-'; ?>
-                    <select id="MargheritaList" name="MargheritaList" onchange="bestellenMargherita()">
+                    <select id="MargheritaList" name="MargheritaList" onclick="registreer()">
                         <option value="0">0</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -322,7 +326,7 @@ if (isset($_POST['Submit'])) {
                     <img src="{{ asset('images/pizza_marina.jpg') }}" alt="pizza marina" width="180" height="180">
                     <p>Pizza Marina</p>
                     <?php echo '€' . $PrijsPMarina . '0,-'; ?>
-                    <select id="MarinaList" name="MarinaList" onchange="bestellenMarina()">
+                    <select id="MarinaList" name="MarinaList" onclick="registreer()">
                         <option value="0">0</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -341,7 +345,7 @@ if (isset($_POST['Submit'])) {
                         height="180">
                     <p>Pizza Quattro Formaggi</p>
                     <?php echo '€' . $PrijsPQFormaggi . '0,-'; ?>
-                    <select id="QFormaggiList" name="QFormaggiList" onchange="bestellenQFormaggi()">
+                    <select id="QFormaggiList" name="QFormaggiList" onclick="registreer()">
                         <option value="0">0</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -375,13 +379,13 @@ if (isset($_POST['Submit'])) {
                     <input name="Totaalprijs" id="Kosten2" type="hidden">
                     <div class=BOA name=BOA id=BOA>
                         <input type="radio" id="afhalen" name="BOA" value ="afhalen"
-                            onchange="bezorgkosten('afhalen')" checked>Afhalen</input>
+                            onclick="registreer()"" checked>Afhalen</input>
                         <label>
                             <input type="radio" id="bezorgen" name="BOA" value ="bezorgen"
-                                onchange="bezorgkosten('bezorgen')">Bezorgen (+ €5)</input>
+                            onclick="registreer()"">Bezorgen (+ €5)</input>
                         </label>
                     </div>
-                    <button class ="button1" type="submit">Afrekenen</button>
+                    <button class ="button1" type="submit"onclick="registreer()">Afrekenen</button>
                 </div>
             </div>   
         @endauth
