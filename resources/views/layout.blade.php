@@ -25,7 +25,7 @@
                    <li><a href="#winkels">Winkels </a></li>
                    <li><a href="#werken">Werken bij </a></li>
                    <div class="dropdown">
-                    <button class="dropbtn">Login/registreren
+                    <button class="dropbtn">Inloggen/Registreren
                       <i class="fa fa-caret-down"></i>
                     </button>
                     <div class="inloggen-registreren">
