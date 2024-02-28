@@ -25,6 +25,9 @@ if ($newDate == 'Monday') {
     $PrijsPQFormaggi = $PrijsPQFormaggiMA;
 }
 
+$RegiEmail = '';
+$RegiPassword = '';
+
 // dit gaat naar de controller
 if (isset($_POST['Submit'])) {
     $BOA = $_POST['BOA'];
@@ -34,6 +37,8 @@ if (isset($_POST['Submit'])) {
     $MarinaList = $_POST['MarinaList'];
     $QFormaggiList = $_POST['QFormaggiList'];
     $Totaalprijs = $_POST['Totaalprijs'];
+    $RegiEmail = $_POST['RegiEmail'];
+    $RegiPassword = $_POST['RegiPassword'];
 }
 ?>
 
