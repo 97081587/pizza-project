@@ -51,8 +51,6 @@ if(isset($_POST['submit'])){
       <br>
       <button>Voltooien</button>
     </form>
-  @else
-    
   @endauth
 </div>
 @endsection

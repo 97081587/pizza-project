@@ -129,7 +129,11 @@ if (isset($_POST['Submit'])) {
 
 @section('content')
     <div class=home>
+        @auth
         <form method="POST" action="/verwerkenpizza" class="home">
+        @else
+        <form action="/" class="home">
+        @endauth
             @csrf
             <ul class=pizza name=pizza>
                 <li class=hawaii>

@@ -14,11 +14,6 @@ use App\Http\Controllers\FormulierController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
-Route::get('/login', function() {
-    return view ('login');
-});
-
 Route::post('/registreren', [loginController::class, 'registreren']);
 Route::post('/ingelogd', [loginController::class, 'login']);
 Route::post('/uitgelogd', [loginController::class, 'logout']);
