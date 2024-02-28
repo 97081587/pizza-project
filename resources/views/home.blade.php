@@ -136,9 +136,6 @@ if (isset($_POST['Submit'])) {
     <div class=home>
         @auth
         <form method="POST" action="/verwerkenpizza" class="home">
-        @else
-        <form action="/" class="home">
-        @endauth
             @csrf
             <ul class=pizza name=pizza>
                 <li class=hawaii>
@@ -263,5 +260,130 @@ if (isset($_POST['Submit'])) {
                 </div>
             </div>
         </form>
+        @else
+        @csrf
+            <ul class=pizza name=pizza>
+                <li class=hawaii>
+                    <img src="{{ asset('images/pizza_hawaii2.webp') }}" alt="pizza hawaii" width="180" height="180">
+                    <p>Pizza Hawaii</p>
+                    <?php echo '€' . $PrijsPHawaii . '0,-'; ?>
+                    <select id="HawaiiList" name="HawaiiList" onchange="bestellenHawaii()">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </li>
+                <li class=funghi>
+                    <img src="{{ asset('images/Pizza_funghi.webp') }}" alt="pizza funghi" width="180" height="180">
+                    <p>Pizza Funghi</p>
+                    <?php echo '€' . $PrijsPFunghi . '0,-'; ?>
+                    <select id="FunghiList" name="FunghiList" onchange="bestellenFunghi()">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </li>
+                <li class=margherita>
+                    <img src="{{ asset('images/pizza_margherita2.webp') }}" alt="pizza margherita" width="180"
+                        height="180">
+                    <p>Pizza Margherita</p>
+                    <?php echo '€' . $PrijsPMargherita . '0,-'; ?>
+                    <select id="MargheritaList" name="MargheritaList" onchange="bestellenMargherita()">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </li>
+                <li class=marina>
+                    <img src="{{ asset('images/pizza_marina.jpg') }}" alt="pizza marina" width="180" height="180">
+                    <p>Pizza Marina</p>
+                    <?php echo '€' . $PrijsPMarina . '0,-'; ?>
+                    <select id="MarinaList" name="MarinaList" onchange="bestellenMarina()">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </li>
+                <li class=QF>
+                    <img src="{{ asset('images/pizza_QF.jpg') }}" alt="pizza Quattro Formaggi" width="180"
+                        height="180">
+                    <p>Pizza Quattro Formaggi</p>
+                    <?php echo '€' . $PrijsPQFormaggi . '0,-'; ?>
+                    <select id="QFormaggiList" name="QFormaggiList" onchange="bestellenQFormaggi()">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </li>
+            </ul>
+            <div class=lijst>
+                <div class=dropdownNumbers>
+                    <div id=HawaiiPlek>
+                    </div>
+                    <div id=FunghiPlek>
+                    </div>
+                    <div id=MargheritaPlek>
+                    </div>
+                    <div id=MarinaPlek>
+                    </div>
+                    <div id=QFormaggiPlek>
+                    </div>
+                </div>
+                <div class=veldbot>
+                    <div id="Kosten" name="Totaalprijs">
+                    </div>
+                    <input name="Totaalprijs" id="Kosten2" type="hidden">
+                    <div class=BOA name=BOA id=BOA>
+                        <input type="radio" id="afhalen" name="BOA" value ="afhalen"
+                            onchange="bezorgkosten('afhalen')" checked>Afhalen</input>
+                        <label>
+                            <input type="radio" id="bezorgen" name="BOA" value ="bezorgen"
+                                onchange="bezorgkosten('bezorgen')">Bezorgen (+ €5)</input>
+                        </label>
+                    </div>
+                    <button class ="button1" type="submit">Afrekenen</button>
+                </div>
+            </div>   
+        @endauth
     </div>
 @endsection

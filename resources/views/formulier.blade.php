@@ -19,7 +19,6 @@ if(isset($_POST['submit'])){
 ?>
 @section('content')
 <div class=formulier>
-    @auth
     <form method='POST' action="/allesverwerken">
      @csrf 
       <div name="adres">
@@ -51,6 +50,5 @@ if(isset($_POST['submit'])){
       <br>
       <button>Voltooien</button>
     </form>
-  @endauth
 </div>
 @endsection
