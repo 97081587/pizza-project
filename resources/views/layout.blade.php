@@ -67,26 +67,26 @@
                             </form>
                             </div>
                             <br>
-                        <div class="2">      
-                            <form method='POST' action="/ingelogd">
-                            @csrf
-                            <h2>Inloggen</h2>
+                            <div class="2">      
+                                <form method='POST' action="/ingelogd">
+                                @csrf
+                                <h2>Inloggen</h2>
+                                    <div>
+                                    <label for="email">E-mailadres:</label>
+                                    <br>
+                                    <input type="text" name="email" placeholder="E-mailadres">
+                                    <br>
+                                    </div>
                                 <div>
-                                <label for="email">E-mailadres:</label>
-                                <br>
-                                <input type="text" name="email" placeholder="E-mailadres">
-                                <br>
+                                    <label for="password">Wachtwoord:</label>
+                                    <br>
+                                    <input type="password" name="password" placeholder="Wachtwoord">
+                                    <br>
                                 </div>
-                            <div>
-                                <label for="password">Wachtwoord:</label>
                                 <br>
-                                <input type="password" name="password" placeholder="Wachtwoord">
-                                <br>
+                                    <button>Inloggen</button>
+                                </form>
                             </div>
-                            <br>
-                                <button>Inloggen</button>
-                            </form>
-                        </div>
                         </div>
                         @endauth
                     </div>

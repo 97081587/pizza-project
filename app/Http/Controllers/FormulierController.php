@@ -27,7 +27,8 @@ class FormulierController extends Controller
          
          //voor de besteld pagina
          if (auth()->check()) {
-            $pizzas = auth()->user()->pizzas()->orderBy('user_id', 'desc')->get();
+            //$pizzas = auth()->user()->pizzas()->orderBy('user_id', 'desc')->get();
+            $pizzas = Pizza::latest()->first();
             $gegevens =  auth()->user()->bestelgegevens()->get();
             $Users = auth()->user()->user()->get(); 
          }

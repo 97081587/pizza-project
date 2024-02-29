@@ -94,6 +94,12 @@ li a:hover {
     display: block;
   }
 
+.formulierRegistrerenEnInloggen {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
 /* */
 .footer {
     display: flex;

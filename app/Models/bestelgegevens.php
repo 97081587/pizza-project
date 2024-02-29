@@ -16,4 +16,5 @@ class bestelgegevens extends Model
         'Bdatum'
     ];
 
+    protected $table = 'bestelgegevens';
 }
