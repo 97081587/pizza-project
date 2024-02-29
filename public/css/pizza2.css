@@ -75,6 +75,7 @@ li a:hover {
     background-color: rgb(251, 221, 132);
     min-width: 160px;
     border-radius: 15px;
+    
   }
   
   .inloggen-registreren a {
@@ -93,12 +94,6 @@ li a:hover {
   .dropdown:hover .inloggen-registreren {
     display: block;
   }
-
-.formulierRegistrerenEnInloggen {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-}
 
 /* */
 .footer {
