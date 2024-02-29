@@ -16,6 +16,4 @@ class pizza extends Model
         'MarinaList',
         'QFormaggiList'
     ];
-
-    protected $table = 'pizzas';
 }
