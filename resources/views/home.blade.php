@@ -133,6 +133,7 @@ if (isset($_POST['Submit'])) {
 </script>
 
 @section('content')
+<div>
     <div class=home>
         @auth
         <form method="POST" action="/verwerkenpizza" class="home">
@@ -260,12 +261,15 @@ if (isset($_POST['Submit'])) {
                 </div>
             </div>
         </form>
+    </div>    
         @else
-        <script>
-            function registreer() {
-                alert("Login of registreer aub");
-            }
-        </script>
+    <script>
+        function registreer() {
+            alert("Login of registreer aub");
+        }
+    </script>
+
+        <div class="home">
             <ul class=pizza name=pizza>
                 <li class=hawaii>
                     <img src="{{ asset('images/pizza_hawaii2.webp') }}" alt="pizza hawaii" width="180" height="180">
@@ -387,7 +391,8 @@ if (isset($_POST['Submit'])) {
                     </div>
                     <button class ="button1" type="submit"onclick="registreer()">Afrekenen</button>
                 </div>
-            </div>   
-        @endauth
-    </div>
+            </div>
+        </div>        
+     @endauth
+</div>
 @endsection
