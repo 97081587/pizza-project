@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Models\bestelgegevens;
 use App\Models\pizza;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class FormulierController extends Controller
 {
@@ -22,7 +23,10 @@ class FormulierController extends Controller
          $form->Postcode = $request['postcode'];
          $form->Plaats = $request['plaats'];
          $form->Bdatum = $request['Bdatum'];
+         $value = Session::get('register');
+         $value = Session::get('pizzas');
 
+         $value->save();
          $form->save();
          
          //voor de besteld pagina
