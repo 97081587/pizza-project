@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Session;
 
 class loginController extends Controller
 {   
@@ -33,6 +34,7 @@ class loginController extends Controller
         
         $register->password = bcrypt(request('RegiPassword'));
         $register->save();
+        Session::put('registratie', $register);
 
         auth()->login($register);
 

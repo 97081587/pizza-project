@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\pizza;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class PizzaController extends Controller
 {   
@@ -27,9 +28,7 @@ class PizzaController extends Controller
         $pizza->QFormaggiList = $request['QFormaggiList'];
         $pizza->BOA = $request['BOA'];
 
-        $pizza->save();
-
-        //Pizza::create($validatedData);
+        Session::put('pizzas', $pizza);
 
         return view ('formulier'); 
     }
