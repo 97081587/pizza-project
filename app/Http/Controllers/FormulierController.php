@@ -26,6 +26,10 @@ class FormulierController extends Controller
          $value = Session::get('register');
          $value = Session::get('pizzas');
 
+         $user = User::find(1);
+         $gegevens = $user->gegevens;
+
+
          $value->save();
          $form->save();
          
