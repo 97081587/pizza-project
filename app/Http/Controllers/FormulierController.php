@@ -23,13 +23,9 @@ class FormulierController extends Controller
          $form->Postcode = $request['postcode'];
          $form->Plaats = $request['plaats'];
          $form->Bdatum = $request['Bdatum'];
-         $form->user_id = $request['user_id'];
+         // $form->user_id = $request['user_id'];
          $value = Session::get('register');
          $value = Session::get('pizzas');
-
-         $user = User::find(1);
-         $gegevens = $user->gegevens;
-
 
          $value->save();
          $form->save();
@@ -47,4 +43,12 @@ class FormulierController extends Controller
             'Users' => $Users
         ]);
      }
+
+   // public function NieuwsteGegevens(Request $request) {
+   //    $user = User::find(1);
+   //    $gebruikersgegevens = $user->gegevens;
+
+   //    return view('besteld');
+   // }
+     
 }
