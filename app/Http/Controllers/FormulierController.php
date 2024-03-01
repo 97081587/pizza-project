@@ -23,6 +23,7 @@ class FormulierController extends Controller
          $form->Postcode = $request['postcode'];
          $form->Plaats = $request['plaats'];
          $form->Bdatum = $request['Bdatum'];
+         $form->user_id = $request['user_id'];
          $value = Session::get('register');
          $value = Session::get('pizzas');
 
