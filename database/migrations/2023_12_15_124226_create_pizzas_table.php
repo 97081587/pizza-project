@@ -24,9 +24,9 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        // Schema::table('pizzas' , function (Blueprint $table) {
-        //     $table->foreignId('user_id')->constrained();
-        // });
+        Schema::table('pizzas' , function (Blueprint $table) {
+            $table->foreignId('user_id')->constrained();
+        });
     }
 
     /**
