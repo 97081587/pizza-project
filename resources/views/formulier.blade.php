@@ -48,7 +48,7 @@ if(isset($_POST['submit'])){
             <input type="date" id="Bdatum" name="Bdatum"  min="<?php echo date("Y-m-d"); ?>" required>
       </div>
       <br>
-      <button>Voltooien</button>
+      <button class ="voltooi">Voltooien</button>
     </form>
 </div>
 @endsection

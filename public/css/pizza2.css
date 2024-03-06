@@ -172,6 +172,25 @@ li a:hover {
     align-items: center;
     justify-content: center;
 }
+
+.voltooi {
+    background-color: rgb(245, 197, 54);
+    border: none;
+    height: 40px;
+    width: 100px;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor:pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.voltooi:hover {
+    background-color: rgb(246, 228, 176);
+    transition-duration: 0.5s;
+}
+
 /* inloggen en registreren */
 .formulierRegistrerenEnInloggen {
     display: flex;
