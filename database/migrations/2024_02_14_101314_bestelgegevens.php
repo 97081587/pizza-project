@@ -22,7 +22,7 @@ return new class extends Migration
         });
 
         Schema::table('bestelgegevens' , function (Blueprint $table) {
-            $table->foreignId('user_id')->constrained()->default();
+            $table->foreignId('user_id')->constrained();
         });
     }
 

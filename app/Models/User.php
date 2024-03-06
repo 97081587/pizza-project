@@ -50,7 +50,7 @@ class User extends Authenticatable
 
     public function bestelgegevens()
     {
-        return $this->hasMany(Bestelgegevens::class, 'id');
+        return $this->hasMany(Bestelgegevens::class, 'user_id');
     }
 
     public function user()
