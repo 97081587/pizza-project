@@ -27,14 +27,15 @@ class FormulierController extends Controller
          $value = Session::get('pizzas');
 
          $form->user_id = auth()->id();
+         $value->user_id = auth()->id();
 
-         $value->save();
          $form->save();
+         $value->save();
          
          //voor de besteld pagina
          if (auth()->check()) {
-            $pizzas = auth()->user()->pizzas()->latest('created_at')->get();
-            $gegevens =  auth()->user()->bestelgegevens('created_at')->get();
+            $pizzas = auth()->user()->pizzas()->latest('created_at')->first();
+            $gegevens =  auth()->user()->bestelgegevens()->latest('created_at')->first();
             $Users = auth()->user()->user()->get(); 
          }
 
@@ -43,13 +44,5 @@ class FormulierController extends Controller
             'gegevens' => $gegevens, 
             'Users' => $Users
         ]);
-     }
-
-   // public function NieuwsteGegevens(Request $request) {
-   //    $user = User::find(1);
-   //    $gebruikersgegevens = $user->gegevens;
-
-   //    return view('besteld');
-   // }
-     
+     }   
 }
