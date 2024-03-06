@@ -272,7 +272,7 @@ if (isset($_POST['Submit'])) {
         <div class="home">
             <ul class=pizza name=pizza>
                 <li class=hawaii>
-                    <img src="{{ asset('images/pizza_hawaii2.webp') }}" alt="pizza hawaii" width="180" height="180">
+                    <img src="{{ asset('images/hawaii.png') }}" alt="pizza hawaii" width="180" height="180">
                     <p>Pizza Hawaii</p>
                     <?php echo '€' . $PrijsPHawaii . '0,-'; ?>
                     <select id="HawaiiList" name="HawaiiList" onclick="registreer()">
@@ -290,7 +290,7 @@ if (isset($_POST['Submit'])) {
                     </select>
                 </li>
                 <li class=funghi>
-                    <img src="{{ asset('images/Pizza_funghi.webp') }}" alt="pizza funghi" width="180" height="180">
+                    <img src="{{ asset('images/funghi.png') }}" alt="pizza funghi" width="180" height="180">
                     <p>Pizza Funghi</p>
                     <?php echo '€' . $PrijsPFunghi . '0,-'; ?>
                     <select id="FunghiList" name="FunghiList" onclick="registreer()">
@@ -308,7 +308,7 @@ if (isset($_POST['Submit'])) {
                     </select>
                 </li>
                 <li class=margherita>
-                    <img src="{{ asset('images/pizza_margherita2.webp') }}" alt="pizza margherita" width="180"
+                    <img src="{{ asset('images/margherita.png') }}" alt="pizza margherita" width="180"
                         height="180">
                     <p>Pizza Margherita</p>
                     <?php echo '€' . $PrijsPMargherita . '0,-'; ?>
@@ -327,7 +327,7 @@ if (isset($_POST['Submit'])) {
                     </select>
                 </li>
                 <li class=marina>
-                    <img src="{{ asset('images/pizza_marina.jpg') }}" alt="pizza marina" width="180" height="180">
+                    <img src="{{ asset('images/marina.png') }}" alt="pizza marina" width="180" height="180">
                     <p>Pizza Marina</p>
                     <?php echo '€' . $PrijsPMarina . '0,-'; ?>
                     <select id="MarinaList" name="MarinaList" onclick="registreer()">
@@ -345,7 +345,7 @@ if (isset($_POST['Submit'])) {
                     </select>
                 </li>
                 <li class=QF>
-                    <img src="{{ asset('images/pizza_QF.jpg') }}" alt="pizza Quattro Formaggi" width="180"
+                    <img src="{{ asset('images/QF.png') }}" alt="pizza Quattro Formaggi" width="180"
                         height="180">
                     <p>Pizza Quattro Formaggi</p>
                     <?php echo '€' . $PrijsPQFormaggi . '0,-'; ?>
