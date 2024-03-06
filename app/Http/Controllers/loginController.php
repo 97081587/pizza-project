@@ -34,6 +34,9 @@ class loginController extends Controller
         
         $register->password = bcrypt(request('RegiPassword'));
         $register->save();
+
+        // $register->user_id = auth()->id();
+        
         Session::put('registratie', $register);
 
         auth()->login($register);

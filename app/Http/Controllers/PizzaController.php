@@ -28,6 +28,8 @@ class PizzaController extends Controller
         $pizza->QFormaggiList = $request['QFormaggiList'];
         $pizza->BOA = $request['BOA'];
 
+        // $pizza->user_id = auth()->id();
+
         Session::put('pizzas', $pizza);
 
         return view ('formulier'); 
