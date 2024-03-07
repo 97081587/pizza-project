@@ -8,8 +8,15 @@ use Illuminate\Support\Facades\Session;
 
 class PizzaController extends Controller
 {   
-    public function (Request $request) {
-
+    public function Kosten(Request $request) {
+        if (['HawaiiList'||
+            'FunghiList'||
+            'MargheritaList'||
+            'MarinaList'||
+            'QFormaggiList'
+        ] <= 0) {
+             return view ('formulier'); 
+        }
     }
 
     public function pizza(Request $request) {
