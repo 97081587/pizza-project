@@ -110,12 +110,12 @@ if (isset($_POST['Submit'])) {
             Totaalprijs += 5;
         }
         document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + Totaalprijs.toFixed(2) + ",-";
-        document.getElementById('Kosten2').value = Totaalprijs.toFixed(2);
+        //document.getElementById('Kosten2').value = Totaalprijs.toFixed(2);
 
         if (newDate == 'Friday' && Totaalprijs > 20) {
             Totaalprijs = Totaalprijs - 15 * (Totaalprijs / 100);
             document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + Totaalprijs.toFixed(2) + ",-";
-            document.getElementById('Kosten2').value = Totaalprijs.toFixed(2);
+            //document.getElementById('Kosten2').value = Totaalprijs.toFixed(2);
         }
     }
 
@@ -128,7 +128,7 @@ if (isset($_POST['Submit'])) {
         berekenTotaal();
 
         document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + Totaalprijs.toFixed(2) + ",-";
-        document.getElementById('Kosten2').value = Totaalprijs.toFixed(2);
+        //document.getElementById('Kosten2').value = Totaalprijs.toFixed(2);
     }
 </script>
 
@@ -144,7 +144,7 @@ if (isset($_POST['Submit'])) {
                     <p>Pizza Hawaii</p>
                     <?php echo '€' . $PrijsPHawaii . '0,-'; ?>
                     <select id="HawaiiList" name="HawaiiList" onchange="bestellenHawaii()">
-                        <option selected value="0">0</option>
+                        <option value="0">0</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -162,7 +162,7 @@ if (isset($_POST['Submit'])) {
                     <p>Pizza Funghi</p>
                     <?php echo '€' . $PrijsPFunghi . '0,-'; ?>
                     <select id="FunghiList" name="FunghiList" onchange="bestellenFunghi()">
-                        <option selected value="0">0</option>
+                        <option value="0">0</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -181,7 +181,7 @@ if (isset($_POST['Submit'])) {
                     <p>Pizza Margherita</p>
                     <?php echo '€' . $PrijsPMargherita . '0,-'; ?>
                     <select id="MargheritaList" name="MargheritaList" onchange="bestellenMargherita()">
-                        <option selected value="0">0</option>
+                        <option value="0">0</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -199,7 +199,7 @@ if (isset($_POST['Submit'])) {
                     <p>Pizza Marina</p>
                     <?php echo '€' . $PrijsPMarina . '0,-'; ?>
                     <select id="MarinaList" name="MarinaList" onchange="bestellenMarina()">
-                        <option selected value="0">0</option>
+                        <option value="0">0</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -218,7 +218,7 @@ if (isset($_POST['Submit'])) {
                     <p>Pizza Quattro Formaggi</p>
                     <?php echo '€' . $PrijsPQFormaggi . '0,-'; ?>
                     <select id="QFormaggiList" name="QFormaggiList" onchange="bestellenQFormaggi()">
-                        <option selected value="0">0</option>
+                        <option value="0">0</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -262,8 +262,7 @@ if (isset($_POST['Submit'])) {
             </div>
         </form>
     </div>
-
- @else    // dit is voor als je uitgelogd bent
+ @else
     <script>
         function registreer() {
             alert("Login of registreer aub");
