@@ -8,6 +8,12 @@ use Illuminate\Support\Facades\Session;
 
 class PizzaController extends Controller
 {   
+    public function Kosten(Request $request) {
+        if () {
+            return view ('home'); 
+        }
+    }
+
     public function pizza(Request $request) {
         //dd($request);
         $validatedData = $request->validate([
