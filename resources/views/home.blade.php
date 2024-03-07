@@ -276,7 +276,7 @@ if (isset($_POST['Submit'])) {
                     <p>Pizza Hawaii</p>
                     <?php echo '€' . $PrijsPHawaii . '0,-'; ?>
                     <select id="HawaiiList" name="HawaiiList" onclick="registreer()">
-                        <option value="0">0</option>
+                        <option selected disabled hidden>0</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -294,7 +294,7 @@ if (isset($_POST['Submit'])) {
                     <p>Pizza Funghi</p>
                     <?php echo '€' . $PrijsPFunghi . '0,-'; ?>
                     <select id="FunghiList" name="FunghiList" onclick="registreer()">
-                        <option value="0">0</option>
+                        <option selected disabled hidden>0</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -313,7 +313,7 @@ if (isset($_POST['Submit'])) {
                     <p>Pizza Margherita</p>
                     <?php echo '€' . $PrijsPMargherita . '0,-'; ?>
                     <select id="MargheritaList" name="MargheritaList" onclick="registreer()">
-                        <option value="0">0</option>
+                        <option selected disabled hidden>0</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -331,7 +331,7 @@ if (isset($_POST['Submit'])) {
                     <p>Pizza Marina</p>
                     <?php echo '€' . $PrijsPMarina . '0,-'; ?>
                     <select id="MarinaList" name="MarinaList" onclick="registreer()">
-                        <option value="0">0</option>
+                        <option selected disabled hidden>0</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -350,7 +350,7 @@ if (isset($_POST['Submit'])) {
                     <p>Pizza Quattro Formaggi</p>
                     <?php echo '€' . $PrijsPQFormaggi . '0,-'; ?>
                     <select id="QFormaggiList" name="QFormaggiList" onclick="registreer()">
-                        <option value="0">0</option>
+                        <option selected disabled hidden>0</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
