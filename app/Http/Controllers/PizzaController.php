@@ -21,15 +21,15 @@ class PizzaController extends Controller
 
     public function pizza(Request $request) {
         //dd($request);
-        $validatedData = $request->validate([
-            'HawaiiList' => 'required',
-            'FunghiList' => 'required',
-            'MargheritaList' => 'required',
-            'MarinaList' => 'required',
-            'Totaalprijs' => 'required',
-            'QFormaggiList' => 'required',
-            'BOA' => 'required'
-        ]);
+        // $validatedData = $request->validate([
+        //     'HawaiiList' => 'required',
+        //     'FunghiList' => 'required',
+        //     'MargheritaList' => 'required',
+        //     'MarinaList' => 'required',
+        //     'Totaalprijs' => 'required',
+        //     'QFormaggiList' => 'required',
+        //     'BOA' => 'required'
+        // ]);
 
         $pizza = new Pizza();
         $pizza->HawaiiList = $request['HawaiiList'];
@@ -39,8 +39,6 @@ class PizzaController extends Controller
         $pizza->Totaalprijs = $request['Totaalprijs'];
         $pizza->QFormaggiList = $request['QFormaggiList'];
         $pizza->BOA = $request['BOA'];
-
-        // $pizza->user_id = auth()->id();
 
         Session::put('pizzas', $pizza);
 
