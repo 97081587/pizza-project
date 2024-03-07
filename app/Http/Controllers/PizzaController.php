@@ -10,7 +10,7 @@ class PizzaController extends Controller
 {   
     public function Kosten(Request $request) {
         if () {
-            return view ('home'); 
+            alert('selecteer minimaal 1 pizza aub');
         }
     }
 
