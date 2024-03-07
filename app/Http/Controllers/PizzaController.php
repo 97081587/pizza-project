@@ -9,13 +9,12 @@ use Illuminate\Support\Facades\Session;
 class PizzaController extends Controller
 {   
     public function pizza(Request $request) {
-        dd($request);
+        //dd($request);
         $validatedData = $request->validate([
             'HawaiiList' => 'required',
             'FunghiList' => 'required',
             'MargheritaList' => 'required',
             'MarinaList' => 'required',
-            'Totaalprijs' => 'required',
             'QFormaggiList' => 'required',
             'BOA' => 'required'
         ]);
