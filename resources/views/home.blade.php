@@ -233,30 +233,32 @@ if (isset($_POST['Submit'])) {
                 </li>
             </ul>
             <div class=lijst>
-                <div class=dropdownNumbers>
-                    <div id=HawaiiPlek>
+                    <div class=dropdownNumbers>
+                        <div id=HawaiiPlek>
+                        </div>
+                        <div id=FunghiPlek>
+                        </div>
+                        <div id=MargheritaPlek>
+                        </div>
+                        <div id=MarinaPlek>
+                        </div>
+                        <div id=QFormaggiPlek>
+                        </div>
                     </div>
-                    <div id=FunghiPlek>
-                    </div>
-                    <div id=MargheritaPlek>
-                    </div>
-                    <div id=MarinaPlek>
-                    </div>
-                    <div id=QFormaggiPlek>
-                    </div>
-                </div>
                 <div class=veldbot>
                     <div id="Kosten" name="Totaalprijs">
                     </div>
-                    <input id="Kosten2" type="hidden">
-                    <div class=BOA name=BOA id=BOA>
-                        <input type="radio" id="afhalen" name="BOA" value ="afhalen"
-                            onchange="bezorgkosten('afhalen')" checked>Afhalen</input>
-                        <label>
-                            <input type="radio" id="bezorgen" name="BOA" value ="bezorgen"
-                                onchange="bezorgkosten('bezorgen')">Bezorgen (+ €5)</input>
-                        </label>
-                    </div>
+                    <input id="Kosten2" name="Totaalprijs2" type="hidden">
+                        <div class=BOA name=BOA id=BOA>
+                            <label>
+                                <input type="radio" id="afhalen" name="BOA" value ="afhalen"
+                                    onchange="bezorgkosten('afhalen')" checked>Afhalen</input>
+                            </label>
+                            <label>
+                                <input type="radio" id="bezorgen" name="BOA" value ="bezorgen"
+                                    onchange="bezorgkosten('bezorgen')">Bezorgen (+ €5)</input>
+                            </label>
+                        </div>
                     <button class ="button1" type="submit">Afrekenen</button>
                 </div>
             </div>
