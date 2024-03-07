@@ -8,7 +8,12 @@ use Illuminate\Support\Facades\Session;
 
 class PizzaController extends Controller
 {   
+    public function (Request $request) {
+
+    }
+
     public function pizza(Request $request) {
+
         $validatedData = $request->validate([
             'HawaiiList' => 'required',
             'FunghiList' => 'required',

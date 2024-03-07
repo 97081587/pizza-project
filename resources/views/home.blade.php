@@ -144,7 +144,7 @@ if (isset($_POST['Submit'])) {
                     <p>Pizza Hawaii</p>
                     <?php echo '€' . $PrijsPHawaii . '0,-'; ?>
                     <select id="HawaiiList" name="HawaiiList" onchange="bestellenHawaii()">
-                        <option selected disabled hidden>0</option>
+                        <option selected value="0">0</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -162,7 +162,7 @@ if (isset($_POST['Submit'])) {
                     <p>Pizza Funghi</p>
                     <?php echo '€' . $PrijsPFunghi . '0,-'; ?>
                     <select id="FunghiList" name="FunghiList" onchange="bestellenFunghi()">
-                        <option selected disabled hidden>0</option>
+                        <option selected value="0">0</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -181,7 +181,7 @@ if (isset($_POST['Submit'])) {
                     <p>Pizza Margherita</p>
                     <?php echo '€' . $PrijsPMargherita . '0,-'; ?>
                     <select id="MargheritaList" name="MargheritaList" onchange="bestellenMargherita()">
-                        <option selected disabled hidden>0</option>
+                        <option selected value="0">0</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -199,7 +199,7 @@ if (isset($_POST['Submit'])) {
                     <p>Pizza Marina</p>
                     <?php echo '€' . $PrijsPMarina . '0,-'; ?>
                     <select id="MarinaList" name="MarinaList" onchange="bestellenMarina()">
-                        <option selected disabled hidden>0</option>
+                        <option selected value="0">0</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -218,7 +218,7 @@ if (isset($_POST['Submit'])) {
                     <p>Pizza Quattro Formaggi</p>
                     <?php echo '€' . $PrijsPQFormaggi . '0,-'; ?>
                     <select id="QFormaggiList" name="QFormaggiList" onchange="bestellenQFormaggi()">
-                        <option selected disabled hidden>0</option>
+                        <option selected value="0">0</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -248,7 +248,7 @@ if (isset($_POST['Submit'])) {
                 <div class=veldbot>
                     <div id="Kosten" name="Totaalprijs">
                     </div>
-                    <input name="Totaalprijs" id="Kosten2" type="hidden">
+                    <input id="Kosten2" type="hidden">
                     <div class=BOA name=BOA id=BOA>
                         <input type="radio" id="afhalen" name="BOA" value ="afhalen"
                             onchange="bezorgkosten('afhalen')" checked>Afhalen</input>
@@ -261,8 +261,9 @@ if (isset($_POST['Submit'])) {
                 </div>
             </div>
         </form>
-    </div>    
-        @else
+    </div>
+
+ @else    // dit is voor als je uitgelogd bent
     <script>
         function registreer() {
             alert("Login of registreer aub");
@@ -380,7 +381,7 @@ if (isset($_POST['Submit'])) {
                 <div class=veldbot>
                     <div id="Kosten" name="Totaalprijs">
                     </div>
-                    <input name="Totaalprijs" id="Kosten2" type="hidden">
+                    <input name="Totaalprijs" type="hidden">
                     <div class=BOA name=BOA id=BOA>
                         <input type="radio" id="afhalen" name="BOA" value ="afhalen"
                             onclick="registreer()"" checked>Afhalen</input>
