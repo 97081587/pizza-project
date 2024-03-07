@@ -14,9 +14,6 @@
                 <h1>👩‍🍳 Pizza di mama. 🍕</h1>
                 <h2 class=est>Est. 2022 "la migliore pizza fatta in casa."</h2> 
             </div>  
-            @auth
-                <div class="emailHome">{{Auth::user()->email}}</div>  
-            @endauth
         </div>     
             <nav>
                 <ul class=nav2>
@@ -26,15 +23,15 @@
                    <li><a href="#werken">Werken bij </a></li>
                    <div class="dropdown">
                     <button class="dropbtn">Inloggen/Registreren
-                      <i class="fa fa-caret-down"></i>
                     </button>
                     <div class="inloggen-registreren">
                         @auth
+                        <div class="emailHome">{{Auth::user()->email}}</div>  
                         <form method='POST' action="/uitgelogd">
                             @csrf
                             <br>
-                            <div class="Uitloggen">
-                            <button >Uitloggen</button>
+                            <div>
+                            <button class="Uitloggen">Uitloggen</button>
                             </div>
                         </form>
                         @else
