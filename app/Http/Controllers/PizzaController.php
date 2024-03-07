@@ -8,19 +8,13 @@ use Illuminate\Support\Facades\Session;
 
 class PizzaController extends Controller
 {   
-    public function Kosten(Request $request) {
-        if (Totaalprijs < 1) {
-            alert('selecteer minimaal 1 pizza aub');
-        }
-    }
-
     public function pizza(Request $request) {
         //dd($request);
         $validatedData = $request->validate([
             'HawaiiList' => 'required',
             'FunghiList' => 'required',
             'MargheritaList' => 'required',
-            'Totaalprijs' => 'required',
+            'Totaalprijs' => ['required', 'min:1'],
             'MarinaList' => 'required',
             'QFormaggiList' => 'required',
             'BOA' => 'required'
