@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Session;
 class PizzaController extends Controller
 {   
     public function Kosten(Request $request) {
-        if () {
+        if (Totaalprijs < 1) {
             alert('selecteer minimaal 1 pizza aub');
         }
     }
