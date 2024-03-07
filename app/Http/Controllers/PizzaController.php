@@ -20,6 +20,7 @@ class PizzaController extends Controller
             'HawaiiList' => 'required',
             'FunghiList' => 'required',
             'MargheritaList' => 'required',
+            'Totaalprijs' => 'required',
             'MarinaList' => 'required',
             'QFormaggiList' => 'required',
             'BOA' => 'required'
