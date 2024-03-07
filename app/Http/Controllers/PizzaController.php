@@ -8,19 +8,8 @@ use Illuminate\Support\Facades\Session;
 
 class PizzaController extends Controller
 {   
-    // public function Kosten(Request $request) {
-    //     if (['HawaiiList',
-    //         'FunghiList',
-    //         'MargheritaList',
-    //         'MarinaList',
-    //         'QFormaggiList'
-    //     ] > 0) {
-    //          return view ('home'); 
-    //     }
-    // }
-
     public function pizza(Request $request) {
-        dd($request);
+        //dd($request);
         $validatedData = $request->validate([
             'HawaiiList' => 'required',
             'FunghiList' => 'required',
