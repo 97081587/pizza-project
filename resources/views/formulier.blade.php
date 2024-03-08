@@ -17,6 +17,16 @@ if(isset($_POST['submit'])){
     $Bdatum = $_POST['Bdatum'];
 }
 ?>
+
+<script>
+ if (Bdatum == 'Friday' && Totaalprijs > 20) {
+            Totaalprijs = Totaalprijs - 15 * (Totaalprijs / 100);
+            document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + Totaalprijs.toFixed(2) + ",-";
+            //waarde
+            document.getElementById('Kosten2').value = Totaalprijs.toFixed(2);
+        }
+</script>
+
 @section('content')
 <div class=formulier>
     <form method='POST' action="/allesverwerken">
