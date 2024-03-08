@@ -36,7 +36,7 @@ class FormulierController extends Controller
          if (auth()->check()) {
             $pizzas = auth()->user()->pizzas()->latest('created_at')->first();
             $gegevens =  auth()->user()->bestelgegevens()->latest('created_at')->first();
-            $Users = auth()->user()->user()->get(); 
+            $Users = auth()->user()->user()->first(); 
          }
 
          return view('besteld', [
