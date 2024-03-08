@@ -8,6 +8,14 @@ use Illuminate\Support\Facades\Session;
 
 class PizzaController extends Controller
 {   
+    public function Kosten(Request $request) {
+        dd($request);
+        if ('TotaalprijsWaarde' == 0) {
+          alert('selecteer 1 of meer pizzas aub');
+          return view ('home');  
+        } 
+    }
+    
     public function pizza(Request $request) {
         //dd($request);
         $validatedData = $request->validate([
