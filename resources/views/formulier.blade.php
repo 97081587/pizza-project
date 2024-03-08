@@ -19,12 +19,26 @@ if(isset($_POST['submit'])){
 ?>
 
 <script>
+  if (Bdatum == 'monday') {
+    PrijsPHawaii = <?php echo $PrijsPHawaii; ?>;
+    PrijsPFunghi = <?php echo $PrijsPFunghi; ?>;
+    PrijsPMargherita = <?php echo $PrijsPMargherita; ?>;
+    PrijsPMarina = <?php echo $PrijsPMarina; ?>;
+    PrijsPQFormaggi = <?php echo $PrijsPQFormaggi; ?>;
+
+    PrijsPHawaii = 7.5;
+    PrijsPFunghi = 7.5;
+    PrijsPMargherita = 7.5;
+    PrijsPMarina = 7.5;
+    PrijsPQFormaggi = 7.5;
+  }
+
  if (Bdatum == 'Friday' && Totaalprijs > 20) {
-            Totaalprijs = Totaalprijs - 15 * (Totaalprijs / 100);
-            document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + Totaalprijs.toFixed(2) + ",-";
-            //waarde
-            document.getElementById('Kosten2').value = Totaalprijs.toFixed(2);
-        }
+      Totaalprijs = Totaalprijs - 15 * (Totaalprijs / 100);
+      document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + Totaalprijs.toFixed(2) + ",-";
+      //waarde
+      document.getElementById('Kosten2').value = Totaalprijs.toFixed(2);
+  }
 </script>
 
 @section('content')
