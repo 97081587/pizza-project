@@ -19,12 +19,12 @@ class PizzaController extends Controller
     public function pizza(Request $request) {
         //dd($request);
         $validatedData = $request->validate([
-            'HawaiiList' => ['required', 'min:1'],
-            'FunghiList' => ['required', 'min:1'],
-            'MargheritaList' => ['required', 'min:1'],
+            'HawaiiList' => 'required',
+            'FunghiList' => 'required',
+            'MargheritaList' => 'required',
             'Totaalprijs' => 'required',
-            'MarinaList' => ['required', 'min:1'],
-            'QFormaggiList' => ['required', 'min:1'],
+            'MarinaList' => 'required',
+            'QFormaggiList' => 'required',
             'BOA' => 'required'
         ]);
 

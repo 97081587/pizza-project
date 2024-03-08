@@ -250,9 +250,9 @@ if (isset($_POST['Submit'])) {
                         </div>
                     </div>
                 <div class=veldbot>
-                    <div id="Kosten" name="Totaalprijs">
+                    <div id="Kosten" name="Totaalprijs1">
                     </div>
-                    <input name="TotaalprijsWaarde" id="Kosten2" type="hidden">
+                    <input name="Totaalprijs" id="Kosten2" type="hidden">
                         <div class=BOA name=BOA id=BOA>
                             <label>
                                 <input type="radio" id="afhalen" name="BOA" value ="afhalen"
