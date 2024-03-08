@@ -119,6 +119,7 @@ if (isset($_POST['Submit'])) {
             //waarde
             document.getElementById('Kosten2').value = Totaalprijs.toFixed(2);
         }
+        // alert(Totaalprijs);
     }
 
     function bezorgkosten(boa) {

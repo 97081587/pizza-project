@@ -8,23 +8,23 @@ use Illuminate\Support\Facades\Session;
 
 class PizzaController extends Controller
 {   
-    public function Kosten(Request $request) {
-        dd($request);
-        if ('TotaalprijsWaarde' == 0) {
-          alert('selecteer 1 of meer pizzas aub');
-          return view ('home');  
-        } 
-    }
+    // public function Kosten(Request $request) {
+    //     dd();
+    //     if (Totaalprijs <= 0) {
+    //       alert('selecteer 1 of meer pizzas aub');
+    //       return view ('home');  
+    //     } 
+    // }
     
     public function pizza(Request $request) {
         //dd($request);
         $validatedData = $request->validate([
-            'HawaiiList' => 'required',
-            'FunghiList' => 'required',
-            'MargheritaList' => 'required',
-            'Totaalprijs' => ['required', 'min:1'],
-            'MarinaList' => 'required',
-            'QFormaggiList' => 'required',
+            'HawaiiList' => ['required', 'min:1'],
+            'FunghiList' => ['required', 'min:1'],
+            'MargheritaList' => ['required', 'min:1'],
+            //'Totaalprijs' => 'min:1',
+            'MarinaList' => ['required', 'min:1'],
+            'QFormaggiList' => ['required', 'min:1'],
             'BOA' => 'required'
         ]);
 

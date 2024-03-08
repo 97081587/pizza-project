@@ -22,7 +22,7 @@ Route::get('/', function() {
     return view ('home');
 });
 
-Route::post('/verwerkenpizza', [pizzaController::class, 'kosten']);
+// Route::post('/verwerkenpizza', [pizzaController::class, 'kosten']);
 Route::post('/verwerkenpizza', [pizzaController::class, 'pizza']);
 
 Route::get('/form', function() {
