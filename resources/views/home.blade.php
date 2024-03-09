@@ -10,19 +10,15 @@ $PrijsPMargherita = 12.5;
 $PrijsPMarina = 12.5;
 $PrijsPQFormaggi = 14.5;
 
-$PrijsPMargheritaMA = 7.5;
-$PrijsPFunghiMA = 7.5;
-$PrijsPMarinaMA = 7.5;
-$PrijsPHawaiiMA = 7.5;
-$PrijsPQFormaggiMA = 7.5;
+$PrijsPizzasMA = 7.5;
 
 $newDate = date('l', strtotime('Today'));
 if ($newDate == 'Monday') {
-    $PrijsPMargherita = $PrijsPMargheritaMA;
-    $PrijsPFunghi = $PrijsPFunghiMA;
-    $PrijsPMarina = $PrijsPMarinaMA;
-    $PrijsPHawaii = $PrijsPHawaiiMA;
-    $PrijsPQFormaggi = $PrijsPQFormaggiMA;
+    $PrijsPMargherita = $PrijsPizzasMA;
+    $PrijsPFunghi = $PrijsPizzasMA;
+    $PrijsPMarina = $PrijsPizzasMA;
+    $PrijsPHawaii = $PrijsPizzasMA;
+    $PrijsPQFormaggi = $PrijsPizzasMA;
 }
 
 $RegiEmail = '';
