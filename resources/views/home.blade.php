@@ -293,7 +293,7 @@ if (isset($_POST['Submit'])) {
                                         document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + TotaalprijsMA.toFixed(2) + ",-";
                                         // alert(TotaalprijsMA);
                                     }
-                                } else {
+                                } elseif () {
                                     PrijsPHawaiiMA = 11.5;
                                     PrijsPFunghiMA = 12.5;
                                     PrijsPMargheritaMA = 12.5;
@@ -307,9 +307,9 @@ if (isset($_POST['Submit'])) {
                                 if (Bdatum2.getDay() === 5 && Totaalprijs > 20) {
                                     TotaalprijsVR = Totaalprijs - 15 * (Totaalprijs / 100);
                                     document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + TotaalprijsVR.toFixed(2) + ",-";                           
-                                // } else {
-                                //     Totaalprijs = Totaalprijs;
-                                //     document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + Totaalprijs.toFixed(2) + ",-";
+                                } elseif () {
+                                    Totaalprijs = Totaalprijs;
+                                    document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + Totaalprijs.toFixed(2) + ",-";
                                 }
                             }
                     </script>

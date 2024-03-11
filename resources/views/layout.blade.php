@@ -93,6 +93,6 @@
         @yield('content')
     </body>
 <footer class=footer>
-    <p>Oscar Li 6/10/2023-6/3/2024</p>
+    <p>Oscar Li 6/10/2023-15/3/2024</p>
 </footer>
 </html>
