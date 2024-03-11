@@ -275,9 +275,9 @@ if (isset($_POST['Submit'])) {
                 <li class=hawaii>
                     <img src="{{ asset('images/hawaii.png') }}" alt="pizza hawaii" width="180" height="180">
                     <p>Pizza Hawaii</p>
-                    <?php echo '€' . $PrijsPHawaii . '0,-'; ?>
+                    <script>document.write('€' + PrijsPHawaii + '0,-')</script>
                     <select id="HawaiiList" name="HawaiiList" onclick="registreer()">
-                        <option selected disabled hidden>0</option>
+                        <option selected>0</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -293,9 +293,9 @@ if (isset($_POST['Submit'])) {
                 <li class=funghi>
                     <img src="{{ asset('images/funghi.png') }}" alt="pizza funghi" width="180" height="180">
                     <p>Pizza Funghi</p>
-                    <?php echo '€' . $PrijsPFunghi . '0,-'; ?>
+                    <script>document.write('€' + PrijsPFunghi + '0,-')</script>
                     <select id="FunghiList" name="FunghiList" onclick="registreer()">
-                        <option selected disabled hidden>0</option>
+                        <option selected>0</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -312,9 +312,9 @@ if (isset($_POST['Submit'])) {
                     <img src="{{ asset('images/margherita.png') }}" alt="pizza margherita" width="180"
                         height="180">
                     <p>Pizza Margherita</p>
-                    <?php echo '€' . $PrijsPMargherita . '0,-'; ?>
+                    <script>document.write('€' + PrijsPMargherita + '0,-')</script>
                     <select id="MargheritaList" name="MargheritaList" onclick="registreer()">
-                        <option selected disabled hidden>0</option>
+                        <option selected>0</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -330,9 +330,9 @@ if (isset($_POST['Submit'])) {
                 <li class=marina>
                     <img src="{{ asset('images/marina.png') }}" alt="pizza marina" width="180" height="180">
                     <p>Pizza Marina</p>
-                    <?php echo '€' . $PrijsPMarina . '0,-'; ?>
+                    <script>document.write('€' + PrijsPMarina + '0,-')</script>
                     <select id="MarinaList" name="MarinaList" onclick="registreer()">
-                        <option selected disabled hidden>0</option>
+                        <option selected>0</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -349,9 +349,9 @@ if (isset($_POST['Submit'])) {
                     <img src="{{ asset('images/QF.png') }}" alt="pizza Quattro Formaggi" width="180"
                         height="180">
                     <p>Pizza Quattro Formaggi</p>
-                    <?php echo '€' . $PrijsPQFormaggi . '0,-'; ?>
+                    <script>document.write('€' + PrijsPQFormaggi + '0,-')</script>
                     <select id="QFormaggiList" name="QFormaggiList" onclick="registreer()">
-                        <option selected disabled hidden>0</option>
+                        <option selected>0</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
