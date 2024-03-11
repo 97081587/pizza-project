@@ -20,7 +20,7 @@ if(isset($_POST['submit'])){
 
 <script>
   if (Bdatum == 'Monday') {
-      
+      maandagprijs();
   }
 
  if (Bdatum == 'Friday' && Totaalprijs > 20) {

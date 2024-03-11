@@ -3,26 +3,9 @@
 @section('title', "👩‍🍳Pizza di mama's official website 🍕🍕🍕")
 
 <?php
-//Dit is voor de prijzen op maandag en vrijdag
-$PrijsPHawaii = 11.5;
-$PrijsPFunghi = 12.5;
-$PrijsPMargherita = 12.5;
-$PrijsPMarina = 12.5;
-$PrijsPQFormaggi = 14.5;
-
-$PrijsPizzasMA = 7.5;
-
-$newDate = date('l', strtotime('Today'));
-if ($newDate == 'Monday') {
-    $PrijsPMargherita = $PrijsPizzasMA;
-    $PrijsPFunghi = $PrijsPizzasMA;
-    $PrijsPMarina = $PrijsPizzasMA;
-    $PrijsPHawaii = $PrijsPizzasMA;
-    $PrijsPQFormaggi = $PrijsPizzasMA;
-}
-
 $RegiEmail = '';
 $RegiPassword = '';
+$newDate = date('l', strtotime('Today'));
 
 // dit gaat naar de controller
 if (isset($_POST['Submit'])) {
@@ -40,11 +23,11 @@ if (isset($_POST['Submit'])) {
 
 <!--dit is voor de dropdown op de home & prijs berekenen !-->
 <script>
-    PrijsPHawaii = <?php echo $PrijsPHawaii; ?>;
-    PrijsPFunghi = <?php echo $PrijsPFunghi; ?>;
-    PrijsPMargherita = <?php echo $PrijsPMargherita; ?>;
-    PrijsPMarina = <?php echo $PrijsPMarina; ?>;
-    PrijsPQFormaggi = <?php echo $PrijsPQFormaggi; ?>;
+    PrijsPHawaii = 11.5;
+    PrijsPFunghi = 12.5;
+    PrijsPMargherita = 12.5;
+    PrijsPMarina = 12.5;
+    PrijsPQFormaggi = 14.5;
     Totaalprijs = 0;
     newDate = "<?php echo $newDate; ?>";
     PizzaArray = [];
@@ -130,6 +113,22 @@ if (isset($_POST['Submit'])) {
         //waarde
         document.getElementById('Kosten2').value = Totaalprijs.toFixed(2);
     }
+
+// Dit is voor maandag
+    function maandagprijs() {
+        PrijsPizzasMA = 7.5;
+        newDate = "<?php echo $newDate; ?>";
+            if (newDate == 'Monday') {
+                PrijsPMargherita = PrijsPizzasMA;
+                PrijsPFunghi = PrijsPizzasMA;
+                PrijsPMarina = PrijsPizzasMA;
+                PrijsPHawaii = PrijsPizzasMA;
+                PrijsPQFormaggi = PrijsPizzasMA;
+            }
+        
+
+    }
+
 </script>
 
 @section('content')
@@ -142,7 +141,7 @@ if (isset($_POST['Submit'])) {
                 <li class=hawaii>
                     <img src="{{ asset('images/hawaii.png') }}" alt="pizza hawaii" width="180" height="180">
                     <p>Pizza Hawaii</p>
-                    <?php echo '€' . $PrijsPHawaii . '0,-'; ?>
+                    <script>document.write('€' . PrijsPHawaii . '0,-')</script>
                     <select id="HawaiiList" name="HawaiiList" onchange="bestellenHawaii()">
                         <option selected>0</option>
                         <option value="1">1</option>
