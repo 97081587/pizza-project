@@ -50,85 +50,95 @@ if (isset($_POST['Submit'])) {
     PizzaArray = [];
     let bezorging = false;
 
-    function bestellenHawaii() {
-        HawaiiList = document.getElementById('HawaiiList').value;
-        document.getElementById('HawaiiPlek').innerHTML = HawaiiList + " Stuks Pizza Hawaii 🍍🍕";
-        totaalprijsHawaii = HawaiiList * PrijsPHawaii;
-        PizzaArray["totaalprijsHawaii"] = totaalprijsHawaii;
-        berekenTotaal();
-    }
-
-    function bestellenFunghi() {
-        FunghiList = document.getElementById('FunghiList').value;
-        document.getElementById('FunghiPlek').innerHTML = FunghiList + " Stuks Pizza Funghi 🍄🍕";
-        totaalprijsFunghi = FunghiList * PrijsPFunghi;
-        PizzaArray["totaalprijsFunghi"] = totaalprijsFunghi;
-        berekenTotaal();
-    }
-
-    function bestellenMargherita() {
-        MargheritaList = document.getElementById('MargheritaList').value;
-        document.getElementById('MargheritaPlek').innerHTML = MargheritaList + " Stuks Pizza Margherita 🌿🍕";
-        totaalprijsMargherita = MargheritaList * PrijsPMargherita;
-        PizzaArray["totaalprijsMargherita"] = totaalprijsMargherita;
-
-        berekenTotaal();
-    }
-
-    function bestellenMarina() {
-        MarinaList = document.getElementById('MarinaList').value;
-        document.getElementById('MarinaPlek').innerHTML = MarinaList + " Stuks Pizza Marina 🐟🍕";
-        totaalprijsMarina = MarinaList * PrijsPMarina;
-        PizzaArray["totaalprijsMarina"] = totaalprijsMarina;
-
-        berekenTotaal();
-    }
-
-    function bestellenQFormaggi() {
-        QFormaggiList = document.getElementById('QFormaggiList').value;
-        document.getElementById('QFormaggiPlek').innerHTML = QFormaggiList + " Stuks Pizza Quattro Formaggi 🧀🍕";
-        totaalprijsQFormaggi = QFormaggiList * PrijsPQFormaggi;
-        PizzaArray["totaalprijsQFormaggi"] = totaalprijsQFormaggi;
-
-        berekenTotaal();
-    }
-
-    function berekenTotaal() {
-        // alert(PizzaArray.length);
-        // alert(totaalprijsHawaii)
-        let totaalprijsPerPizza = 0;
-        Object.values(PizzaArray).forEach(value => {
-            totaalprijsPerPizza += value;
-        });
-        Totaalprijs = totaalprijsPerPizza;
-
-        if (bezorging) {
-            Totaalprijs += 5;
+    function maandagprijs() {
+        if (newDate == 'Monday') {
+            PrijsPHawaii = 7.5;
+            PrijsPFunghi = 7.5;
+            PrijsPMargherita = 7.5;
+            PrijsPMarina = 7.5;
+            PrijsPQFormaggi = 7.5; 
         }
-        document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + Totaalprijs.toFixed(2) + ",-";
-        //waarde
-        document.getElementById('Kosten2').value = Totaalprijs.toFixed(2);
 
-        if (newDate == 'Friday' && Totaalprijs > 20) {
-            Totaalprijs = Totaalprijs - 15 * (Totaalprijs / 100);
+        function bestellenHawaii() {
+            HawaiiList = document.getElementById('HawaiiList').value;
+            document.getElementById('HawaiiPlek').innerHTML = HawaiiList + " Stuks Pizza Hawaii 🍍🍕";
+            totaalprijsHawaii = HawaiiList * PrijsPHawaii;
+            PizzaArray["totaalprijsHawaii"] = totaalprijsHawaii;
+            berekenTotaal();
+        }
+
+        function bestellenFunghi() {
+            FunghiList = document.getElementById('FunghiList').value;
+            document.getElementById('FunghiPlek').innerHTML = FunghiList + " Stuks Pizza Funghi 🍄🍕";
+            totaalprijsFunghi = FunghiList * PrijsPFunghi;
+            PizzaArray["totaalprijsFunghi"] = totaalprijsFunghi;
+            berekenTotaal();
+        }
+
+        function bestellenMargherita() {
+            MargheritaList = document.getElementById('MargheritaList').value;
+            document.getElementById('MargheritaPlek').innerHTML = MargheritaList + " Stuks Pizza Margherita 🌿🍕";
+            totaalprijsMargherita = MargheritaList * PrijsPMargherita;
+            PizzaArray["totaalprijsMargherita"] = totaalprijsMargherita;
+
+            berekenTotaal();
+        }
+
+        function bestellenMarina() {
+            MarinaList = document.getElementById('MarinaList').value;
+            document.getElementById('MarinaPlek').innerHTML = MarinaList + " Stuks Pizza Marina 🐟🍕";
+            totaalprijsMarina = MarinaList * PrijsPMarina;
+            PizzaArray["totaalprijsMarina"] = totaalprijsMarina;
+
+            berekenTotaal();
+        }
+
+        function bestellenQFormaggi() {
+            QFormaggiList = document.getElementById('QFormaggiList').value;
+            document.getElementById('QFormaggiPlek').innerHTML = QFormaggiList + " Stuks Pizza Quattro Formaggi 🧀🍕";
+            totaalprijsQFormaggi = QFormaggiList * PrijsPQFormaggi;
+            PizzaArray["totaalprijsQFormaggi"] = totaalprijsQFormaggi;
+
+            berekenTotaal();
+        }
+
+        function berekenTotaal() {
+            // alert(PizzaArray.length);
+            // alert(totaalprijsHawaii)
+            let totaalprijsPerPizza = 0;
+            Object.values(PizzaArray).forEach(value => {
+                totaalprijsPerPizza += value;
+            });
+            Totaalprijs = totaalprijsPerPizza;
+
+            if (bezorging) {
+                Totaalprijs += 5;
+            }
+            document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + Totaalprijs.toFixed(2) + ",-";
+            //waarde
+            document.getElementById('Kosten2').value = Totaalprijs.toFixed(2);
+
+            if (newDate == 'Friday' && Totaalprijs > 20) {
+                Totaalprijs = Totaalprijs - 15 * (Totaalprijs / 100);
+                document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + Totaalprijs.toFixed(2) + ",-";
+                //waarde
+                document.getElementById('Kosten2').value = Totaalprijs.toFixed(2);
+            }
+            // alert(Totaalprijs);
+        }
+
+        function bezorgkosten(boa) {
+            if (boa === 'bezorgen') {
+                bezorging = true;
+            } else if (boa === 'afhalen') {
+                bezorging = false;
+            }
+            berekenTotaal();
+
             document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + Totaalprijs.toFixed(2) + ",-";
             //waarde
             document.getElementById('Kosten2').value = Totaalprijs.toFixed(2);
         }
-        // alert(Totaalprijs);
-    }
-
-    function bezorgkosten(boa) {
-        if (boa === 'bezorgen') {
-            bezorging = true;
-        } else if (boa === 'afhalen') {
-            bezorging = false;
-        }
-        berekenTotaal();
-
-        document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + Totaalprijs.toFixed(2) + ",-";
-        //waarde
-        document.getElementById('Kosten2').value = Totaalprijs.toFixed(2);
     }
 </script>
 
@@ -143,7 +153,7 @@ if (isset($_POST['Submit'])) {
                     <img src="{{ asset('images/hawaii.png') }}" alt="pizza hawaii" width="180" height="180">
                     <p>Pizza Hawaii</p>
                     <?php echo '€' . $PrijsPHawaii . '0,-'; ?>
-                    <select id="HawaiiList" name="HawaiiList" onchange="bestellenHawaii()">
+                    <select id="HawaiiList" name="HawaiiList" onchange="maandagprijs()">
                         <option selected>0</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -161,7 +171,7 @@ if (isset($_POST['Submit'])) {
                     <img src="{{ asset('images/funghi.png') }}" alt="pizza funghi" width="180" height="180">
                     <p>Pizza Funghi</p>
                     <?php echo '€' . $PrijsPFunghi . '0,-'; ?>
-                    <select id="FunghiList" name="FunghiList" onchange="bestellenFunghi()">
+                    <select id="FunghiList" name="FunghiList" onchange="maandagprijs()">
                         <option selected>0</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -180,7 +190,7 @@ if (isset($_POST['Submit'])) {
                         height="180">
                     <p>Pizza Margherita</p>
                     <?php echo '€' . $PrijsPMargherita . '0,-'; ?>
-                    <select id="MargheritaList" name="MargheritaList" onchange="bestellenMargherita()">
+                    <select id="MargheritaList" name="MargheritaList" onchange="maandagprijs()">
                         <option selected>0</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -198,7 +208,7 @@ if (isset($_POST['Submit'])) {
                     <img src="{{ asset('images/marina.png') }}" alt="pizza marina" width="180" height="180">
                     <p>Pizza Marina</p>
                     <?php echo '€' . $PrijsPMarina . '0,-'; ?>
-                    <select id="MarinaList" name="MarinaList" onchange="bestellenMarina()">
+                    <select id="MarinaList" name="MarinaList" onchange="maandagprijs()">
                         <option selected>0</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -217,7 +227,7 @@ if (isset($_POST['Submit'])) {
                         height="180">
                     <p>Pizza Quattro Formaggi</p>
                     <?php echo '€' . $PrijsPQFormaggi . '0,-'; ?>
-                    <select id="QFormaggiList" name="QFormaggiList" onchange="bestellenQFormaggi()">
+                    <select id="QFormaggiList" name="QFormaggiList" onchange="maandagprijs()">
                         <option selected>0</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
