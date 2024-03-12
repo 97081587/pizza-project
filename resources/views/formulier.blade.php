@@ -23,7 +23,7 @@ if(isset($_POST['submit'])){
       maandagprijs();
   }
 
- if (Bdatum == 'Friday' && Totaalprijs > 20) {
+ if (Bdatum == 'Friday' && Totaalprijs >= 20) {
       Totaalprijs = Totaalprijs - 15 * (Totaalprijs / 100);
       document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + Totaalprijs.toFixed(2) + ",-";
       //waarde
