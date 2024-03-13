@@ -59,7 +59,7 @@ if(isset($_POST['submit'])){
       <div name="Bdatum">
             <label for="Bdatum">Bestel/afhaal datum:</label>
             <br>
-            <input type="date" id="Bdatum" name="Bdatum"  min="<?php echo date("d-m-Y"); ?>" required>
+            <input type="date" id="Bdatum" name="Bdatum"  min="<?php echo date("Y-m-d"); ?>" required>
       </div>
       <br>
       <button class ="voltooi">Voltooien</button>
