@@ -301,11 +301,10 @@ if (isset($_POST['Submit'])) {
 
                                 //Vrijdag   
                                 if (Bdatum2.getDay() === 5 && Totaalprijs > 20) {
-                                    Totaalprijs = Totaalprijs - 15 * (Totaalprijs / 100);
-                                    document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + Totaalprijs.toFixed(2) + ",-";                           
+                                    TotaalprijsVR = Totaalprijs - 15 * (Totaalprijs / 100);
+                                    document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + TotaalprijsVR.toFixed(2) + ",-";                           
                                 } else {
-
-
+                                    Totaalprijs = Totaalprijs;
                                     document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + Totaalprijs.toFixed(2) + ",-";
                                 }
                             }
