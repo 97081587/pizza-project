@@ -241,7 +241,7 @@ if (isset($_POST['Submit'])) {
                 <div name="Bdatum"> 
                         <label for="Bdatum">Bestel/afhaal datum:</label>
                         <br>
-                        <input type="datetime-local" id="Bdatum" name="Bdatum" oninput="KortingMAVR()" min="<?php echo date("Y-m-d")?>" required>
+                        <input type="date" id="Bdatum" name="Bdatum" oninput="KortingMAVR()" min="<?php echo date("Y-m-d")?>" required>
                         <script>
                             function KortingMAVR() {
                                 var Bdatum = document.getElementById('Bdatum');
