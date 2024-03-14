@@ -13,7 +13,7 @@
             <p>{{$pizzas->QFormaggiList}} Stuks Pizza Quattro Formaggi 🧀🍕</p>
             <p>Totaalprijs: €{{$pizzas->Totaalprijs}},-</p>
             <p>Bestellen of afhalen: {{$pizzas->BOA}}<p>
-            <p>Bestel/afhaal datum: {{date('d-m-Y', strtotime($gegevens->Bdatum));}}<p>
+            <p>Bestel/afhaal datum: {{date('d-m-Y', strtotime($pizzas->Bdatum));}}<p>
         </div>
             <h2>Uw gegevens:</h2>
             <div>         

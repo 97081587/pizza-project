@@ -53,12 +53,6 @@ if (isset($_POST['Submit'])) {
         PizzaArray = [];
     let bezorging = false;
 
-    // <div name="Bdatum">
-    //         <label for="Bdatum">Bestel/afhaal datum:</label>
-    //         <br>
-    //         <input type="date" id="Bdatum" name="Bdatum"  min="<?php echo date("Y-m-d"); ?>" required>
-    //   </div>
-
         function bestellenHawaii() {
             HawaiiList = document.getElementById('HawaiiList').value;
             document.getElementById('HawaiiPlek').innerHTML = HawaiiList + " Stuks Pizza Hawaii 🍍🍕";
@@ -257,6 +251,12 @@ if (isset($_POST['Submit'])) {
                 <div class=veldbot>
                     <div id="Kosten" name="Totaalprijs1">
                     </div>
+                    <div name="Bdatum"> 
+                        <label for="Bdatum">Bestel/afhaal datum:</label>
+                        <br>
+                        <input type="date" id="Bdatum" name="Bdatum"  min="<?php echo date("Y-m-d"); ?>" required>
+                    </div>
+                    <br>
                     <input name="Totaalprijs" id="Kosten2" type="hidden">
                         <div class=BOA name=BOA id=BOA>
                             <label>
