@@ -51,7 +51,7 @@ if (isset($_POST['Submit'])) {
     PrijsPQFormaggi = <?php echo $PrijsPQFormaggi; ?>;
     Totaalprijs = 0;
     newDate = "<?php echo $newDate; ?>";
-        PizzaArray = [];
+    PizzaArray = [];
     let bezorging = false;
 
         function bestellenHawaii() {
