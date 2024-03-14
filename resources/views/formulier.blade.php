@@ -7,6 +7,7 @@ $adres = '';
 $Pcode = '';
 $plaats = '';
 $Bdatum = '';
+$Totaalprijs ='';
 //$newDate = date ('l', strtotime($Bdatum));
 
 // dit gaat naar de DB
@@ -15,6 +16,7 @@ if(isset($_POST['submit'])){
     $postcode = $_POST['postcode'];
     $plaats = $_POST['plaats'];
     $Bdatum = $_POST['Bdatum'];
+    $Totaalprijs = $_POST['Totaalprijs'];
 }
 ?>
 
@@ -38,7 +40,7 @@ if(isset($_POST['submit'])){
           <br>
         </div>
       <div name="plaats">
-            <label for="Plaats">Plaats:
+            <label>Plaats:
               <br>
                 <input type="text" id="plaats" name="plaats"
                 placeholder="Plaats" maxlength="85" value="" required>
@@ -49,17 +51,17 @@ if(isset($_POST['submit'])){
             <label for="Bdatum">Bestel/afhaal datum:</label>
             <br>
             <input type="date" id="Bdatum" name="Bdatum"  min="<?php echo date("Y-m-d"); ?>" required>
-            <script>
-              if (Bdatum == 'Monday') {
-                  maandagprijs();
+            <?php
+              if ($Bdatum == 1||'Monday') {
+                  //maandagprijs();
               }
             
-             if (Bdatum == 'Friday' && Totaalprijs > 20) {
-                  Totaalprijs = Totaalprijs - 15 * (Totaalprijs / 100);
-                  //waarde
-                  document.getElementById('Kosten2').value = Totaalprijs.toFixed(2);
+             if (($Bdatum == 4||'Friday') && $Totaalprijs > 20) {
+                  $Totaalprijs = $Totaalprijs - 15 * ($Totaalprijs / 100);
+                  echo "<script>alert($Bdatum);</script>";
+              echo "<script>alert($Totaalprijs);</script>";
               }
-            </script>
+            ?>
       </div>
       <br>
       <button class ="voltooi">Voltooien</button>
