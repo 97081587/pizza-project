@@ -26,6 +26,11 @@ body {
     margin: 7px;
 }
 
+.Bdatum {
+    display: flex;
+    justify-content: right;
+}
+
 /* navbar */
 .nav2 {
     list-style-type: none;

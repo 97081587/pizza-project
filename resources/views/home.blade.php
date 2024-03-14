@@ -261,15 +261,9 @@ if (isset($_POST['Submit'])) {
                                 var Bdatum = document.getElementById('Bdatum');
                                 var Bdatum2 = new Date(Bdatum.value);
                                 if (Bdatum2.getDay() === 1) {
-                                    PrijsPHawaii = PrijsPizzasMA;
-                                    PrijsPFunghi = PrijsPizzasMA;
-                                    PrijsPMargherita = PrijsPizzasMA;
-                                    PrijsPMarina = PrijsPizzasMA;
-                                    PrijsPQFormaggi = PrijsPizzasMA;
-
-                                    alert(PrijsPHawaii);
-
+                                    Totaalprijs
                                 } else {
+
                                     document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + Totaalprijs.toFixed(2) + ",-";
                                 }
                                     
@@ -277,7 +271,7 @@ if (isset($_POST['Submit'])) {
                                     Totaalprijs = Totaalprijs - 15 * (Totaalprijs / 100);
                                     document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + Totaalprijs.toFixed(2) + ",-";                           
                                 } else {
-                                    Totaalprijs += 15 * (Totaalprijs / 100)
+                                    Totaalprijs += 15 * (Totaalprijs / 100);
                                     document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + Totaalprijs.toFixed(2) + ",-";
                                 }
                             }
