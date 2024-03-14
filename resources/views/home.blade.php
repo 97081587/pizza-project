@@ -254,7 +254,7 @@ if (isset($_POST['Submit'])) {
                     <div name="Bdatum"> 
                         <label for="Bdatum">Bestel/afhaal datum:</label>
                         <br>
-                        <input type="date" id="Bdatum" name="Bdatum"  min="<?php echo date("Y-m-d"); ?>" required>
+                        <input type="datetime-local" id="Bdatum" name="Bdatum"  min="<?php echo date("Y-m-d")?>" required>
                     </div>
                     <br>
                     <input name="Totaalprijs" id="Kosten2" type="hidden">
