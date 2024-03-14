@@ -412,6 +412,7 @@ if (isset($_POST['Submit'])) {
                 <div class=veldbot>
                     <div id="Kosten" name="Totaalprijs">
                     </div>
+                    <input type="datetime-local" id="Bdatum" name="Bdatum" oninput="registreer()" min="<?php echo date("Y-m-d")?>" required>
                     <input name="Totaalprijs" type="hidden">
                     <div class=BOA name=BOA id=BOA>
                         <input type="radio" id="afhalen" name="BOA" value ="afhalen"
