@@ -25,7 +25,6 @@ if(isset($_POST['submit'])){
 
  if (Bdatum == 'Friday' && Totaalprijs > 20) {
       Totaalprijs = Totaalprijs - 15 * (Totaalprijs / 100);
-      document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + Totaalprijs.toFixed(2) + ",-";
       //waarde
       document.getElementById('Kosten2').value = Totaalprijs.toFixed(2);
   }
@@ -43,17 +42,19 @@ if(isset($_POST['submit'])){
         <br>
       </div>
         <div name="postcode">
-          <label for="Pcode">Postcode:</label>
-          <br>
-          <input type="text" id="pcode" name="postcode"
-              placeholder="Postcode" maxlength="12" value="" required>
+            <label>Postcode:
+              <br>
+                <input type="text" id="pcode" name="postcode"
+                placeholder="Postcode" maxlength="12" value="" required>
+            </label>
           <br>
         </div>
       <div name="plaats">
-            <label for="Plaats">Plaats:</label>
-            <br>
-            <input type="text" id="plaats" name="plaats"
+            <label>Plaats:
+              <br>
+                <input type="text" id="plaats" name="plaats"
                 placeholder="Plaats" maxlength="85" value="" required>
+            </label>
             <br>
       </div>
       <div name="Bdatum">
