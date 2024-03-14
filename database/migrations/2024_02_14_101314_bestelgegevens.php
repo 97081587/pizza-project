@@ -16,7 +16,6 @@ return new class extends Migration
             $table->string('Adres');
             $table->string('Postcode');
             $table->string('Plaats');
-            $table->date('Bdatum');
             $table->rememberToken();
             $table->timestamps();
         });

@@ -17,7 +17,8 @@ class PizzaController extends Controller
             'Totaalprijs' => 'required|numeric|min:1',
             'MarinaList' => 'required',
             'QFormaggiList' => 'required',
-            'BOA' => 'required'
+            'BOA' => 'required',
+            'Bdatum' => 'required'
         ]);
 
         $pizza = new Pizza();
@@ -28,6 +29,7 @@ class PizzaController extends Controller
         $pizza->Totaalprijs = $request['Totaalprijs'];
         $pizza->QFormaggiList = $request['QFormaggiList'];
         $pizza->BOA = $request['BOA'];
+        $pizza->Bdatum = $request['Bdatum'];
 
         Session::put('pizzas', $pizza);
 

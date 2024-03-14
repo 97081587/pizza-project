@@ -14,15 +14,13 @@ class FormulierController extends Controller
          $validatedData = $request->validate([
             'adres' => 'required',
             'postcode' => ['required','max:12'],
-            'plaats' => ['required','max:85'],
-            'Bdatum' => 'required'
+            'plaats' => ['required','max:85']
          ]);
 
          $form = new bestelgegevens();
          $form->Adres = $request['adres'];
          $form->Postcode = $request['postcode'];
          $form->Plaats = $request['plaats'];
-         $form->Bdatum = $request['Bdatum'];
          $value = Session::get('register');
          $value = Session::get('pizzas');
 

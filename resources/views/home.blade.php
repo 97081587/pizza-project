@@ -12,6 +12,8 @@ $PrijsPQFormaggi = 14.5;
 
 $PrijsPizzasMA = 7.5;
 
+$Bdatum = '';
+
 $newDate = date('l', strtotime('Today'));
 if ($newDate == 'Monday') {
     $PrijsPMargherita = $PrijsPizzasMA;
@@ -35,6 +37,7 @@ if (isset($_POST['Submit'])) {
     $Totaalprijs = $_POST['Totaalprijs'];
     $RegiEmail = $_POST['RegiEmail'];
     $RegiPassword = $_POST['RegiPassword'];
+    $Bdatum = $_POST['Bdatum'];
 }
 ?>
 
@@ -50,14 +53,11 @@ if (isset($_POST['Submit'])) {
         PizzaArray = [];
     let bezorging = false;
 
-    // function maandagprijs() {
-    //     if (newDate == 'Monday') {
-    //         PrijsPHawaii = 7.5;
-    //         PrijsPFunghi = 7.5;
-    //         PrijsPMargherita = 7.5;
-    //         PrijsPMarina = 7.5;
-    //         PrijsPQFormaggi = 7.5; 
-    //     }
+    // <div name="Bdatum">
+    //         <label for="Bdatum">Bestel/afhaal datum:</label>
+    //         <br>
+    //         <input type="date" id="Bdatum" name="Bdatum"  min="<?php echo date("Y-m-d"); ?>" required>
+    //   </div>
 
         function bestellenHawaii() {
             HawaiiList = document.getElementById('HawaiiList').value;
@@ -139,7 +139,6 @@ if (isset($_POST['Submit'])) {
             //waarde
             document.getElementById('Kosten2').value = Totaalprijs.toFixed(2);
         }
-    // }
 </script>
 
 @section('content')
