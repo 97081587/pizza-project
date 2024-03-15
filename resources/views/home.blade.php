@@ -244,10 +244,10 @@ if (isset($_POST['Submit'])) {
                         <input type="datetime-local" id="Bdatum" name="Bdatum" oninput="KortingMAVR()" min="<?php echo date("Y-m-d")?>" required>
                         <script>
                             function KortingMAVR() {
-                                    var Bdatum = document.getElementById('Bdatum');
-                                    var Bdatum2 = new Date(Bdatum.value);
-                                    //maandag
-                                    if (Bdatum2.getDay() === 1) {
+                                var Bdatum = document.getElementById('Bdatum');
+                                var Bdatum2 = new Date(Bdatum.value);
+                                //maandag
+                                if (Bdatum2.getDay() === 1) {
                                         //function bestellenPizzaMA() {
                                             // PizzaList = [document.getElementById('HawaiiList').value, 
                                             //     document.getElementById('FunghiList').value,
@@ -261,77 +261,70 @@ if (isset($_POST['Submit'])) {
                                         PrijsPizzasMA = 7.5;
                                         PizzaArray = [];
 
-                                            function bestellenHawaii() {
-                                                HawaiiList = document.getElementById('HawaiiList').value;
-                                                totaalprijsHawaii = HawaiiList * PrijsPizzasMA;
-                                                PizzaArray["totaalprijsHawaii"] = totaalprijsHawaii;
-                                                berekenTotaal();
-                                            }
+                                        function bestellenHawaii() {
+                                            HawaiiList = document.getElementById('HawaiiList').value;
+                                            totaalprijsHawaii = HawaiiList * PrijsPizzasMA;
+                                            PizzaArray["totaalprijsHawaii"] = totaalprijsHawaii;
+                                            berekenTotaal();
+                                        }
 
-                                            function bestellenFunghi() {
-                                                FunghiList = document.getElementById('FunghiList').value;
-                                                totaalprijsFunghi = FunghiList * PrijsPizzasMA;
-                                                PizzaArray["totaalprijsFunghi"] = totaalprijsFunghi;
-                                                berekenTotaal();
-                                            }
+                                        function bestellenFunghi() {
+                                            FunghiList = document.getElementById('FunghiList').value;
+                                            totaalprijsFunghi = FunghiList * PrijsPizzasMA;
+                                            PizzaArray["totaalprijsFunghi"] = totaalprijsFunghi;
+                                            berekenTotaal();
+                                        }
 
-                                            function bestellenMargherita() {
-                                                MargheritaList = document.getElementById('MargheritaList').value;
-                                                totaalprijsMargherita = MargheritaList * PrijsPizzasMA;
-                                                PizzaArray["totaalprijsMargherita"] = totaalprijsMargherita;
+                                        function bestellenMargherita() {
+                                            MargheritaList = document.getElementById('MargheritaList').value;
+                                            totaalprijsMargherita = MargheritaList * PrijsPizzasMA;
+                                            PizzaArray["totaalprijsMargherita"] = totaalprijsMargherita;
+                                            berekenTotaal();
+                                        }
 
-                                                berekenTotaal();
-                                            }
+                                        function bestellenMarina() {
+                                            MarinaList = document.getElementById('MarinaList').value;
+                                            totaalprijsMarina = MarinaList * PrijsPizzasMA;
+                                            PizzaArray["totaalprijsMarina"] = totaalprijsMarina;
+                                            berekenTotaal();
+                                        }
 
-                                            function bestellenMarina() {
-                                                MarinaList = document.getElementById('MarinaList').value;
-                                                totaalprijsMarina = MarinaList * PrijsPizzasMA;
-                                                PizzaArray["totaalprijsMarina"] = totaalprijsMarina;
+                                        function bestellenQFormaggi() {
+                                            QFormaggiList = document.getElementById('QFormaggiList').value;
+                                            totaalprijsQFormaggi = QFormaggiList * PrijsPizzasMA;
+                                            PizzaArray["totaalprijsQFormaggi"] = totaalprijsQFormaggi;
+                                            berekenTotaal();
+                                        }
 
-                                                berekenTotaal();
-                                            }
-
-                                            function bestellenQFormaggi() {
-                                                QFormaggiList = document.getElementById('QFormaggiList').value;
-                                                totaalprijsQFormaggi = QFormaggiList * PrijsPizzasMA;
-                                                PizzaArray["totaalprijsQFormaggi"] = totaalprijsQFormaggi;
-
-                                                berekenTotaal();
-                                            }
-
-                                            function berekenTotaal() {
-                                            let totaalprijsPerPizza = 0;
-                                            Object.values(PizzaArray).forEach(value => {
-                                                totaalprijsPerPizza += value;
-                                            });
-                                            Totaalprijs = totaalprijsPerPizza;
-                                    // } else {
-
-                                    }
-
-                                    //Vrijdag   
-                                    if (Bdatum2.getDay() === 5 && Totaalprijs > 20) {
-                                        Totaalprijs = Totaalprijs - 15 * (Totaalprijs / 100);
-                                        document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + Totaalprijs.toFixed(2) + ",-";                           
-                                    } else {
-                                        Totaalprijs += 15 * (Totaalprijs / 100);
+                                         function berekenTotaal() {
+                                        let totaalprijsPerPizza = 0;
+                                        Object.values(PizzaArray).forEach(value => {
+                                            totaalprijsPerPizza += value;
+                                        });
+                                        Totaalprijs = totaalprijsPerPizza;
                                         document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + Totaalprijs.toFixed(2) + ",-";
                                     }
                                 }
+
+                                //Vrijdag   
+                                if (Bdatum2.getDay() === 5 && Totaalprijs > 20) {
+                                    Totaalprijs = Totaalprijs - 15 * (Totaalprijs / 100);
+                                    document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + Totaalprijs.toFixed(2) + ",-";                           
+                                }
                             }
-                        </script>
+                    </script>
                     </div>
-                    <div class=dropdownNumbers>
-                        <div id=HawaiiPlek>
-                        </div>
-                        <div id=FunghiPlek>
-                        </div>
-                        <div id=MargheritaPlek>
-                        </div>
-                        <div id=MarinaPlek>
-                        </div>
-                        <div id=QFormaggiPlek>
-                        </div>
+                <div class=dropdownNumbers>
+                    <div id=HawaiiPlek>
+                    </div>
+                    <div id=FunghiPlek>
+                    </div>
+                    <div id=MargheritaPlek>
+                    </div>
+                    <div id=MarinaPlek>
+                    </div>
+                    <div id=QFormaggiPlek>
+                </div>
             </div>
                 <div class=veldbot>
                     <div id="Kosten" name="Totaalprijs1">
