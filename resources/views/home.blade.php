@@ -248,31 +248,35 @@ if (isset($_POST['Submit'])) {
                                 var Bdatum2 = new Date(Bdatum.value);
                                 //maandag
                                 if (Bdatum2.getDay() === 1) {
-                                    PrijsPizzasMA = 7.5;
+                                    PrijsPHawaiiMA = 7.5;
+                                    PrijsPFunghiMA = 7.5;
+                                    PrijsPMargheritaMA = 7.5;
+                                    PrijsPMarina = 7.5;
+                                    PrijsPQFormaggiMA = 7.5;
                                     PizzaArray = [];
 
                                     HawaiiList = document.getElementById('HawaiiList').value;
-                                    totaalprijsHawaii = HawaiiList * PrijsPizzasMA;
+                                    totaalprijsHawaii = HawaiiList * PrijsPHawaiiMA;
                                     PizzaArray["totaalprijsHawaii"] = totaalprijsHawaii;
                                     berekenTotaalMA();
                                         
                                     FunghiList = document.getElementById('FunghiList').value;
-                                    totaalprijsFunghi = FunghiList * PrijsPizzasMA;
+                                    totaalprijsFunghi = FunghiList * PrijsPFunghiMA;
                                     PizzaArray["totaalprijsFunghi"] = totaalprijsFunghi;
                                     berekenTotaalMA();
                                         
                                     MargheritaList = document.getElementById('MargheritaList').value;
-                                    totaalprijsMargherita = MargheritaList * PrijsPizzasMA;
+                                    totaalprijsMargherita = MargheritaList * PrijsPMargheritaMA;
                                     PizzaArray["totaalprijsMargherita"] = totaalprijsMargherita;
                                     berekenTotaalMA();
                                         
                                     MarinaList = document.getElementById('MarinaList').value;
-                                    totaalprijsMarina = MarinaList * PrijsPizzasMA;
+                                    totaalprijsMarina = MarinaList * PrijsPMarinaMA;
                                     PizzaArray["totaalprijsMarina"] = totaalprijsMarina;
                                     berekenTotaalMA();
                                         
                                     QFormaggiList = document.getElementById('QFormaggiList').value;
-                                    totaalprijsQFormaggi = QFormaggiList * PrijsPizzasMA;
+                                    totaalprijsQFormaggi = QFormaggiList * PrijsPQFormaggiMA;
                                     PizzaArray["totaalprijsQFormaggi"] = totaalprijsQFormaggi;
                                     berekenTotaalMA();
                                         
@@ -282,13 +286,17 @@ if (isset($_POST['Submit'])) {
                                         Object.values(PizzaArray).forEach(value => {
                                             totaalprijsPerPizza += value;
                                         });
-                                        Totaalprijs = totaalprijsPerPizza;
-                                        document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + Totaalprijs.toFixed(2) + ",-";
+                                        TotaalprijsMA = totaalprijsPerPizza;
+                                        document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + TotaalprijsMA.toFixed(2) + ",-";
                                     }
-                                // } else {
+                                } else {
+                                    PrijsPHawaiiMA = 11.5;
+                                    PrijsPFunghiMA = 12.5;
+                                    PrijsPMargheritaMA = 12.5;
+                                    PrijsPMarinaMA = 12.5;
+                                    PrijsPQFormaggiMA = 14.5;
 
-
-                                //     document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + Totaalprijs.toFixed(2) + ",-"
+                                    document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + Totaalprijs.toFixed(2) + ",-"
                                 }
 
                                 //Vrijdag   
@@ -297,7 +305,7 @@ if (isset($_POST['Submit'])) {
                                     document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + Totaalprijs.toFixed(2) + ",-";                           
                                 // } else {
 
-                                    
+
                                 //     document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + Totaalprijs.toFixed(2) + ",-";
                                 }
                             }
