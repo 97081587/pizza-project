@@ -285,12 +285,20 @@ if (isset($_POST['Submit'])) {
                                         Totaalprijs = totaalprijsPerPizza;
                                         document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + Totaalprijs.toFixed(2) + ",-";
                                     }
+                                // } else {
+
+
+                                //     document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + Totaalprijs.toFixed(2) + ",-"
                                 }
 
                                 //Vrijdag   
                                 if (Bdatum2.getDay() === 5 && Totaalprijs > 20) {
                                     Totaalprijs = Totaalprijs - 15 * (Totaalprijs / 100);
                                     document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + Totaalprijs.toFixed(2) + ",-";                           
+                                // } else {
+
+                                    
+                                //     document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + Totaalprijs.toFixed(2) + ",-";
                                 }
                             }
                     </script>
