@@ -248,10 +248,11 @@ if (isset($_POST['Submit'])) {
                                 var Bdatum2 = new Date(Bdatum.value);
                                 //maandag
                                 if (Bdatum2.getDay() === 1) {
+                                   // alert('maandag');
                                     PrijsPHawaiiMA = 7.5;
                                     PrijsPFunghiMA = 7.5;
                                     PrijsPMargheritaMA = 7.5;
-                                    PrijsPMarina = 7.5;
+                                    PrijsPMarinaMA = 7.5;
                                     PrijsPQFormaggiMA = 7.5;
                                     PizzaArray = [];
 
@@ -282,12 +283,15 @@ if (isset($_POST['Submit'])) {
                                         
 
                                     function berekenTotaalMA() {
+                                        //alert('maandag');
                                         let totaalprijsPerPizza = 0;
                                         Object.values(PizzaArray).forEach(value => {
                                             totaalprijsPerPizza += value;
                                         });
                                         TotaalprijsMA = totaalprijsPerPizza;
+                                        // alert(TotaalprijsMA);
                                         document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + TotaalprijsMA.toFixed(2) + ",-";
+                                        // alert(TotaalprijsMA);
                                     }
                                 } else {
                                     PrijsPHawaiiMA = 11.5;
@@ -296,16 +300,16 @@ if (isset($_POST['Submit'])) {
                                     PrijsPMarinaMA = 12.5;
                                     PrijsPQFormaggiMA = 14.5;
 
-                                    document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + Totaalprijs.toFixed(2) + ",-"
+                                    document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + Totaalprijs.toFixed(2) + ",-";
                                 }
 
                                 //Vrijdag   
                                 if (Bdatum2.getDay() === 5 && Totaalprijs > 20) {
                                     TotaalprijsVR = Totaalprijs - 15 * (Totaalprijs / 100);
                                     document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + TotaalprijsVR.toFixed(2) + ",-";                           
-                                } else {
-                                    Totaalprijs = Totaalprijs;
-                                    document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + Totaalprijs.toFixed(2) + ",-";
+                                // } else {
+                                //     Totaalprijs = Totaalprijs;
+                                //     document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + Totaalprijs.toFixed(2) + ",-";
                                 }
                             }
                     </script>
@@ -445,8 +449,7 @@ if (isset($_POST['Submit'])) {
             </ul>
             <div class=lijst>
                 <label for="Bdatum">Bestel/afhaal datum:</label>
-                <br>
-                <input type="datetime-local" id="Bdatum" name="Bdatum" oninput="registreer()" min="<?php echo date("Y-m-d")?>" required>
+                <input type="date" id="Bdatum" name="Bdatum" oninput="registreer()" min="<?php echo date("Y-m-d")?>" required>
                 <div class=dropdownNumbers>
                     <div id=HawaiiPlek>
                     </div>
