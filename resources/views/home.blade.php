@@ -303,10 +303,10 @@ if (isset($_POST['Submit'])) {
                                 if (Bdatum2.getDay() === 5 && Totaalprijs > 20) {
                                     Totaalprijs = Totaalprijs - 15 * (Totaalprijs / 100);
                                     document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + Totaalprijs.toFixed(2) + ",-";                           
-                                // } else {
+                                } else {
 
 
-                                //     document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + Totaalprijs.toFixed(2) + ",-";
+                                    document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + Totaalprijs.toFixed(2) + ",-";
                                 }
                             }
                     </script>
@@ -445,6 +445,8 @@ if (isset($_POST['Submit'])) {
                 </li>
             </ul>
             <div class=lijst>
+                <label for="Bdatum">Bestel/afhaal datum:</label>
+                <br>
                 <input type="datetime-local" id="Bdatum" name="Bdatum" oninput="registreer()" min="<?php echo date("Y-m-d")?>" required>
                 <div class=dropdownNumbers>
                     <div id=HawaiiPlek>
