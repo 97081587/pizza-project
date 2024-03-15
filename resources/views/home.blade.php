@@ -113,6 +113,7 @@ if (isset($_POST['Submit'])) {
             //waarde
             document.getElementById('Kosten2').value = Totaalprijs.toFixed(2);
 
+            //vrijdag
             if (newDate == 'Friday' && Totaalprijs > 20) {
                 Totaalprijs = Totaalprijs - 15 * (Totaalprijs / 100);
                 document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + Totaalprijs.toFixed(2) + ",-";
@@ -237,6 +238,89 @@ if (isset($_POST['Submit'])) {
                 </li>
             </ul>
             <div class=lijst>
+                <div name="Bdatum"> 
+                        <label for="Bdatum">Bestel/afhaal datum:</label>
+                        <br>
+                        <input type="datetime-local" id="Bdatum" name="Bdatum" oninput="KortingMAVR()" min="<?php echo date("Y-m-d")?>" required>
+                        <script>
+                            function KortingMAVR() {
+                                    var Bdatum = document.getElementById('Bdatum');
+                                    var Bdatum2 = new Date(Bdatum.value);
+                                    //maandag
+                                    if (Bdatum2.getDay() === 1) {
+                                        //function bestellenPizzaMA() {
+                                            // PizzaList = [document.getElementById('HawaiiList').value, 
+                                            //     document.getElementById('FunghiList').value,
+                                            //     document.getElementById('MargheritaList').value,  
+                                            //     document.getElementById('MarinaList').value, 
+                                            //     document.getElementById('QFormaggiList').value
+                                            // ];
+                                            // alert(PizzaList);
+                                            // totaalprijsPizzaMA = PizzaList * PrijsPizzasMA;
+                                        //}
+                                        PrijsPizzasMA = 7.5;
+                                        PizzaArray = [];
+
+                                            function bestellenHawaii() {
+                                                HawaiiList = document.getElementById('HawaiiList').value;
+                                                totaalprijsHawaii = HawaiiList * PrijsPizzasMA;
+                                                PizzaArray["totaalprijsHawaii"] = totaalprijsHawaii;
+                                                berekenTotaal();
+                                            }
+
+                                            function bestellenFunghi() {
+                                                FunghiList = document.getElementById('FunghiList').value;
+                                                totaalprijsFunghi = FunghiList * PrijsPizzasMA;
+                                                PizzaArray["totaalprijsFunghi"] = totaalprijsFunghi;
+                                                berekenTotaal();
+                                            }
+
+                                            function bestellenMargherita() {
+                                                MargheritaList = document.getElementById('MargheritaList').value;
+                                                totaalprijsMargherita = MargheritaList * PrijsPizzasMA;
+                                                PizzaArray["totaalprijsMargherita"] = totaalprijsMargherita;
+
+                                                berekenTotaal();
+                                            }
+
+                                            function bestellenMarina() {
+                                                MarinaList = document.getElementById('MarinaList').value;
+                                                totaalprijsMarina = MarinaList * PrijsPizzasMA;
+                                                PizzaArray["totaalprijsMarina"] = totaalprijsMarina;
+
+                                                berekenTotaal();
+                                            }
+
+                                            function bestellenQFormaggi() {
+                                                QFormaggiList = document.getElementById('QFormaggiList').value;
+                                                totaalprijsQFormaggi = QFormaggiList * PrijsPizzasMA;
+                                                PizzaArray["totaalprijsQFormaggi"] = totaalprijsQFormaggi;
+
+                                                berekenTotaal();
+                                            }
+
+                                            function berekenTotaal() {
+                                            let totaalprijsPerPizza = 0;
+                                            Object.values(PizzaArray).forEach(value => {
+                                                totaalprijsPerPizza += value;
+                                            });
+                                            Totaalprijs = totaalprijsPerPizza;
+                                    // } else {
+
+                                    }
+
+                                    //Vrijdag   
+                                    if (Bdatum2.getDay() === 5 && Totaalprijs > 20) {
+                                        Totaalprijs = Totaalprijs - 15 * (Totaalprijs / 100);
+                                        document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + Totaalprijs.toFixed(2) + ",-";                           
+                                    } else {
+                                        Totaalprijs += 15 * (Totaalprijs / 100);
+                                        document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + Totaalprijs.toFixed(2) + ",-";
+                                    }
+                                }
+                            }
+                        </script>
+                    </div>
                     <div class=dropdownNumbers>
                         <div id=HawaiiPlek>
                         </div>
@@ -248,47 +332,10 @@ if (isset($_POST['Submit'])) {
                         </div>
                         <div id=QFormaggiPlek>
                         </div>
-                    </div>
+            </div>
                 <div class=veldbot>
                     <div id="Kosten" name="Totaalprijs1">
                     </div>
-                    <div name="Bdatum"> 
-                        <label for="Bdatum">Bestel/afhaal datum:</label>
-                        <br>
-                        <input type="datetime-local" id="Bdatum" name="Bdatum" oninput="KortingMAVR()" min="<?php echo date("Y-m-d")?>" required>
-                        <script>
-                            function KortingMAVR() {
-                                PrijsPizzasMA = 7.5;
-                                var Bdatum = document.getElementById('Bdatum');
-                                var Bdatum2 = new Date(Bdatum.value);
-                                //maandag
-                                if (Bdatum2.getDay() === 1) {
-                                    //function bestellenPizzaMA() {
-                                        PizzaList = [document.getElementById('HawaiiList').value, 
-                                            document.getElementById('FunghiList').value,
-                                            document.getElementById('MargheritaList').value,  
-                                            document.getElementById('MarinaList').value, 
-                                            document.getElementById('QFormaggiList').value
-                                        ];
-                                        alert(PizzaList);
-                                        totaalprijsPizzaMA = PizzaList * PrijsPizzasMA;
-                                    //}
-                                } else {
-
-                                }
-
-                                 //Vrijdag   
-                                if (Bdatum2.getDay() === 5 && Totaalprijs > 20) {
-                                    Totaalprijs = Totaalprijs - 15 * (Totaalprijs / 100);
-                                    document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + Totaalprijs.toFixed(2) + ",-";                           
-                                } else {
-                                    Totaalprijs += 15 * (Totaalprijs / 100);
-                                    document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + Totaalprijs.toFixed(2) + ",-";
-                                }
-                            }
-                        </script>
-                    </div>
-                    <br>
                     <input name="Totaalprijs" id="Kosten2" type="hidden">
                         <div class=BOA name=BOA id=BOA>
                             <label>
@@ -408,6 +455,7 @@ if (isset($_POST['Submit'])) {
                 </li>
             </ul>
             <div class=lijst>
+                <input type="datetime-local" id="Bdatum" name="Bdatum" oninput="registreer()" min="<?php echo date("Y-m-d")?>" required>
                 <div class=dropdownNumbers>
                     <div id=HawaiiPlek>
                     </div>
@@ -423,7 +471,6 @@ if (isset($_POST['Submit'])) {
                 <div class=veldbot>
                     <div id="Kosten" name="Totaalprijs">
                     </div>
-                    <input type="datetime-local" id="Bdatum" name="Bdatum" oninput="registreer()" min="<?php echo date("Y-m-d")?>" required>
                     <input name="Totaalprijs" type="hidden">
                     <div class=BOA name=BOA id=BOA>
                         <input type="radio" id="afhalen" name="BOA" value ="afhalen"
