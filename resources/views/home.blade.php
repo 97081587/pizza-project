@@ -261,12 +261,23 @@ if (isset($_POST['Submit'])) {
                                 PrijsPizzasMA = 7.5;
                                 var Bdatum = document.getElementById('Bdatum');
                                 var Bdatum2 = new Date(Bdatum.value);
+                                //maandag
                                 if (Bdatum2.getDay() === 1) {
-                                    TotaalprijsMA();
+                                    //function bestellenPizzaMA() {
+                                        PizzaList = [document.getElementById('HawaiiList').value, 
+                                            document.getElementById('FunghiList').value,
+                                            document.getElementById('MargheritaList').value,  
+                                            document.getElementById('MarinaList').value, 
+                                            document.getElementById('QFormaggiList').value
+                                        ];
+                                        alert(PizzaList);
+                                        totaalprijsPizzaMA = PizzaList * PrijsPizzasMA;
+                                    //}
                                 } else {
 
                                 }
-                                    
+
+                                 //Vrijdag   
                                 if (Bdatum2.getDay() === 5 && Totaalprijs > 20) {
                                     Totaalprijs = Totaalprijs - 15 * (Totaalprijs / 100);
                                     document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + Totaalprijs.toFixed(2) + ",-";                           
