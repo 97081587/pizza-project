@@ -248,57 +248,36 @@ if (isset($_POST['Submit'])) {
                                 var Bdatum2 = new Date(Bdatum.value);
                                 //maandag
                                 if (Bdatum2.getDay() === 1) {
-                                    alert('maandag');
-                                        //function bestellenPizzaMA() {
-                                            // PizzaList = [document.getElementById('HawaiiList').value, 
-                                            //     document.getElementById('FunghiList').value,
-                                            //     document.getElementById('MargheritaList').value,  
-                                            //     document.getElementById('MarinaList').value, 
-                                            //     document.getElementById('QFormaggiList').value
-                                            // ];
-                                            // alert(PizzaList);
-                                            // totaalprijsPizzaMA = PizzaList * PrijsPizzasMA;
-                                        //}
-                                        PrijsPizzasMA = 7.5;
-                                        PizzaArray = [];
+                                    PrijsPizzasMA = 7.5;
+                                    PizzaArray = [];
 
-                                        function bestellenHawaii() {
-                                            HawaiiList = document.getElementById('HawaiiList').value;
-                                            totaalprijsHawaii = HawaiiList * PrijsPizzasMA;
-                                            PizzaArray["totaalprijsHawaii"] = totaalprijsHawaii;
-                                            berekenTotaalMA();
-                                        }
+                                    HawaiiList = document.getElementById('HawaiiList').value;
+                                    totaalprijsHawaii = HawaiiList * PrijsPizzasMA;
+                                    PizzaArray["totaalprijsHawaii"] = totaalprijsHawaii;
+                                    berekenTotaalMA();
+                                        
+                                    FunghiList = document.getElementById('FunghiList').value;
+                                    totaalprijsFunghi = FunghiList * PrijsPizzasMA;
+                                    PizzaArray["totaalprijsFunghi"] = totaalprijsFunghi;
+                                    berekenTotaalMA();
+                                        
+                                    MargheritaList = document.getElementById('MargheritaList').value;
+                                    totaalprijsMargherita = MargheritaList * PrijsPizzasMA;
+                                    PizzaArray["totaalprijsMargherita"] = totaalprijsMargherita;
+                                    berekenTotaalMA();
+                                        
+                                    MarinaList = document.getElementById('MarinaList').value;
+                                    totaalprijsMarina = MarinaList * PrijsPizzasMA;
+                                    PizzaArray["totaalprijsMarina"] = totaalprijsMarina;
+                                    berekenTotaalMA();
+                                        
+                                    QFormaggiList = document.getElementById('QFormaggiList').value;
+                                    totaalprijsQFormaggi = QFormaggiList * PrijsPizzasMA;
+                                    PizzaArray["totaalprijsQFormaggi"] = totaalprijsQFormaggi;
+                                    berekenTotaalMA();
+                                        
 
-                                        function bestellenFunghi() {
-                                            FunghiList = document.getElementById('FunghiList').value;
-                                            totaalprijsFunghi = FunghiList * PrijsPizzasMA;
-                                            PizzaArray["totaalprijsFunghi"] = totaalprijsFunghi;
-                                            berekenTotaalMA();
-                                        }
-
-                                        function bestellenMargherita() {
-                                            MargheritaList = document.getElementById('MargheritaList').value;
-                                            totaalprijsMargherita = MargheritaList * PrijsPizzasMA;
-                                            PizzaArray["totaalprijsMargherita"] = totaalprijsMargherita;
-                                            berekenTotaalMA();
-                                        }
-
-                                        function bestellenMarina() {
-                                            MarinaList = document.getElementById('MarinaList').value;
-                                            totaalprijsMarina = MarinaList * PrijsPizzasMA;
-                                            PizzaArray["totaalprijsMarina"] = totaalprijsMarina;
-                                            berekenTotaalMA();
-                                        }
-
-                                        function bestellenQFormaggi() {
-                                            QFormaggiList = document.getElementById('QFormaggiList').value;
-                                            totaalprijsQFormaggi = QFormaggiList * PrijsPizzasMA;
-                                            PizzaArray["totaalprijsQFormaggi"] = totaalprijsQFormaggi;
-                                            berekenTotaalMA();
-                                        }
-
-                                         function berekenTotaalMA() {
-                                            alert(Totaalprijs);
+                                    function berekenTotaalMA() {
                                         let totaalprijsPerPizza = 0;
                                         Object.values(PizzaArray).forEach(value => {
                                             totaalprijsPerPizza += value;
