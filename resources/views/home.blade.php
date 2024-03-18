@@ -313,18 +313,18 @@ if (isset($_POST['Submit'])) {
                                 }
                             }
                     </script>
-                    </div>
-                <div class=dropdownNumbers>
-                    <div id=HawaiiPlek>
-                    </div>
-                    <div id=FunghiPlek>
-                    </div>
-                    <div id=MargheritaPlek>
-                    </div>
-                    <div id=MarinaPlek>
-                    </div>
-                    <div id=QFormaggiPlek>
                 </div>
+                    <div class=dropdownNumbers>
+                        <div id=HawaiiPlek>
+                        </div>
+                        <div id=FunghiPlek>
+                        </div>
+                        <div id=MargheritaPlek>
+                        </div>
+                        <div id=MarinaPlek>
+                        </div>
+                        <div id=QFormaggiPlek>
+                    </div>
             </div>
                 <div class=veldbot>
                     <div id="Kosten" name="Totaalprijs1">
@@ -448,8 +448,11 @@ if (isset($_POST['Submit'])) {
                 </li>
             </ul>
             <div class=lijst>
-                <label for="Bdatum">Bestel/afhaal datum:</label>
-                <input type="date" id="Bdatum" name="Bdatum" oninput="registreer()" min="<?php echo date("Y-m-d")?>" required>
+                <div name="Bdatum"> 
+                    <label for="Bdatum">Bestel/afhaal datum:</label>
+                    <br>
+                    <input type="date" id="Bdatum" name="Bdatum" oninput="registreer()" min="<?php echo date("Y-m-d")?>" required>
+                </div>
                 <div class=dropdownNumbers>
                     <div id=HawaiiPlek>
                     </div>
