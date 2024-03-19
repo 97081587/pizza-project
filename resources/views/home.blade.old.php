@@ -52,15 +52,12 @@ if (isset($_POST['Submit'])) {
     Totaalprijs = 0;
     newDate = "<?php echo $newDate; ?>";
     PizzaArray = [];
-    AantallenArray = [];
     let bezorging = false;
-
 
         function bestellenHawaii() {
             HawaiiList = document.getElementById('HawaiiList').value;
             document.getElementById('HawaiiPlek').innerHTML = HawaiiList + " Stuks Pizza Hawaii 🍍🍕";
             totaalprijsHawaii = HawaiiList * PrijsPHawaii;
-            AantallenArray["HawaiiList"] = HawaiiList;
             PizzaArray["totaalprijsHawaii"] = totaalprijsHawaii;
             berekenTotaal();
         }
@@ -69,7 +66,6 @@ if (isset($_POST['Submit'])) {
             FunghiList = document.getElementById('FunghiList').value;
             document.getElementById('FunghiPlek').innerHTML = FunghiList + " Stuks Pizza Funghi 🍄🍕";
             totaalprijsFunghi = FunghiList * PrijsPFunghi;
-            AantallenArray["FunghiList"] = FunghiList;
             PizzaArray["totaalprijsFunghi"] = totaalprijsFunghi;
             berekenTotaal();
         }
@@ -78,8 +74,8 @@ if (isset($_POST['Submit'])) {
             MargheritaList = document.getElementById('MargheritaList').value;
             document.getElementById('MargheritaPlek').innerHTML = MargheritaList + " Stuks Pizza Margherita 🌿🍕";
             totaalprijsMargherita = MargheritaList * PrijsPMargherita;
-            AantallenArray["MargheritaList"] = MargheritaList;
             PizzaArray["totaalprijsMargherita"] = totaalprijsMargherita;
+
             berekenTotaal();
         }
 
@@ -87,8 +83,8 @@ if (isset($_POST['Submit'])) {
             MarinaList = document.getElementById('MarinaList').value;
             document.getElementById('MarinaPlek').innerHTML = MarinaList + " Stuks Pizza Marina 🐟🍕";
             totaalprijsMarina = MarinaList * PrijsPMarina;
-            AantallenArray["MarinaList"] = MarinaList;
             PizzaArray["totaalprijsMarina"] = totaalprijsMarina;
+
             berekenTotaal();
         }
 
@@ -96,20 +92,13 @@ if (isset($_POST['Submit'])) {
             QFormaggiList = document.getElementById('QFormaggiList').value;
             document.getElementById('QFormaggiPlek').innerHTML = QFormaggiList + " Stuks Pizza Quattro Formaggi 🧀🍕";
             totaalprijsQFormaggi = QFormaggiList * PrijsPQFormaggi;
-            AantallenArray["QFormaggiList"] = QFormaggiList;
             PizzaArray["totaalprijsQFormaggi"] = totaalprijsQFormaggi;
+
             berekenTotaal();
         }
 
         function berekenTotaal() {
-            var Bdatum = document.getElementById('Bdatum');
-            var Bdatum2 = new Date(Bdatum.value);
-            if(Bdatum2.getDay() === 5){
-                newDate = 'Friday'
-            }else if(Bdatum2.getDay() == 1){
-                newDate = 'Monday'
-            }
-            //alert(PizzaArray.length);
+            // alert(PizzaArray.length);
             // alert(totaalprijsHawaii)
             let totaalprijsPerPizza = 0;
             Object.values(PizzaArray).forEach(value => {
@@ -131,21 +120,6 @@ if (isset($_POST['Submit'])) {
                 //waarde
                 document.getElementById('Kosten2').value = Totaalprijs.toFixed(2);
             }
-
-            //maandag
-            if(newDate == 'Monday'){
-                let AantalPerPizza = 0;
-                Object.values(AantalArray).forEach(value => {
-                    AantalPerPizza += 7.5;
-                });
-                Totaalprijs = AantalPerPizza;
-
-                alert(AantallenArray)
-                alert(Totaalprijs)
-                document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + Totaalprijs.toFixed(2) + ",-";
-                //waarde
-                document.getElementById('Kosten2').value = Totaalprijs.toFixed(2);
-            }    
             // alert(Totaalprijs);
         }
 
@@ -165,12 +139,12 @@ if (isset($_POST['Submit'])) {
 
 @section('content')
 <div>
-    <div class="home">
+    <div class=home>
         @auth
         <form method="POST" action="/verwerkenpizza" class="home">
             @csrf
-            <ul class="pizza" name="pizza">
-                <li class="hawaii">
+            <ul class=pizza name=pizza>
+                <li class=hawaii>
                     <img src="{{ asset('images/hawaii.png') }}" alt="pizza hawaii" width="180" height="180">
                     <p>Pizza Hawaii</p>
                     <?php echo '€' . $PrijsPHawaii . '0,-'; ?>
@@ -188,7 +162,7 @@ if (isset($_POST['Submit'])) {
                         <option value="10">10</option>
                     </select>
                 </li>
-                <li class="funghi">
+                <li class=funghi>
                     <img src="{{ asset('images/funghi.png') }}" alt="pizza funghi" width="180" height="180">
                     <p>Pizza Funghi</p>
                     <?php echo '€' . $PrijsPFunghi . '0,-'; ?>
@@ -206,7 +180,7 @@ if (isset($_POST['Submit'])) {
                         <option value="10">10</option>
                     </select>
                 </li>
-                <li class="margherita">
+                <li class=margherita>
                     <img src="{{ asset('images/margherita.png') }}" alt="pizza margherita" width="180"
                         height="180">
                     <p>Pizza Margherita</p>
@@ -225,7 +199,7 @@ if (isset($_POST['Submit'])) {
                         <option value="10">10</option>
                     </select>
                 </li>
-                <li class="marina">
+                <li class=marina>
                     <img src="{{ asset('images/marina.png') }}" alt="pizza marina" width="180" height="180">
                     <p>Pizza Marina</p>
                     <?php echo '€' . $PrijsPMarina . '0,-'; ?>
@@ -243,7 +217,7 @@ if (isset($_POST['Submit'])) {
                         <option value="10">10</option>
                     </select>
                 </li>
-                <li class="QF">
+                <li class=QF>
                     <img src="{{ asset('images/QF.png') }}" alt="pizza Quattro Formaggi" width="180"
                         height="180">
                     <p>Pizza Quattro Formaggi</p>
@@ -263,29 +237,102 @@ if (isset($_POST['Submit'])) {
                     </select>
                 </li>
             </ul>
-            <div class="lijst">
+            <div class=lijst>
                 <div name="Bdatum"> 
                         <label for="Bdatum">Bestel/afhaal datum:</label>
                         <br>
-                        <input type="date" id="Bdatum" name="Bdatum" oninput="berekenTotaal()" min="<?php echo date("Y-m-d")?>" required>
+                        <input type="date" id="Bdatum" name="Bdatum" oninput="KortingMAVR()" min="<?php echo date("Y-m-d")?>" required>
+                        <script>
+                            function KortingMAVR() {
+                                var Bdatum = document.getElementById('Bdatum');
+                                var Bdatum2 = new Date(Bdatum.value);
+                                //maandag
+                                if (Bdatum2.getDay() === 1) {
+                                    alert('maandag');
+                                    PrijsPHawaiiMA = 7.5;
+                                    PrijsPFunghiMA = 7.5;
+                                    PrijsPMargheritaMA = 7.5;
+                                    PrijsPMarinaMA = 7.5;
+                                    PrijsPQFormaggiMA = 7.5;
+                                    PizzaArray = [];
+
+                                    HawaiiList = document.getElementById('HawaiiList').value;
+                                    totaalprijsHawaii = HawaiiList * PrijsPHawaiiMA;
+                                    PizzaArray["totaalprijsHawaii"] = totaalprijsHawaii;
+                                    berekenTotaalMA();
+                                        
+                                    FunghiList = document.getElementById('FunghiList').value;
+                                    totaalprijsFunghi = FunghiList * PrijsPFunghiMA;
+                                    PizzaArray["totaalprijsFunghi"] = totaalprijsFunghi;
+                                    berekenTotaalMA();
+                                        
+                                    MargheritaList = document.getElementById('MargheritaList').value;
+                                    totaalprijsMargherita = MargheritaList * PrijsPMargheritaMA;
+                                    PizzaArray["totaalprijsMargherita"] = totaalprijsMargherita;
+                                    berekenTotaalMA();
+                                        
+                                    MarinaList = document.getElementById('MarinaList').value;
+                                    totaalprijsMarina = MarinaList * PrijsPMarinaMA;
+                                    PizzaArray["totaalprijsMarina"] = totaalprijsMarina;
+                                    berekenTotaalMA();
+                                        
+                                    QFormaggiList = document.getElementById('QFormaggiList').value;
+                                    totaalprijsQFormaggi = QFormaggiList * PrijsPQFormaggiMA;
+                                    PizzaArray["totaalprijsQFormaggi"] = totaalprijsQFormaggi;
+                                    berekenTotaalMA();
+                                        
+
+                                    function berekenTotaalMA() {
+                                        //alert('maandag');
+                                        let totaalprijsPerPizza = 0;
+                                        Object.values(PizzaArray).forEach(value => {
+                                            totaalprijsPerPizza += value;
+                                        });
+                                        TotaalprijsMA = totaalprijsPerPizza;
+                                        // alert(TotaalprijsMA);
+                                        document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + TotaalprijsMA.toFixed(2) + ",-";
+                                        // alert(TotaalprijsMA);
+                                    }
+                                } elseif (Bdatum2.getDay() !== 1) {
+                                    alert('hohoho2');
+                                    PrijsPHawaiiMA = 11.5;
+                                    PrijsPFunghiMA = 12.5;
+                                    PrijsPMargheritaMA = 12.5;
+                                    PrijsPMarinaMA = 12.5;
+                                    PrijsPQFormaggiMA = 14.5;
+
+                                    document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + Totaalprijs.toFixed(2) + ",-";
+                                }
+
+                                //Vrijdag   
+                                if (Bdatum2.getDay() === 5 && Totaalprijs > 20) {
+                                    TotaalprijsVR = Totaalprijs - 15 * (Totaalprijs / 100);
+                                    document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + TotaalprijsVR.toFixed(2) + ",-";                           
+                                } elseif (Bdatum2.getDay() !== 5) {
+                                    alert('hohoho');
+                                    // Totaalprijs = Totaalprijs;
+                                    document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + Totaalprijs.toFixed(2) + ",-";
+                                }
+                            }
+                    </script>
                 </div>
-                    <div class="dropdownNumbers">
-                        <div id="HawaiiPlek">
+                    <div class=dropdownNumbers>
+                        <div id=HawaiiPlek>
                         </div>
-                        <div id="FunghiPlek">
+                        <div id=FunghiPlek>
                         </div>
-                        <div id="MargheritaPlek">
+                        <div id=MargheritaPlek>
                         </div>
-                        <div id="MarinaPlek">
+                        <div id=MarinaPlek>
                         </div>
-                        <div id="QFormaggiPlek">
+                        <div id=QFormaggiPlek>
                     </div>
             </div>
-                <div class="veldbot">
+                <div class=veldbot>
                     <div id="Kosten" name="Totaalprijs1">
                     </div>
                     <input name="Totaalprijs" id="Kosten2" type="hidden">
-                        <div class="BOA" name="BOA" id="BOA">
+                        <div class=BOA name=BOA id=BOA>
                             <label>
                                 <input type="radio" id="afhalen" name="BOA" value ="afhalen"
                                     onchange="bezorgkosten('afhalen')" checked>Afhalen</input>
@@ -308,8 +355,8 @@ if (isset($_POST['Submit'])) {
     </script>
 
         <div class="home">
-            <ul class="pizza" name="pizza">
-                <li class="hawaii">
+            <ul class=pizza name=pizza>
+                <li class=hawaii>
                     <img src="{{ asset('images/hawaii.png') }}" alt="pizza hawaii" width="180" height="180">
                     <p>Pizza Hawaii</p>
                     <?php echo '€' . $PrijsPHawaii . '0,-'; ?>
@@ -327,7 +374,7 @@ if (isset($_POST['Submit'])) {
                         <option value="10">10</option>
                     </select>
                 </li>
-                <li class="funghi">
+                <li class=funghi>
                     <img src="{{ asset('images/funghi.png') }}" alt="pizza funghi" width="180" height="180">
                     <p>Pizza Funghi</p>
                     <?php echo '€' . $PrijsPFunghi . '0,-'; ?>
@@ -345,7 +392,7 @@ if (isset($_POST['Submit'])) {
                         <option value="10">10</option>
                     </select>
                 </li>
-                <li class="margherita">
+                <li class=margherita>
                     <img src="{{ asset('images/margherita.png') }}" alt="pizza margherita" width="180"
                         height="180">
                     <p>Pizza Margherita</p>
@@ -364,7 +411,7 @@ if (isset($_POST['Submit'])) {
                         <option value="10">10</option>
                     </select>
                 </li>
-                <li class="marina">
+                <li class=marina>
                     <img src="{{ asset('images/marina.png') }}" alt="pizza marina" width="180" height="180">
                     <p>Pizza Marina</p>
                     <?php echo '€' . $PrijsPMarina . '0,-'; ?>
@@ -382,7 +429,7 @@ if (isset($_POST['Submit'])) {
                         <option value="10">10</option>
                     </select>
                 </li>
-                <li class="QF">
+                <li class=QF>
                     <img src="{{ asset('images/QF.png') }}" alt="pizza Quattro Formaggi" width="180"
                         height="180">
                     <p>Pizza Quattro Formaggi</p>
@@ -402,34 +449,34 @@ if (isset($_POST['Submit'])) {
                     </select>
                 </li>
             </ul>
-            <div class="lijst">
+            <div class=lijst>
                 <div name="Bdatum"> 
                     <label for="Bdatum">Bestel/afhaal datum:</label>
                     <br>
                     <input type="date" id="Bdatum" name="Bdatum" oninput="registreer()" min="<?php echo date("Y-m-d")?>" required>
                 </div>
-                <div class="dropdownNumbers">
-                    <div id="HawaiiPlek">
+                <div class=dropdownNumbers>
+                    <div id=HawaiiPlek>
                     </div>
-                    <div id="FunghiPlek">
+                    <div id=FunghiPlek>
                     </div>
-                    <div id="MargheritaPlek">
+                    <div id=MargheritaPlek>
                     </div>
-                    <div id="MarinaPlek">
+                    <div id=MarinaPlek>
                     </div>
-                    <div id="QFormaggiPlek">
+                    <div id=QFormaggiPlek>
                     </div>
                 </div>
-                <div class="veldbot">
+                <div class=veldbot>
                     <div id="Kosten" name="Totaalprijs">
                     </div>
                     <input name="Totaalprijs" type="hidden">
-                    <div class="BOA" name="BOA" id="BOA">
+                    <div class=BOA name=BOA id=BOA>
                         <input type="radio" id="afhalen" name="BOA" value ="afhalen"
-                            onclick="registreer()" checked>Afhalen</input>
+                            onclick="registreer()"" checked>Afhalen</input>
                         <label>
                             <input type="radio" id="bezorgen" name="BOA" value ="bezorgen"
-                            onclick="registreer()">Bezorgen (+ €5)</input>
+                            onclick="registreer()"">Bezorgen (+ €5)</input>
                         </label>
                     </div>
                     <button class ="button1" type="submit"onclick="registreer()">Afrekenen</button>
