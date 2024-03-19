@@ -52,7 +52,7 @@ if (isset($_POST['Submit'])) {
     Totaalprijs = 0;
     newDate = "<?php echo $newDate; ?>";
     PizzaArray = [];
-    AantallenArray = [];
+    AantalArray = [];
     let bezorging = false;
 
 
@@ -60,7 +60,7 @@ if (isset($_POST['Submit'])) {
             HawaiiList = document.getElementById('HawaiiList').value;
             document.getElementById('HawaiiPlek').innerHTML = HawaiiList + " Stuks Pizza Hawaii 🍍🍕";
             totaalprijsHawaii = HawaiiList * PrijsPHawaii;
-            AantallenArray["HawaiiList"] = HawaiiList;
+            AantalArray["HawaiiList"] = HawaiiList;
             PizzaArray["totaalprijsHawaii"] = totaalprijsHawaii;
             berekenTotaal();
         }
@@ -69,7 +69,7 @@ if (isset($_POST['Submit'])) {
             FunghiList = document.getElementById('FunghiList').value;
             document.getElementById('FunghiPlek').innerHTML = FunghiList + " Stuks Pizza Funghi 🍄🍕";
             totaalprijsFunghi = FunghiList * PrijsPFunghi;
-            AantallenArray["FunghiList"] = FunghiList;
+            AantalArray["FunghiList"] = FunghiList;
             PizzaArray["totaalprijsFunghi"] = totaalprijsFunghi;
             berekenTotaal();
         }
@@ -78,7 +78,7 @@ if (isset($_POST['Submit'])) {
             MargheritaList = document.getElementById('MargheritaList').value;
             document.getElementById('MargheritaPlek').innerHTML = MargheritaList + " Stuks Pizza Margherita 🌿🍕";
             totaalprijsMargherita = MargheritaList * PrijsPMargherita;
-            AantallenArray["MargheritaList"] = MargheritaList;
+            AantalArray["MargheritaList"] = MargheritaList;
             PizzaArray["totaalprijsMargherita"] = totaalprijsMargherita;
             berekenTotaal();
         }
@@ -87,7 +87,7 @@ if (isset($_POST['Submit'])) {
             MarinaList = document.getElementById('MarinaList').value;
             document.getElementById('MarinaPlek').innerHTML = MarinaList + " Stuks Pizza Marina 🐟🍕";
             totaalprijsMarina = MarinaList * PrijsPMarina;
-            AantallenArray["MarinaList"] = MarinaList;
+            AantalArray["MarinaList"] = MarinaList;
             PizzaArray["totaalprijsMarina"] = totaalprijsMarina;
             berekenTotaal();
         }
@@ -96,7 +96,7 @@ if (isset($_POST['Submit'])) {
             QFormaggiList = document.getElementById('QFormaggiList').value;
             document.getElementById('QFormaggiPlek').innerHTML = QFormaggiList + " Stuks Pizza Quattro Formaggi 🧀🍕";
             totaalprijsQFormaggi = QFormaggiList * PrijsPQFormaggi;
-            AantallenArray["QFormaggiList"] = QFormaggiList;
+            AantalArray["QFormaggiList"] = QFormaggiList;
             PizzaArray["totaalprijsQFormaggi"] = totaalprijsQFormaggi;
             berekenTotaal();
         }
@@ -117,6 +117,13 @@ if (isset($_POST['Submit'])) {
             });
             Totaalprijs = totaalprijsPerPizza;
 
+
+            let totaalAantalPerPizza = 0;
+                Object.values(AantalArray).forEach(value => {
+                    totaalAantalPerPizza += value;
+                });
+            totaalAantalPizza = totaalAantaPerPizza;
+
             if (bezorging) {
                 Totaalprijs += 5;
             }
@@ -134,14 +141,9 @@ if (isset($_POST['Submit'])) {
 
             //maandag
             if(newDate == 'Monday'){
-                let AantalPerPizza = 0;
-                Object.values(AantalArray).forEach(value => {
-                    AantalPerPizza += 7.5;
-                });
-                Totaalprijs = AantalPerPizza;
+              
 
-                alert(AantallenArray)
-                alert(Totaalprijs)
+                alert(totaalAantalPizza)
                 document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + Totaalprijs.toFixed(2) + ",-";
                 //waarde
                 document.getElementById('Kosten2').value = Totaalprijs.toFixed(2);
