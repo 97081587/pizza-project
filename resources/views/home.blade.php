@@ -132,13 +132,6 @@ if (isset($_POST['Submit'])) {
             totaalAantalPizza = totaalAantalPerPizza;
             //alert(totaalAantalPizza);
 
-            if (bezorging) {
-                Totaalprijs += 5;
-            }
-            document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + Totaalprijs.toFixed(2) + ",-";
-            //waarde
-            document.getElementById('Kosten2').value = Totaalprijs.toFixed(2);
-
             //vrijdag
             if (newDate == 'Friday' && Totaalprijs > 20) {
                 Totaalprijs = Totaalprijs - 15 * (Totaalprijs / 100);
@@ -156,6 +149,13 @@ if (isset($_POST['Submit'])) {
                 document.getElementById('Kosten2').value = Totaalprijs.toFixed(2);
             }    
             // alert(Totaalprijs);
+
+            if (bezorging) {
+                Totaalprijs += 5;
+            }
+            document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + Totaalprijs.toFixed(2) + ",-";
+            //waarde
+            document.getElementById('Kosten2').value = Totaalprijs.toFixed(2);
         }
 
         function bezorgkosten(boa) {
