@@ -16,13 +16,13 @@ $Bdatum = '';
 
 $newDate = date('l', strtotime('Today'));
 
-if ($newDate == 'Monday') {
-        $PrijsPMargherita = $PrijsPizzasMA;
-        $PrijsPFunghi = $PrijsPizzasMA;
-        $PrijsPMarina = $PrijsPizzasMA;
-        $PrijsPHawaii = $PrijsPizzasMA;
-        $PrijsPQFormaggi = $PrijsPizzasMA;
-    }
+// if ($newDate == 'Monday') {
+//         $PrijsPMargherita = $PrijsPizzasMA;
+//         $PrijsPFunghi = $PrijsPizzasMA;
+//         $PrijsPMarina = $PrijsPizzasMA;
+//         $PrijsPHawaii = $PrijsPizzasMA;
+//         $PrijsPQFormaggi = $PrijsPizzasMA;
+//     }
 
 $RegiEmail = '';
 $RegiPassword = '';
@@ -106,10 +106,10 @@ if (isset($_POST['Submit'])) {
             var Bdatum2 = new Date(Bdatum.value);
             if(Bdatum2.getDay() === 5){
                 newDate = 'Friday'
-                // alert(newDate)
+                //alert(newDate)
             } else if(Bdatum2.getDay() === 1){
                 newDate = 'Monday'
-                // alert(newDate)
+                //alert(newDate)
             } else {
                 newDate = 'Today'
             }
@@ -147,7 +147,7 @@ if (isset($_POST['Submit'])) {
                 document.getElementById('Kosten').innerHTML = "Totaalprijs: €" + Totaalprijs.toFixed(2) + ",-";
                 //waarde
                 document.getElementById('Kosten2').value = Totaalprijs.toFixed(2);
-            }    
+            }
             // alert(Totaalprijs);
 
             if (bezorging) {
@@ -276,7 +276,7 @@ if (isset($_POST['Submit'])) {
                 <div name="Bdatum"> 
                         <label for="Bdatum">Bestel/afhaal datum:</label>
                         <br>
-                        <input type="date" id="Bdatum" name="Bdatum" oninput="berekenTotaal()" min="<?php echo date("Y-m-d")?>" required>
+                        <input type="date" id="Bdatum" name="Bdatum" oninput="berekenTotaal()" min="<?php echo date("Y-m-d")?>" value="<?php echo date("Y-m-d")?>" required>
                 </div>
                     <div class="dropdownNumbers">
                         <div id="HawaiiPlek">
