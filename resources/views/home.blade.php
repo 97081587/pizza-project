@@ -107,8 +107,7 @@ if (isset($_POST['Submit'])) {
             if(Bdatum2.getDay() === 5){
                 newDate = 'Friday'
                 // alert(newDate)
-            }
-            else if(Bdatum2.getDay() === 1){
+            } else if(Bdatum2.getDay() === 1){
                 newDate = 'Monday'
                 // alert(newDate)
             } else {
@@ -117,13 +116,15 @@ if (isset($_POST['Submit'])) {
            // alert(newDate)
             //alert(PizzaArray.length);
             // alert(totaalprijsHawaii)
+
+            //totaalpijs
             let totaalprijsPerPizza = 0;
             Object.values(PizzaArray).forEach(value => {
                 totaalprijsPerPizza += value;
             });
             Totaalprijs = totaalprijsPerPizza;
 
-            
+            //aantal pizzas
             let totaalAantalPerPizza = 0;
                 Object.values(AantalArray).forEach(value => {
                     totaalAantalPerPizza += value;
