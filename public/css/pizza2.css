@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: #f2d394;
+    background-color: 	#f3c681;
 }
 
 .est {
@@ -38,18 +38,18 @@ body {
     padding: 0;
     display: flex;
     justify-content: space-around;
-    background-color: rgb(245, 197, 54);
+    background-color: 	#ffac0e;
 }
 
 li a {
     display: block;
     padding: 8px;
-    background-color: rgb(245, 197, 54);
+    background-color: 	#ffac0e;
     border-radius: 15px;
 }
 
 li a:hover {
-    background-color: rgb(205, 0, 0);
+    background-color: 	#b61500;
     transition-duration: 0.5s;
 }
 
@@ -69,14 +69,14 @@ li a:hover {
   }
   
   .navbar a:hover, .dropdown:hover .dropbtn {
-    background-color: rgb(205, 0, 0);
+    background-color: 	#b61500;
     transition-duration: 0.5s;
   }
   
   .inloggen-registreren {
     display: none;
     position: absolute;
-    background-color: rgb(251, 221, 132);
+    background-color: 	#feb329;
     min-width: 160px;
     border-radius: 15px;
     height: auto;
@@ -93,7 +93,7 @@ li a:hover {
   }
   
   .inloggen-registreren a:hover {
-    background-color: rgb(245, 205, 85);
+    background-color: 		#fbae89;
   }
   
   .dropdown:hover .inloggen-registreren {
@@ -110,7 +110,7 @@ li a:hover {
 }
 
 .Uitloggen {
-    background-color: rgb(251, 221, 132);
+    background-color: #feb329;
     border: none;
     border-radius: 10px;
     font-size: 17px;
@@ -119,7 +119,7 @@ li a:hover {
 }
 
 .Uitloggen:hover {
-    color:rgb(96, 96, 96);
+    color: 	#b61500;
 }
 
 /* */
@@ -129,7 +129,7 @@ li a:hover {
 }
 /*lijst*/
 .lijst {
-    background-color: rgb(245, 205, 85);
+    background-color:#ffac0e;
     height: 480px;
     width: 300px;
     border-radius: 15px;
@@ -169,7 +169,7 @@ li a:hover {
 }
   
 .button1 {
-    background-color: rgb(245, 197, 54);
+    background-color: #ffac0e;
     border: none;
     height: 100px;
     width: 300px;
@@ -188,7 +188,7 @@ li a:hover {
 }
 
 .button1:hover {
-    background-color: rgb(246, 228, 176);
+    background-color: 	#f8c466;
     transition-duration: 0.5s;
 }
 
@@ -201,7 +201,7 @@ li a:hover {
 }
 
 .voltooi {
-    background-color: rgb(245, 197, 54);
+    background-color: #ffac0e;
     border: none;
     height: 40px;
     width: 100px;
@@ -214,6 +214,6 @@ li a:hover {
 }
 
 .voltooi:hover {
-    background-color: rgb(246, 228, 176);
+    background-color: 	#f8c466;
     transition-duration: 0.5s;
 }
